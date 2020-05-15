@@ -16,6 +16,8 @@
         <el-form-item label="症状:"  prop="symptomIdList" >
           <el-select
              clearable class="input-width"
+             filterable 
+             allow-create
              multiple
             v-model="expObj.symptomIdList"
             placeholder="请选择"
@@ -24,7 +26,7 @@
               v-for="item in symptomOption"
               :key="item.id"
               :label="item.name"
-              :value="item.id">
+              :value="item.name">
             </el-option>
           </el-select>
         </el-form-item>
@@ -204,7 +206,7 @@
              queryHospital(queryString).then(res=> {
                this.loadingOption=false;
               if (res.code == 200) {
-                this.hostList = res.dataList;
+                this.hostList = res.dataList.slice(0,50);
               }else{
                  this.hostList=[];
               }

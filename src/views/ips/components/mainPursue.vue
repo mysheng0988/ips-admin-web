@@ -12,22 +12,22 @@
           clearable></el-input>
       </el-form-item>
       <el-form-item label="主诉症状:" prop="mainSymptomsIdList">
-        <el-select  placeholder="请选择主诉症状"  filterable multiple v-model="pursueObj.mainSymptomsIdList" clearable class="input-width">
+        <el-select  placeholder="请选择主诉症状"  filterable multiple allow-create v-model="pursueObj.mainSymptomsIdList" clearable class="input-width">
           <el-option
             v-for="item in optionSymptomsList"
             :key="item.id"
             :label="item.name"
-            :value="item.id">
+            :value="item.name">
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="主诉症状补充:">
+      <!-- <el-form-item label="主诉症状补充:">
         <el-input
           placeholder="请输入内容,多个用','分割"
           type="text"
           v-model="mainSymptoms"
           clearable></el-input>
-      </el-form-item>
+      </el-form-item> -->
       <el-row :gutter="2">
         <el-col :span="6">
           <el-form-item label="发作频率:" prop="onsetInterval">
@@ -75,22 +75,22 @@
         </el-col>
       </el-row>
       <el-form-item label="伴随症状:">
-        <el-select  placeholder="请选择伴随症状"  filterable multiple v-model="pursueObj.accompanyingSymptomsIdList" clearable class="input-width">
+        <el-select  placeholder="请选择伴随症状"  filterable allow-create multiple v-model="pursueObj.accompanyingSymptomsIdList" clearable class="input-width">
           <el-option
             v-for="item in optionAccompanyingSymptoms"
             :key="item.id"
             :label="item.name"
-            :value="item.id">
+            :value="item.name">
           </el-option>
         </el-select>
       </el-form-item>
-      <el-form-item label="伴随症状补充:">
+      <!-- <el-form-item label="伴随症状补充:">
         <el-input
           v-model="accompanyingSymptoms"
           placeholder="请输入内容,多个用','分割"
           type="text"
           clearable></el-input>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="临床专科诊断:" prop="clinicalSpecialistDiagnosisIdList">
         <el-select
           style="width: 100%"
@@ -132,7 +132,7 @@
           <p class="add-btn"><i class="el-icon-plus"></i>点击添加</p>
           <el-checkbox :checked="false">暂无运动症状</el-checkbox>
         </div> -->
-        <el-select  placeholder="请选择伴随症状"  filterable multiple v-model="pursueObj.motorSymptomsIdList" clearable class="input-width">
+        <el-select  placeholder="请选择运动症状"  filterable  multiple v-model="pursueObj.motorSymptomsIdList" clearable class="input-width">
           <el-option
             v-for="item in optionMotorSymptoms"
             :key="item.id"
@@ -425,8 +425,7 @@
               {required: true, message: '请填写主诉', trigger: 'blur'},
           ],
           mainSymptomsIdList: [
-             {required: false, trigger: 'change', validator: validateTwo}
-            // {required: true, message: '请选择主诉症状', trigger: 'change'},
+             {required: true,  message: '请选择主诉症状', trigger: 'change'}
           ],
            mainSymptoms: [
              {required: false, trigger: 'blur', validator: validateTwo}
