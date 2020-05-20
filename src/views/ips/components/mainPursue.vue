@@ -11,8 +11,8 @@
           show-word-limit
           clearable></el-input>
       </el-form-item>
-      <el-form-item label="主诉症状:" prop="mainSymptomsIdList">
-        <el-select  placeholder="请选择主诉症状"  filterable multiple allow-create v-model="pursueObj.mainSymptomsIdList" clearable class="input-width">
+      <el-form-item label="主诉症状:" prop="mainSymptomsSet">
+        <el-select  placeholder="请选择主诉症状"  filterable multiple allow-create v-model="pursueObj.mainSymptomsSet" clearable class="input-width">
           <el-option
             v-for="item in optionSymptomsList"
             :key="item.id"
@@ -75,7 +75,7 @@
         </el-col>
       </el-row>
       <el-form-item label="伴随症状:">
-        <el-select  placeholder="请选择伴随症状"  filterable allow-create multiple v-model="pursueObj.accompanyingSymptomsIdList" clearable class="input-width">
+        <el-select  placeholder="请选择伴随症状"  filterable allow-create multiple v-model="pursueObj.accompanyingSymptomsSet" clearable class="input-width">
           <el-option
             v-for="item in optionAccompanyingSymptoms"
             :key="item.id"
@@ -117,7 +117,7 @@
           type="text"
           clearable></el-input>
       </el-form-item>
-      <el-form-item label="器质损害或疾病严重程度:" prop="organicDiseaseSeverity"  v-if="type=='A'">
+      <el-form-item label="器质损害或疾病严重程度:" prop="organicDiseaseSeverity" >
         <el-select  placeholder="请选择" v-model="pursueObj.organicDiseaseSeverity" clearable class="input-width">
            <el-option label="未知" value="未知" ></el-option>
           <el-option label="无" value="无" ></el-option>
@@ -128,16 +128,12 @@
         </el-select>
       </el-form-item>
       <el-form-item label="运动症状:">
-        <!-- <div class="flex">
-          <p class="add-btn"><i class="el-icon-plus"></i>点击添加</p>
-          <el-checkbox :checked="false">暂无运动症状</el-checkbox>
-        </div> -->
-        <el-select  placeholder="请选择运动症状"  filterable  multiple v-model="pursueObj.motorSymptomsIdList" clearable class="input-width">
+        <el-select  placeholder="请选择运动症状"  filterable allow-create multiple v-model="pursueObj.motorSymptomsSet" clearable class="input-width">
           <el-option
             v-for="item in optionMotorSymptoms"
             :key="item.id"
             :label="item.name"
-            :value="item.id">
+            :value="item.name">
           </el-option>
         </el-select>
       </el-form-item>
@@ -159,7 +155,7 @@
             </el-table-column>
             <el-table-column label="症状" align="center">
               <template slot-scope="scope">
-                <p v-for="(item,index) in scope.row.symptomList" :key="index">{{item.name}}</p>
+                <p v-for="(item,index) in scope.row.symptomsSet" :key="index">{{item}}</p>
                 <!--{{scope.row.symptomList}}-->
               </template>
             </el-table-column>
@@ -312,8 +308,7 @@
   import FamilyHistory from "./familyHistory"
   const defaultPursue = {
     id: null,
-    accompanyingSymptomsIdList:[],//伴随症状
-    accompanyingSymptomsSupplementList:[],//伴随症状补充
+    accompanyingSymptomsSet:[],//伴随症状
     allergenSupplement:"",//过敏史
     clinicalSpecialistDiagnosisIdList:[],//临床专科诊断
     clinicalSpecialistDiagnosisList:[],//临床专科诊断已选项
@@ -324,8 +319,7 @@
     illnessDegree:"",//严重程度
     mainComplaint:"",//患者主诉
     mainSymptoms:"",
-    mainSymptomsIdList:[],//主要症状
-    mainSymptomsSupplementList:[],//主要症状补充
+    mainSymptomsSet:[],//主要症状
     medicalRecordId:"",//病历ID
     motorSymptoms:"",//运动症状
     onsetInterval:"",//发病频率
@@ -424,7 +418,7 @@
           mainComplaint:[
               {required: true, message: '请填写主诉', trigger: 'blur'},
           ],
-          mainSymptomsIdList: [
+          mainSymptomsSet: [
              {required: true,  message: '请选择主诉症状', trigger: 'change'}
           ],
            mainSymptoms: [
@@ -458,6 +452,7 @@
       ])
     },
     mounted(){
+      console.log(this.type)
       this.getExperienceList();
       this.queryFamily();
       this.getSymptoms("1");
@@ -471,8 +466,6 @@
         getPursue(this.medicalRecordId).then(res=>{
            if(res.code==200){
             this.pursueObj=res.dataList[0];
-             this.mainSymptoms=res.dataList[0].mainSymptomsSupplementList.join(",");;
-             this.accompanyingSymptoms=this.pursueObj.accompanyingSymptomsSupplementList.join(",")
              this.clinicalSpecialist=this.pursueObj.clinicalSpecialistDiagnosisSupplementList.join(",")
            }
         })
@@ -582,8 +575,6 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {
             this.listLoading = true;
-            this.pursueObj.mainSymptomsSupplementList=this.mainSymptoms.split(",")
-            this.pursueObj.accompanyingSymptomsSupplementList=this.accompanyingSymptoms.split(",")
             this.pursueObj.clinicalSpecialistDiagnosisSupplementList=this.clinicalSpecialist.split(",")
             this.pursueObj.patientId = this.patientId;
             this.pursueObj.medicalRecordId = this.medicalRecordId;

@@ -13,13 +13,13 @@
             placeholder="请选择时间">
           </el-date-picker>
         </el-form-item>
-        <el-form-item label="症状:"  prop="symptomIdList" >
+        <el-form-item label="症状:"  prop="symptomsSet" >
           <el-select
              clearable class="input-width"
              filterable 
              allow-create
              multiple
-            v-model="expObj.symptomIdList"
+            v-model="expObj.symptomsSet"
             placeholder="请选择"
             >
             <el-option
@@ -125,7 +125,7 @@
     updatePursue} from '@/api/ips';
   import {getICD11} from '@/api/icd'
   const defaultExp={
-    symptomIdList:[],
+    symptomsSet:[],
     checkupIdList:[],
     diagnosisIdList:[],
     hospital: "",
@@ -178,7 +178,7 @@
             ],
             diagnosisIdList: [{required: true, message: '请输入关键词检索诊断', trigger: 'blur' }],
             checkupIdList:[{required: true, message: '请输入关键词检索', trigger: 'blur' }],
-            symptomIdList: [{required: true, message: '请选择症状', trigger: 'blur' }],
+            symptomsSet: [{required: true, message: '请选择症状', trigger: 'blur' }],
             hospitalId: [{required: true, message: '请选择医院', trigger: 'blur'}],
             treatmentEffect:[{required: true, message: '请选择治疗方案', trigger: 'blur'}],
             treatmentPrograms: [{required: true, message: '请选择治疗方案', trigger: 'blur'}],

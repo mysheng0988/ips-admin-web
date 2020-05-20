@@ -11,8 +11,8 @@
       </div>
         <el-row :gutter="10">
           <el-col :span="8">
-            <el-form-item label="姓名："  prop="realName"  maxlength="10" show-word-limit>
-              <el-input v-model="patObj.realName" placeholder="请输入姓名"></el-input>
+            <el-form-item label="姓名："  prop="realName"  maxlength="10" show-word-limit >
+              <el-input v-model="patObj.realName" placeholder="请输入姓名" disabled></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="8">
@@ -35,7 +35,7 @@
           </el-col>
           <el-col :span="8">
             <el-form-item label="身份证号："  prop="cardNo" >
-              <el-input v-model="patObj.cardNo" placeholder="请输入身份证号"></el-input>
+              <el-input v-model="patObj.cardNo" placeholder="请输入身份证号" disabled></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="8">
