@@ -3,7 +3,7 @@
     <div class="pdf-bar"></div>
     <div class="content-box">
       <div class="label-title">
-        <p>附录1. 患者教育</p>
+        <p>附录. 患者教育</p>
         <p>P<span>ATIENT EDUCATION</span></p>
       </div>
       <template v-for="(item,index) in data">

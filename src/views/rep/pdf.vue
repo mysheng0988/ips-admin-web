@@ -167,13 +167,14 @@ import {analysisData} from "@/api/analysis"
           let patient=await this.getPatientData();
           await this.getExperienceList(patient.patientId)
           await this.getPursueData();
+           await this.getReportMsgData();
           await this.getEEGData();
-          await this.getReportMsgData();
+         
           await this.getScaleResult();
           await this.getScaleNumResult();
         },
         getEEGData(){
-           getEEG(this.medicalRecordId).then(res=>{
+          return getEEG(this.medicalRecordId).then(res=>{
               if(res.code==200){
                 this.eegData=true;
               }else{
@@ -182,7 +183,7 @@ import {analysisData} from "@/api/analysis"
           })
         },
         getScaleNumResult(){
-            scaleResultNum(this.medicalRecordId,{questionnaireNumbers:12}).then(res=>{
+           return scaleResultNum(this.medicalRecordId,{questionnaireNumbers:12}).then(res=>{
               let rowNum=0;
               let maxRow=15;
               if(res.code==200){
@@ -210,7 +211,7 @@ import {analysisData} from "@/api/analysis"
             })
         },
         getReportMsgData(){
-         getReportMsg(this.medicalRecordId).then(res=>{
+         return getReportMsg(this.medicalRecordId).then(res=>{
               if(res.code==200){
                   let pageNum=0;
                   let rowNum=0;
@@ -285,7 +286,7 @@ import {analysisData} from "@/api/analysis"
                      this.contentsData[8].pageName="附录4:压力量表评估"
                 }
                  this.contentsData[7].pageNum=this.contentsData[6].pageNum+1;
-                this.contentsData[8].pageNum=this.contentsData[7].pageNum+this.scaleData.length;//附录4:压力量表评估
+               
 
               }
 
@@ -397,7 +398,7 @@ import {analysisData} from "@/api/analysis"
           return data;
         },
         getScaleResult(){
-          scaleResult(this.medicalRecordId).then(res=>{
+         return scaleResult(this.medicalRecordId).then(res=>{
             let data=res.dataList;
             let scaleData=[];
             let pageNum=0;
@@ -432,6 +433,7 @@ import {analysisData} from "@/api/analysis"
               }
             }
             this.scaleData=scaleData;
+             this.contentsData[8].pageNum=this.contentsData[7].pageNum-0+this.scaleData.length;//附录4:压力量表评估
           })
         },
         getPatientData(){
@@ -444,7 +446,7 @@ import {analysisData} from "@/api/analysis"
           })
         },
         getPursueData(){
-          getPursue(this.medicalRecordId).then(res=>{
+         return getPursue(this.medicalRecordId).then(res=>{
            if(res.code==200){
             this.mainPursue=res.dataList[0];
            }

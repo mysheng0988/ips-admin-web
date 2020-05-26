@@ -5,6 +5,12 @@ export function queryHospital(data) {
     method:'get',
   })
 }
+export function getHospitalData(hospitalId) {
+  return request({
+    url:'base/hospital/'+hospitalId,
+    method:'get',
+  })
+}
 export function saveHospital(data) {
   return request({
     url:'base/hospital',

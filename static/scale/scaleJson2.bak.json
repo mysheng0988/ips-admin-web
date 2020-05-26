@@ -1,0 +1,1285 @@
+{
+  "code": 200,
+  "data": {
+    "id": 2,
+    "scaleTitle": "首访问卷",
+    "type": "3",
+    "explain": "根据过去两周的情况，请您选择下列症状出现的频率。",
+    "problem": [
+      {
+        "questionNum": "4",
+        "question": "您是否有以下症状，选择一项或多项,选择一项或多项；若无症状，请直接点击下一题",
+        "symptom": [
+          {
+            "question": "口干",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "出汗",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "心悸",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "呼吸困难",
+            "answers": [
+              "完全符合",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "喉部堵塞感",
+            "answers": [
+              "完全符合",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "气急",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "面色潮红或苍白",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "阵发性发冷发热",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer":""
+          },
+          {
+            "question": "头疼",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "头晕",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "失平衡感",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer": ""
+          },
+          {
+            "question": "疲劳或乏力",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer":""
+          },
+          {
+            "question": "腹胀",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer":""
+          },
+          {
+            "question": "恶心",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer":""
+          },
+          {
+            "question": "呕吐",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer":""
+          },
+          {
+            "question": "腹泻",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer":""
+          },
+          {
+            "question": "便秘",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer":""
+          },
+          {
+            "question": "多部位疼痛或不适",
+            "answers": [
+              "完全符合",
+              "符合",
+              "中立",
+              "不符合",
+              "完全不符合"
+            ],
+            "answer":""
+          }
+        ],
+        "data": [],
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "5",
+        "question": "我容易生病。",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "6",
+        "question": "我容易感冒",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "7",
+        "question": "我有痛风、风湿等免疫疾病。",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+
+      {
+        "questionNum": "9",
+        "question": "我的饮食结构不均衡",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "10",
+        "question": "我需要卧床20分钟以上才能入睡",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "11",
+        "question": "我睡眠浅，多梦，易醒",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "12",
+        "question": "我容易早醒。",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "13",
+        "question": "我醒后感到疲劳。",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "15",
+        "question": "您有甲状腺能力障碍、糖尿病内分泌疾病吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "16",
+        "question": "您是否有以下症状：女性回答：月经不调、痛经、色斑、体毛、性欲、体重、长痘及皮肤变化等内分泌紊乱症状？男性回答：脸上长痘、皮肤肤质变化、性功能、体重等变化",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "17",
+        "question": "您容易过敏或咳喘吗（对药物、食物、气味、花粉或在季节交替、气候变化时？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "18",
+        "question": "您的皮肤容易起荨麻疹（风团、风疹块、风疙瘩）、过敏性紫癜吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "19",
+        "question": "您吃辛辣刺激性食物易出现过敏或痛风类症状吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "20",
+        "question": "您的皮肤一抓就红，并出现抓痕吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "21",
+        "question": "是否有记忆深刻的不良经历（着急、惊吓、生气，重要亲友重病或伤亡，重要亲友矛盾、冷战或分离等对自己造成影响的事件）？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 17,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "22",
+        "question": "那些不良经历让您寝食难安或心情不好吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "23",
+        "question": "近期是否有重要事件面临选择或转折吗（考试、工作、就业、婚恋等）？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 19,
+        "prevNum": 15
+      },
+      {
+        "questionNum": "24",
+        "question": "近期这些转折让您感到焦虑吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "25",
+        "question": "您经常感到紧张或心理不踏实吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 17
+      },
+      {
+        "questionNum": "26",
+        "question": "您常常因为小事儿感到担忧吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "27",
+        "question": "您经常感到心烦吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "28",
+        "question": "您经常做事提不起兴趣吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "29",
+        "question": "您经常感到情绪低落或闷闷不乐吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "30",
+        "question": "您有多思多虑或反复洗手、关门窗、计数等情况吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "31",
+        "question": "您经常感到身体不舒服吗（头晕、头疼、胸闷气短、心慌、胃部不适、排便困难、四肢乏力等）？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "32",
+        "question": "您长期处于超负荷状态吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "33",
+        "question": "您生活/工作上感到有压力吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 29,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "34",
+        "question": "您感到压力与自身的抗压能力失衡了吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "35",
+        "question": "您了解自身疾病产生的原因及治疗方法吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 27
+      },
+      {
+        "questionNum": "36",
+        "question": "您认为只要到了医院，自己的病就一定能好转吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "38",
+        "question": "每当生病时，您都会觉得非常严重吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "39",
+        "question": "当您有情绪变化时通常会做什么？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "40",
+        "question": "当您有需求或与别人的需求发生冲突时您通常采用什么方式？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "41",
+        "question": "您有了压力或不良情绪时多长时间可以消化？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "42",
+        "question": "您能比较敏感的注意到自己的感觉感受吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "43",
+        "question": "当您感到压力或情绪波动时易出现身体不适吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "44",
+        "question": "您的主要家人强势吗（父母、配偶、子女等）？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "45",
+        "question": "您自己的想法和建议易受重要家人影响吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "46",
+        "question": "和重要养育人沟通有压力吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "47",
+        "question": "您和重要亲人之间有清晰的界限吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "48",
+        "question": "家人能带给您安全感和亲密感吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "49",
+        "question": "学习/工作/生活/人际关系让您感到消耗吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 46,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "50",
+        "question": "您体能消耗的严重吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "51",
+        "question": "您智能（脑力）消耗的严重吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "52",
+        "question": "您情感消耗的严重吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "53",
+        "question": "您的自我感受如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 42
+      },
+      {
+        "questionNum": "54",
+        "question": "您能清晰认识您自己吗？（各项能力、优劣势、发展方向）？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "55",
+        "question": "对自己成功性事件的感受如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "56",
+        "question": "您有时间紧迫感吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "57",
+        "question": "您易怒吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "58",
+        "question": "您偏好快速的行走、移动、活动、手势表达或平时语速快吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "59",
+        "question": "您比其他人有更强烈的上进心、渴望获得成就、好竞争吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "60",
+        "question": "您生气或恼怒时，会把他藏在内心不表露吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "61",
+        "question": "当不成功时，您就会觉得一切都完了吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "62",
+        "question": "当有人阻挠您的愿望与要求时，您会试图理解他吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "63",
+        "question": "即使有足够的理由，您也不会对别人发火吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "64",
+        "question": "您性子急吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "65",
+        "question": "事情达不到自己内心期待您会很不安吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "66",
+        "question": "经常会把事情看的比实际情况严重，甚至灾难化吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "67",
+        "question": "您对自己的躯体生理变化过分敏感吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "68",
+        "question": "通常，您是固定时间休息吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "69",
+        "question": "通常，您是规律饮食吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "70",
+        "question": "通常，您会规律运动或定期放松娱乐吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "71",
+        "question": "您有不利于健康的嗜好吗？（吸烟、饮酒、打牌、服用兴奋性药物等）？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "76",
+        "question": "症状发生前1-2个月是否有戒烟酒及对自己影响如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "77",
+        "question": "症状发生前1-2个月是否有学习/工作/居住环境改变及对自己影响如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "78",
+        "question": "症状发生前1-2个月是否有兴趣爱好受限制及对自己影响如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "72",
+        "question": "您生活自理状况如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "73",
+        "question": "您学习/工作/生活适应状态如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "74",
+        "question": "您对学习/工作/生活的满意程度及价值感如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "hidden": 74,
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "75",
+        "question": "您在学习/工作/生活中的人际环境如何（包括同事之间、上下级之间，夫妻之间）？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+     
+      {
+        "questionNum": "79",
+        "question": "很多时候您能得到别人的支持或帮助吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "80",
+        "question": "您愿意接受别人的帮助吗？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "81",
+        "question": "居住、工作或学习环境中是否有生化影响或声光污染以及严重程度如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "82",
+        "question": "居住、工作或学习环境中是否感到人际氛围紧张以及严重程度如何？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "83",
+        "question": "是否感受过突然的心悸、手足发麻、濒死感、或失去控制感？",
+        "answers": [
+          "完全符合",
+          "符合",
+          "中立",
+          "不符合",
+          "完全不符合"
+        ],
+        "answer":"",
+        "nextNum": 0,
+        "prevNum": 0
+      }
+    ]
+  }
+}

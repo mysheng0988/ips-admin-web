@@ -3,11 +3,11 @@
     <div class="pdf-container">
       <div class="title">Medical manual</div>
       <div class="msg-content flex-wrap">
-         <div class="conent">
+         <div class="conent" v-if="hospitalData">
             <!-- <div>{{info.hospitalName}}</div> -->
-            <div>东方心世界（北京）科技有限公司</div>
-            <div>联系电话：010-64925945 </div>
-            <div>公司地址：北京市朝阳区北苑路108号鸿华高尔夫庄园A12栋 </div>
+            <div>医院名称：{{hospitalData.name}}</div>
+            <div>联系电话：{{hospitalData.contactNumber}} </div>
+            <div>医院地址：{{hospitalData.address}} </div>
          </div>
          <div class="img-box">
             <el-image class="img" :src="qrcode"></el-image>
@@ -20,16 +20,20 @@
 </template>
 <script>
   import qrcode from '@/assets/images/logo-qrcode.png'
+  import {getHospitalData} from '@/api/manage'
    import {mapGetters} from 'vuex'
   export default {
     name: 'rep-analysis',
     props:{
-      data:{},
+      data:{
+        
+      },
 
     },
     data(){
       return {
         qrcode: qrcode,
+        hospitalData:"",
       };
     },
      computed:{
@@ -38,6 +42,13 @@
       ])
     },
     mounted(){
+      console.log(this.info)
+      getHospitalData(this.info.hospitalId).then(res=>{
+        if(res.code==200){
+          console.log(res)
+          this.hospitalData=res.dataList[0]
+        }
+      })
     }
   }
 </script>

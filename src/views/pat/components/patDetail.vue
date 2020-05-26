@@ -56,12 +56,12 @@
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="宗教/信仰："  prop="faith"  >
+            <el-form-item label="宗教/信仰："  >
               <el-input v-model="patObj.faith" placeholder="请输入内容"></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="文化程度："  prop="education" >
+            <el-form-item label="文化程度："   >
               <el-select  placeholder="请选择" v-model="patObj.education" clearable class="input-width">
                 <el-option label="小学及以下" value="小学及以下" ></el-option>
                 <el-option label="初中" value="初中"></el-option>
@@ -75,7 +75,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="职  业："  prop="profession" >
+            <el-form-item label="职  业："  >
               <el-input v-model="patObj.profession" placeholder="请输入内容"></el-input>
             </el-form-item>
           </el-col>
@@ -130,7 +130,7 @@
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="人群分类：" prop="crowdRole" >
+            <el-form-item label="人群分类："  >
               <el-select  placeholder="请选择" multiple v-model="patObj.crowdRole"  clearable class="input-width" >
                 <el-option v-for="(item,index) in optionRow" :key="index"
                      :label="item"

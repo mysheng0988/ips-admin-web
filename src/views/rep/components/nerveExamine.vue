@@ -3,7 +3,7 @@
     <div class="pdf-bar"></div>
     <div class="content-box">
       <div class="label-title">
-        <p>附录2. 自主神经检查</p>
+        <p>附录. 自主神经检查</p>
         <p>A<span>UTONOMIC NERVE EXAMNATION</span></p>
       </div>
       <div class="content-title">1.自主神经症状：</div>

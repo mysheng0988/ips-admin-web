@@ -3,7 +3,7 @@
     <div class="pdf-bar"></div>
     <div class="content-box">
       <div class="label-title">
-        <p>附录3. EEG检测</p>
+        <p>附录. EEG检测</p>
         <p>E<span>EG DETECTION</span></p>
       </div>
       <el-image class="img" :src="eegPath" ></el-image>

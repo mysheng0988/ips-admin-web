@@ -75,7 +75,9 @@
     vertical-align: middle;
   }
   .content-box .content{
-    flex:1;
+    flex:1;;
+    font-size: 15px;
+    color: #666;
   }
   .content-box .content .label{
     width: 170px;
