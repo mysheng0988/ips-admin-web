@@ -220,7 +220,7 @@ import {analysisData} from "@/api/analysis"
                  this.getAnalysisData(data);//报告分析总结模块
                    this.doctorDrugPlan(data);//医生治疗建议
                   let patientMedicationPlan={};
-                  patientMedicationPlan.title="用药辅助建议";
+                  patientMedicationPlan.title="用药注意事项";
                   patientMedicationPlan.data=[];
                    let dataPlan=data.patientMedicationPlan;
                     if(dataPlan.length==0){
@@ -228,21 +228,21 @@ import {analysisData} from "@/api/analysis"
                       dataPlan.push(data.noneMedicationPlanPrompt)
                     }
                       patientMedicationPlan.data.push(dataPlan)
+
                     //躯体化药物方案
-                    let somatizationSymptomsDrugRegimen=JSON.parse(data.somatizationSymptomsDrugRegimen);
-                  
-                    if(somatizationSymptomsDrugRegimen){
-                       patientMedicationPlan.data.push(somatizationSymptomsDrugRegimen);
-                    }
+                   // let somatizationSymptomsDrugRegimen=JSON.parse(data.somatizationSymptomsDrugRegimen);
+                    let suggestData=[];
+                    let totalData=[];
+                    totalData=this.pageThenDrugData(totalData,patientMedicationPlan,0);
+                    totalData.splice(2,0,{content:"请医生勾选患者使用的药物，患者仅需查看医生勾选药物的注意事项",type:1})
+                    //  console.log(totalData)
+                    // if(somatizationSymptomsDrugRegimen){
+                    //    totalData=this.pageThenData(totalData,somatizationSymptomsDrugRegimen,0);
+                    // }
                   let exercisePrescription=JSON.parse(data.exercisePrescription);//运动处方
                  let nutritionPrescription=JSON.parse(data.nutritionPrescription);//营养处方
                  let functionalMedicineAdvice=JSON.parse(data.functionalMedicineAdvice);//功能医学建议
                  let otherSuggestion=JSON.parse(data.otherSuggestion);
-
-
-                 let suggestData=[];
-                 let totalData=[];
-                totalData=this.pageThenDrugData(totalData,patientMedicationPlan,0);
                 if(exercisePrescription){
                   totalData=this.pageThenData(totalData,exercisePrescription,0);
                 }
@@ -358,7 +358,7 @@ import {analysisData} from "@/api/analysis"
               let index2=0;
              for(let item of obj.data){
                index2++;
-              this.pageThenDrugData(data,item,index2)
+               this.pageThenDrugData(data,item,index2) 
              }
           }else{
             let param={
@@ -459,7 +459,7 @@ import {analysisData} from "@/api/analysis"
               let exeList=[];
               let pageNum=0;
               let itemNum=0
-              let pageMaxItem=2;
+              let pageMaxItem=3;
               exeList[pageNum]={};
               for(let item of res.dataList){
                 let year=item.visitDate.substring(0,4);

@@ -42,10 +42,9 @@
       ])
     },
     mounted(){
-      console.log(this.info)
       getHospitalData(this.info.hospitalId).then(res=>{
         if(res.code==200){
-          console.log(res)
+         
           this.hospitalData=res.dataList[0]
         }
       })
