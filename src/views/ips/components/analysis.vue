@@ -1,9 +1,9 @@
 <template>
   <div style="margin-top: 50px">
-    <el-form  :rules="rules" ref="productInfoForm" label-width="150px" >
-      <el-form-item label="焦点问题:" >
+    <el-form  :rules="rules" ref="productInfoForm" label-width="100px" >
+      <el-form-item label="生物心理社会综合评估:" >
         <div class="text-box" >
-          <div class="flex-wrap" v-for="(item,index) in data.focusProblem" :key="index" >
+          <!-- <div class="flex-wrap" v-for="(item,index) in data.focusProblem" :key="index" >
            <el-button @click="addText('focusProblem')" class="text-boder blue" icon="el-icon-edit">
              {{index+1}}、</el-button>
               <el-input placeholder="请输入详细内容"
@@ -13,10 +13,32 @@
               autosize>
             </el-input>
             <el-button  @click="deleteText(data.focusProblem,index)" class="text-boder red" icon="el-icon-delete"></el-button>
+          </div> -->
+           <div v-for="(item1,index1) in data.comprehensiveEvaluation" :key="index1">
+            <div class="box-title">{{item1.title}}</div>
+            <div class="flex-wrap" v-for="(item2,index2) in item1.data" :key="index2">
+              <el-button
+                @click="addText2('comprehensiveEvaluation',index1,index2)"
+                class="text-boder blue"
+                icon="el-icon-edit"
+              >{{index2+1}}、</el-button>
+              <el-input
+                placeholder="请输入详细内容"
+                v-model="item1.data[index2]"
+                class="text-boder"
+                type="textarea"
+                autosize
+              ></el-input>
+              <el-button
+                @click="deleteText2('comprehensiveEvaluation',index1,index2)"
+                class="text-boder red"
+                icon="el-icon-delete"
+              ></el-button>
+            </div>
           </div>
         </div>
       </el-form-item>
-      <el-form-item label="心身因素:"  prop="name" >
+      <!-- <el-form-item label="心身因素:"  prop="name" >
         <div class="text-box" >
           <div class="flex-wrap" v-for="(item,index) in data.psychosomaticFactors" :key="index" >
            <el-button @click="addText('psychosomaticFactors')" class="text-boder blue" icon="el-icon-edit">
@@ -42,11 +64,10 @@
                 type="textarea"
                 autosize>
               </el-input>
-            <!-- <edit-text :edit-text="item"></edit-text> -->
             <el-button  @click="deleteText(data.socialFunction,index)" class="text-boder red" icon="el-icon-delete"></el-button>
           </div>
         </div>
-      </el-form-item>
+      </el-form-item> -->
       <el-form-item label="辅助诊断建议:" v-if="type!='A'">
        <div class="text-box" >
           <div class="flex-wrap" v-for="(item,index) in data.initialDiagnosisVO" :key="index" >
@@ -56,23 +77,23 @@
           </div>
         </div>
       </el-form-item>
-      <el-form-item label="心身疾病成因分析:" v-if="type!='A'">
+      <el-form-item label="综合分析:" v-if="type!='A'">
         <div class="text-box" >
-          <div class="flex-wrap" v-for="(item,index) in data.causes" :key="index" >
-            <el-button @click="addText('causes')" class="text-boder blue" icon="el-icon-edit">
+          <div class="flex-wrap" v-for="(item,index) in data.comprehensiveAnalysis" :key="index" >
+           <el-button @click="addText('comprehensiveAnalysis')" class="text-boder blue" icon="el-icon-edit">
              {{index+1}}、</el-button>
               <el-input placeholder="请输入详细内容"
-              v-model="data.causes[index]"
+              v-model="data.comprehensiveAnalysis[index]"
               class="text-boder"
               type="textarea"
               autosize>
             </el-input>
-            <el-button  @click="deleteText(data.causes,index)" class="text-boder red" icon="el-icon-delete"></el-button>
+            <el-button  @click="deleteText('comprehensiveAnalysis',index)" class="text-boder red" icon="el-icon-delete"></el-button>
           </div>
         </div>
       </el-form-item>
       <el-form-item style="text-align: center">
-        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
+        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
         <el-button type="primary" size="medium" @click="handleNext" v-if="nextTitle!=''">下一步，{{nextTitle}}</el-button>
         <el-button type="primary" size="medium" @click="handleFinishCommit" v-else>完成</el-button>
       </el-form-item>
@@ -159,7 +180,7 @@
         if(res.code==200){
           data=res.dataList[0];
         }
-    
+        data.comprehensiveEvaluation=JSON.parse(data.comprehensiveEvaluation);
         if(!data.focusProblem||data.focusProblem.length==0){
             data.focusProblem=[],
             data.focusProblem.push("无");
@@ -194,6 +215,17 @@
         }
         
       },
+    addText2(key, index) {
+      this.data[key][index].data.push("");
+    },
+    deleteText2(key, index, index2) {
+      let arr = this.data[key][index].data;
+      if (arr.length > 1) {
+        arr.splice(index2, 1);
+      } else {
+        this.$message.warning("最后一行不可以删除！");
+      }
+    },
       handlePrev() {
         this.$emit('prevStep')
       },
@@ -207,7 +239,9 @@
          //this.$emit('nextStep')
         this.data["complete"]=false;
         this.data["isRecommendedMedicationTips"]=this.checkList;
-        updataData(this.data).then(res=>{
+        let data=this.data;
+        data.comprehensiveAnalysis=JSON.stringify(data.comprehensiveAnalysis);
+        updataData(data).then(res=>{
            loading.close();
             if(res.code==200){
                 this.$emit('nextStep');

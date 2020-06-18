@@ -14,6 +14,15 @@ export function queryExperience(patientId) {
     method:'get',
   })
 }
+export function queryExperienceList(patientId,createTime) {
+  return request({
+    url:'base/visitingExperience/list/patientId/'+patientId,
+    method:'get',
+    params:{
+      visitDateBefore:createTime
+    }
+  })
+}
 export function queryCheckUp(data) {
   return request({
     url:'base/medicalExaminationItem/list',

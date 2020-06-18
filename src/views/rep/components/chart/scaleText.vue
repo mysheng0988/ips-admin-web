@@ -1,10 +1,10 @@
 <template> 
   <div class="item-box">
       <div class="content">
-          <div class="content-title">{{data.questionnaireName}}</div>
-          <div>得分：{{data.score}}分</div>
-          <div>{{data.conclusion}}</div>
-           <div v-for="(item,index) in data.explanation" :key="index">{{item}}</div>
+          <div class="content-title" v-if="data.questionnaireName">{{data.questionnaireName}}</div>
+          <div v-if="data.score">得分：{{data.score}}分</div>
+          <div v-if="data.conclusion">{{data.conclusion}}</div>
+          <div v-for="(item,index) in data.explanation" :key="index" >{{item}}</div>
       </div>
   </div>
 </template>

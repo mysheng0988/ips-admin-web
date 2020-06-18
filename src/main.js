@@ -32,13 +32,6 @@ Vue.use(VueClipboard)
 Vue.use(VueAMap);
 Vue.use(Viewer);
 Vue.use(htmlToPdf);
-VueAMap.initAMapApiLoader({
-  key: '88c9bb8dea021721ce5eb52511e90a35',
-  plugin: ['AMap.Geocoder','AMap.Autocomplete','AMap.Geolocation', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor'],
-  // 默认高德 sdk 版本为 1.4.4
-  uiVersion:'1.0.14',
-  v: '1.4.4'
-});
 new Vue({
   el: '#app',
   router,

@@ -8,8 +8,9 @@
           <el-date-picker
             v-model="expObj.visitDate"
             class="input-width"
-            value-format="yyyy-MM-dd"
-            type="date"
+            value-format="yyyy-MM-dd HH:mm:ss"
+            type="datetime"
+            :picker-options="pickerOptions"
             placeholder="请选择时间">
           </el-date-picker>
         </el-form-item>
@@ -124,6 +125,7 @@
     getPursue,
     updatePursue} from '@/api/ips';
   import {getICD11} from '@/api/icd'
+  
   const defaultExp={
     symptomsSet:[],
     checkupIdList:[],
@@ -172,6 +174,11 @@
           expObj:this.data,
           loadingOption:false,
           hostList:[],
+          pickerOptions: {
+            disabledDate(time) {
+              return time.getTime() > Date.now();
+            }
+          },
           expRules: {
             visitDate: [
               {required: true, message: '请选择时间', trigger: 'blur'},

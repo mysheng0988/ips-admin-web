@@ -131,7 +131,7 @@
           </el-col>
           <el-col :span="8">
             <el-form-item label="人群分类："  >
-              <el-select  placeholder="请选择" multiple v-model="patObj.crowdRole"  clearable class="input-width" >
+              <el-select  placeholder="请选择" multiple v-model="patObj.crowdRole"   clearable class="input-width" >
                 <el-option v-for="(item,index) in optionRow" :key="index"
                      :label="item"
                      :value="item"
@@ -360,7 +360,7 @@
     caregiver: "父母",
     childrenNumber: 0,
     childrenSituation: "",
-    crowdRole: ["无"],
+    crowdRole: [],
     address: "",
     dominantHand: false,
     education: "",
@@ -448,7 +448,7 @@
         cardState:false,
         doctorList:[],
         examinationList:[],
-        optionRow:["无","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"],
+        optionRow:["驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"],
         deptList:[],
         cureList:[],
         showBase:true,
@@ -552,13 +552,18 @@
 
 
     methods: {
+     
        readCardMsg(){
          this.loadingbut=true;
         readCardReset().then(res=>{
            this.loadingbut=false;
           this.cardState=true;
           this.medObj.cardNo=""
-          if(res.code==200){
+          if(res.retcode==0){
+             let cardMsg=parseInt(res.CardSn1,16);
+            this.medObj.cardNo=cardMsg;
+            this.onSubmit()
+          }else if(res.code==200){
              let cardMsg=parseInt(res.data.CardSn1,16);
             this.medObj.cardNo=cardMsg;
             this.onSubmit()
@@ -571,11 +576,11 @@
       },
       genderChange(){
         if(this.patObj.gender){
-          this.optionRow=["无","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"];
+          this.optionRow=["驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"];
         }else{
-         this.optionRow= ["无","哺乳","妊娠期妇女","育龄期妇女","产妇","孕妇","妊娠期妇女（前三个月）","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"]
+         this.optionRow= ["哺乳","妊娠期妇女","育龄期妇女","产妇","孕妇","妊娠期妇女（前三个月）","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"]
         }
-         this.patObj.crowdRole=["无"]
+         this.patObj.crowdRole=[]
       },
       onSelected(val){
         this.select.province=val.province.value;
@@ -625,9 +630,11 @@
               if(cardMsg){
                 this.patObj.cardNo=cardMsg.cardNo;
                 this.patObj.realName=cardMsg.realName;
-                this.patObj.gender=cardMsg.gender;
+               // this.patObj.gender=cardMsg.gender;
                 this.patObj.nation=cardMsg.nation;
               }
+              this.patObj.gender =(this.patObj.cardNo.substring(16,17)%2)==0?false:true
+             
             sessionStorage.setItem("cardMsg",null)
           }
           return this.patObj.pid;

@@ -232,7 +232,7 @@
     caregiver: "",
     childrenNumber: 0,
     childrenSituation: "",
-    crowdRole: ["无"],
+    crowdRole: [],
     address: "",
     dominantHand: false,
     education: "",
@@ -388,11 +388,11 @@
     methods: {
       genderChange(){
         if(this.patObj.gender){
-          this.optionRow=["无","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"];
+          this.optionRow=["驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"];
         }else{
-         this.optionRow= ["无","哺乳","妊娠期妇女","育龄期妇女","产妇","孕妇","妊娠期妇女（前三个月）","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"]
+         this.optionRow= ["哺乳","妊娠期妇女","育龄期妇女","产妇","孕妇","妊娠期妇女（前三个月）","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"]
         }
-        this.patObj.crowdRole=["无"]
+        this.patObj.crowdRole=[]
       },
       onSelected(val){
         this.select.province=val.province.value;

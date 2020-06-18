@@ -17,7 +17,7 @@
           </div>
         </div>
       </el-form-item>
-      <el-form-item label="躯体化症状药物方案:" v-if="initData.somatizationSymptomsDrugRegimen.data.length>0">
+      <el-form-item label="躯体化症状药物方案:" v-if="initData.somatizationSymptomsDrugRegimen.data&&initData.somatizationSymptomsDrugRegimen.data.length>0">
         <div class="text-box">
           <div v-for="(item1,index1) in initData.somatizationSymptomsDrugRegimen.data" :key="index1">
             <div class="box-title">{{item1.title}}</div>
@@ -33,12 +33,6 @@
                 </div>
                 <div v-else>{{index3+1}}、{{item3}}</div>
               </div>
-
-              <!-- <div v-else>
-                      <div class="flex-wrap" v-for="(item2,index2) in item1.data" :key="index2" >
-                          <div>{{index2+1}}、{{item2}}</div>
-                      </div>
-              </div>-->
             </div>
           </div>
         </div>
@@ -224,7 +218,7 @@
         </div>
       </el-form-item>
       <el-form-item style="text-align: center">
-        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
+        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
         <el-button type="primary" size="medium" @click="submitReportData">确认签名</el-button>
       </el-form-item>
     </el-form>
@@ -362,6 +356,9 @@ export default {
     this.initDataList();
   },
   methods: {
+     cheakedNum(val){
+        return val>9?val:"0"+val
+      },
     submitReportData() {
       if(this.drugPlan.length==0){
        this.$message.warning("请选择药物")
@@ -388,12 +385,27 @@ export default {
         ),
         complete: true
       };
+     
       updataReportData(param).then(res => {
         if (res.code == 200) {
+          let createTime=new Date().getFullYear() +
+                "-" +
+                this.cheakedNum(new Date().getMonth() + 1) +
+                "-" +
+                 this.cheakedNum(new Date().getDate()) +
+                " " +
+                 this.cheakedNum(new Date().getHours()) +
+                ":" +
+                this.cheakedNum(new Date().getMinutes())  +
+                ":" +
+                 this.cheakedNum(new Date().getSeconds());
           this.$store.commit("delete_tabs", this.$route.path);
           this.$router.push({
             path: "/rep/pdf",
-            query: { id: this.medicalRecordId }
+            query: { 
+              id: this.medicalRecordId,
+              createTime:createTime
+            }
           });
         }
       });
@@ -539,10 +551,10 @@ export default {
             this.initData.otherSuggestion = this.cheakedEmpty(
               data.otherSuggestion
             );
-            //let somatizationSymptomsDrugRegimen=JSON.parse(data.somatizationSymptomsDrugRegimen)
-            this.initData.somatizationSymptomsDrugRegimen = this.cheakedEmpty(
-              data.somatizationSymptomsDrugRegimen
-            ); //躯体化治疗方案
+            this.initData.somatizationSymptomsDrugRegimen=JSON.parse(data.somatizationSymptomsDrugRegimen)
+            // this.initData.somatizationSymptomsDrugRegimen = this.cheakedEmpty(
+            //   data.somatizationSymptomsDrugRegimen
+            // ); //躯体化治疗方案
             if (data.noneMedicationPlanPrompt) {
               this.drugPlan[0] = data.noneMedicationPlanPrompt;
             }

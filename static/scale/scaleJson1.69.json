@@ -1,0 +1,499 @@
+{
+  "code": 200,
+  "data": {
+    "id": 1,
+    "scaleTitle": "初筛首访简易问卷",
+    "type": "3",
+    "explain": "根据近半年的情况如实作答。",
+    "problem": [
+      {
+
+        "questionNum": "1",
+        "question": "您是否有以下症状，选择一项或多项,若无症状，请直接点击下一题",
+        "symptom": [
+          {
+            "question": "口干",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "出汗",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "心悸",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "呼吸困难",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "喉部堵塞感",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "气急",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "面色潮红或苍白",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "阵发性发冷发热",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "头疼",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "头晕",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "失平衡感",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "疲劳或乏力",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "腹胀",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "恶心",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "呕吐",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "腹泻",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "便秘",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          },
+          {
+            "question": "多部位疼痛或不适",
+            "answers": [
+              "无",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+           "answer": ""
+          }
+        ],
+        "data": [],
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "2",
+        "question": "您易生病吗",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "3",
+        "question": "近期是否有内分泌的变化？（甲功、糖尿病；女性回答：月经不调、痛经、色斑、体毛、性欲、体重、长痘及皮肤变化等内分泌紊乱症状；男性回答：脸上长痘、皮肤肤质变化、性功能、体重等变化）",
+        "answers": [
+          "否",
+          "一项",
+          "两项",
+          "三项",
+          "四项及以上"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "4",
+        "question": ".您偏食吗",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "5",
+        "question": ".您易过敏吗",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "6",
+        "question": "发病前有没有发生过让你印象深刻的事情",
+        "answers": [
+          "没有",
+          "一项",
+          "两项",
+          "三项",
+          "四项及以上"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "7",
+        "question": "是否感受过突然的心悸、手足发麻、濒死感、或失去控制感",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "8",
+        "question": "您有多思多虑或反复洗手、关门窗、计数等情况吗",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+      "questionNum": "9",
+      "question": "是否有睡眠不好的情况(如难入睡/多梦/早醒等)",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+      "answer": "",
+      "nextNum": 0,
+      "prevNum": 0
+      },
+      {
+        "questionNum": "10",
+        "question": "您感到的压力与自身的抗压能力失衡了吗",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "11",
+        "question": "每当生病时，您都会觉得非常严重吗",
+        "answers": [
+          "完全是",
+          "有点是",
+          "不确定",
+          "有点不是",
+          "完全不是"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "12",
+        "question": "当您有压力或情绪波动时易出现身体不适吗",
+        "answers": [
+          "完全是",
+          "大部分情况是",
+          "有时这样有时不这样",
+          "大部分不是",
+          "完全不是"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "13",
+        "question": "您和您的主要家人（父母、配偶、子女）关系有困扰吗",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "14",
+        "question": "学习/工作/生活/人际关系让您感到消耗吗",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "15",
+        "question": "您的自我感受如何",
+        "answers": [
+          "极其好",
+          "非常好",
+          "一般",
+          "非常不好",
+          "极其不好"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "16",
+        "question": "您性子急吗",
+        "answers": [
+          "完全是",
+          "有点是",
+          "不确定",
+          "有点不是",
+          "完全不是"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "17",
+        "question": "您近期的生活习惯有规律吗",
+        "answers": [
+          "完全是",
+          "有点是",
+          "不确定",
+          "有点不是",
+          "完全不是"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "18",
+        "question": "您近期的生活习惯有变化吗？（饮食、烟酒、环境、兴趣爱好等",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "19",
+        "question": "以您目前的状态，可以顺畅完成日常的生活工作吗",
+        "answers": [
+          "完全可以",
+          "大多可以",
+          "不确定",
+          "大多不可以",
+          "完全不能"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "20",
+        "question": "很多时候您能得到别人的支持或帮助吗",
+        "answers": [
+          "完全不是",
+          "大部分情况不是",
+          "有时这样有时不这样",
+          "大部分是",
+          "完全是"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      },
+      {
+        "questionNum": "21",
+        "question": "居住、工作或学习环境中是否有生化影响或声光污染以及严重程度如何",
+        "answers": [
+          "无",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "nextNum": 0,
+        "prevNum": 0
+      }
+    ]
+  }
+}

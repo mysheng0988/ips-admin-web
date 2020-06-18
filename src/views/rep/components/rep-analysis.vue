@@ -6,7 +6,8 @@
         <img class="img" :src="item.imgPath" v-if="item.imgPath!=''"/>
         <div class="img" v-else></div>
         <div class="content ">
-          <div :class="item.imgPath!=''?'label':''">{{item.content}}</div>  
+          <div :class="item.imgPath!=''?'label':'indent'" v-if="item.type">{{item.content}}</div> 
+          <div :class="item.imgPath!=''?'label':''" v-else>{{item.content}}</div>  
         </div>
     </div>
     <div class="pageNum">-{{pageNum}}-</div>   
@@ -54,7 +55,7 @@
     width: 705px;
     height: 72px;
     padding-left: 30px;
-    margin:64px 0;
+    margin:64px 0 32px 0;
     text-align: left;
     line-height: 73px;
     font-size: 30px;
@@ -64,8 +65,8 @@
   }
   .content-box{
     padding: 0 50px;
-    line-height: 40px;
-    margin-bottom: 10px;
+    line-height: 35px;
+    
   }
   .content-box .img{
     width: 40px;
@@ -80,9 +81,9 @@
     color: #666;
   }
   .content-box .content .label{
-    width: 170px;
+    width: 300px;
     height: 43px;
-    margin-bottom: 10px;
+    margin-bottom :10px;
     line-height: 43px;
     text-align: center;
     color: #fff;
@@ -93,6 +94,9 @@
   .result{
     font-size: 16px;
     line-height: 45px;
+  }
+  .indent{
+   text-indent:1em
   }
 </style>
 

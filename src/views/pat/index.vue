@@ -260,16 +260,15 @@
       readCardData(){
         readCard().then(res=>{
 
-           //  if(res.cardno){
-          //   let cardMsg={}
-          //   cardMsg.realName=res.name;
-          //   cardMsg.gender=res.sex=="男"?false:true;
-          //   cardMsg.nation=res.nation;
-          //   cardMsg.cardNo=res.cardno;
-          //   sessionStorage.setItem("cardMsg",JSON.stringify(cardMsg))
-          //   this.cardForm.cardID=res.cardno
-          // }
-          if(res.code==200){
+          if(res.cardno){
+            let cardMsg={}
+            cardMsg.realName=res.name;
+            cardMsg.gender=res.sex=="男"?false:true;
+            cardMsg.nation=res.nation;
+            cardMsg.cardNo=res.cardno;
+            sessionStorage.setItem("cardMsg",JSON.stringify(cardMsg))
+            this.cardForm.cardID=res.cardno
+          }else if(res.code==200){
             this.cardForm.cardID=res.data.cardno
              let cardMsg={}
               cardMsg.realName=res.data.name;

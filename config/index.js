@@ -3,22 +3,21 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
       '/base': {
-        target: 'http://121.36.46.3',//后端接口地址
-        //target: 'http://192.168.2.131',//后端接口地址
+        //target: 'http://121.36.46.3',//后端接口地址
+        target: 'http://192.168.101.2',//后端接口地址
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
           '^/base': '/base',//重写,
         }
       },
       '/ips': {
-        target: 'http://121.36.46.3',//后端接口地址
-       // target: 'http://192.168.2.131',//后端接口地址
+        //target: 'http://121.36.46.3',//后端接口地址
+        target: 'http://192.168.101.2',//后端接口地址
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
           '^/ips': '/ips',//重写,
@@ -42,12 +41,6 @@ module.exports = {
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
-
-
-    /**
-     * Source Maps
-     */
-
     // https://webpack.js.org/configuration/devtool/#development
     devtool: 'cheap-module-eval-source-map',
 

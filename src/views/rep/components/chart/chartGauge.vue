@@ -90,7 +90,7 @@
      color: #48A3DA;
   }
    .chart{
-     width: 300px;
+     width: 250px;
      height: 180px;
      margin-right: 20px;
    }

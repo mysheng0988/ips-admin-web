@@ -3,7 +3,11 @@
     <el-form  ref="productInfoForm" label-width="120px" >
      
       <el-form-item style="text-align: center" v-for="(item,index) of scaleNoList" :key="index">
-        <div v-if="item!=2201">
+           <div class="ips-input" >{{item.name}}</div>
+           <el-button type="primary" @click="startQuestion(item.number)">
+             {{item.completed?"重新测评":"开始测试"}}</el-button>
+              <el-button type="primary" :class="item.completed?'':'disable'" @click="handleRecord(false,item)">记录结果</el-button>
+        <!-- <div v-if="item!=2201">
             <div class="ips-input" >{{arrTitle[item-1]}}</div>
             <el-button type="primary" @click="startQuestion(item)">
             {{completeScaleNoList.includes(item)?"重新测评":"开始测试"}}</el-button>
@@ -14,13 +18,13 @@
            <el-button type="primary" @click="startQuestion(item)">
             {{completeScaleNoList.includes(2201)?"重新测评":"开始测试"}}</el-button>
             <el-button type="primary" :class="completeScaleNoList.includes(2201)?'':'disable'" @click="handleRecord(false,2201)">记录结果</el-button>
-        </div>
+        </div> -->
         
         
        </el-form-item>
      
       <el-form-item style="text-align: center">
-        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
+        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
         <el-button type="primary" size="medium" @click="handleNext">下一步，{{nextTitle}}</el-button> </el-form-item>
     </el-form>
     <el-dialog
@@ -29,7 +33,6 @@
      destroy-on-close
       width="700px">
       <question-scale :scale-id="scaleId"  :medical-record-id="medicalRecordId"
-        :number="siblingsNumber"
         :patient-id="patientId" @closeDialog="closeDialog" ref="scale"></question-scale>
 
     </el-dialog>
@@ -65,6 +68,7 @@
    additionalQuestions,
    additionalScreeningA,
    submitAdditionalQuestions,
+   getScaleSelectedData,
    } from '@/api/question'
   const defaultProductParam = {
     
@@ -96,13 +100,9 @@
      components: {questionScale},
     data() {
       return {
-        arrTitle:["GAD-7筛查量表","汉密尔顿焦虑量表（HAMA）","惊恐障碍严重度量表（PDSS）","PHQ-9筛查量表","汉密尔顿抑郁量表(HAMD)","斯坦福急性应激反应问卷（SASRQ）","简易自评量表SCL - 12","阿森斯失眠量表（AIS）","营养不良通用筛查表（MUST）","社会适应能力量表"
-         ,"生活满意度量表（SWLS）","压力自评量表（SSQ-53）","YALE-BROWN强迫量表","防御方式问卷DSQ","A型行为问卷","应付方式问卷","青少年生活事件量表（ASLEC）","抑郁性质问卷","焦虑性质问卷","家庭亲密度与适应性量表","领悟社会支持量表(PSSS)",
-         "父母教养方式评价量表（EMBU）","特质应对方式问卷（TCSQ）","营养初次问诊表","创伤后应激障碍自评量表（PCL-C）","躯体化症状自评量表","生活事件量表（ＬＥＳ）","抑郁自评量表SDS","焦虑自评量表SAS","贝克抑郁自评量表","焦虑抑郁筛查量表（HADS）"],
         dialogVisible:false,
         dialogVisible2:false,
         scaleId:"",
-        siblingsNumber:"",
         problemNum:0,
         problemData:[],
         unfinish:true,
@@ -117,23 +117,26 @@
     },
     methods: {
       initData(){
-        getMedicalRecord(this.medicalRecordId).then(res=>{
-          if(res.code==200){
-              this.scaleNoList=res.dataList[0].scaleNoList;
-              this.completeScaleNoList=res.dataList[0].completeScaleNoList;
-              this.scaleState=res.dataList[0].scaleNoList.length===res.dataList[0].completeScaleNoList.length;
-              this.siblingsNumber=res.dataList[0].patientVO.siblingsNumber;
-          }
+        getScaleSelectedData(this.medicalRecordId).then(res=>{
+         if(res.code==200){
+            this.scaleNoList=res.dataList;
+         }
+       })
+        // getMedicalRecord(this.medicalRecordId).then(res=>{
+        //   if(res.code==200){
+        //       this.scaleState=res.dataList[0].scaleNoList.length===res.dataList[0].completeScaleNoList.length;
+        //       this.siblingsNumber=res.dataList[0].patientVO.siblingsNumber;
+        //   }
             
-        });
+        // });
       },
-      handleRecord(questionnaire,questionnaireId){
-          if(this.completeScaleNoList.includes(questionnaireId)){
+      handleRecord(questionnaire,data){
+          if(data.completed){
            this.$router.push({path:'/ips/questionResult',
             query: {
               medicalRecordId: this.medicalRecordId,
               questionnaire:questionnaire,
-              questionnaireId,questionnaireId
+              questionnaireId:data.number
             }
             });
           }else{
@@ -202,25 +205,36 @@
       },
       handleAddQusetion(){
   
-            let param={
-              answers:[]
-            }
-          
+           let list=[];
+          console.log(this.problemData)
           for(let item of this.problemData){
-            let param1={};
-              param1[item.num]=item.answer;
-              param.answers.push(param1);
+            let param={
+                medicalRecordId: this.medicalRecordId,
+                questionNumber: item.num,
+                returnValue: [],
+                optionOrder: item.answer,
+                optionValue: item.answers[this.problemData.answer]
+            };
+            list.push(param)
+            
           }
-          // console.log(param)
-          submitAdditionalQuestions(param,this.medicalRecordId).then(res=>{
+          submitAdditionalQuestions(list).then(res=>{
               if(res.code==200){
                 this.$emit('nextStep');
                 this.dialogVisible2=false;
               }
           })
       },
+      checkUpData(){
+        for(let item of this.scaleNoList){
+          if(!item.completed){
+            return false;
+          }
+        }
+        return true;
+      },
       handleNext() {
-      if(this.scaleState){
+      if(this.checkUpData()){
         if(this.type=="A"){
           additionalScreeningA(this.medicalRecordId).then(res=>{
            if(res.code==200){
@@ -238,8 +252,6 @@
            }
          })
         }
-         
-        
       }else{
         this.$message.warning("您的量表还没有做完")
        }

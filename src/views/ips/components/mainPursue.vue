@@ -43,8 +43,8 @@
             <el-date-picker
               v-model="pursueObj.firstOnsetTime"
               class="input-width"
-              value-format="yyyy-MM-dd HH:mm:ss"
-              type="datetime"
+              value-format="yyyy-MM-dd"
+              type="date"
               :pickerOptions="pickerOptions0"
               placeholder="请选择时间">
             </el-date-picker>
@@ -56,8 +56,8 @@
               v-model="pursueObj.recentOnsetTime"
               class="input-width"
               :pickerOptions="pickerOptions1"
-              value-format="yyyy-MM-dd HH:mm:ss"
-              type="datetime"
+              value-format="yyyy-MM-dd"
+              type="date"
               placeholder="请选择时间">
             </el-date-picker>
           </el-form-item>

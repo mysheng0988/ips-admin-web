@@ -6,7 +6,7 @@
         <p>附录. 自主神经检查</p>
         <p>A<span>UTONOMIC NERVE EXAMNATION</span></p>
       </div>
-      <div class="content-title">1.自主神经症状：</div>
+      <div class="content-title">1.自述自主神经症状：</div>
       <div class="content indent"> 
           {{data.symptom==""?"暂无自主神经症状":data.symptom}}
       </div>

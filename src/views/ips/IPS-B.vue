@@ -41,7 +41,7 @@
         <el-step title="设备检查"  @click.native="changeTab(1)"></el-step>
         <el-step title="问卷"></el-step>
         <el-step title="量表"></el-step>
-        <el-step title="综合分析"  @click.native="changeTab(4)"></el-step>
+        <el-step title="评估与分析"  @click.native="changeTab(4)"></el-step>
         <el-step title="生成评估报告" @click.native="changeTab(5)"></el-step>
       </el-steps>
       <main-pursue
@@ -83,7 +83,7 @@
         :patient-id="patientId+''"
         :medical-record-id="medicalRecordId+''"
         prev-title="问卷"
-        next-title="综合分析"
+        next-title="评估与分析"
         @nextStep="nextStep"
         @prevStep="prevStep">
       </scale>

@@ -116,9 +116,6 @@
           type:String,
           value:""
         },
-        number:{
-          type:Number,
-        },
         patientId:{
           type:String,
           value:"",
@@ -307,7 +304,6 @@
             }else{
               for(let itemData of item.data){
                   if(itemData.type!="2"){
-                    console.log(itemData.answer)
                     let answer=itemData.answer==""?0:itemData.answer;
                      qr.optionOrderList.push(answer);
                   }else{

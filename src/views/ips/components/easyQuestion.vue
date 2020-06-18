@@ -17,7 +17,8 @@
       :visible.sync="dialogVisible"
       width="700px">
       <question :scale-id="scaleId"  :medical-record-id="medicalRecordId"
-        :patient-id="patientId" @closeDialog="closeDialog"></question>
+        :gender="gender"
+        :patient-id="patientId" @closeDialog="closeDialog" @openDialog="openDialog"></question>
 
     </el-dialog>
     <el-dialog
@@ -38,7 +39,6 @@
                 node-key="id"
                 class="tree-box"
                 :filter-node-method="filterNode"
-                :props="defaultProps"
                 highlight-current
                 @node-click="handleNodeClick"
                 @check="handleNodeChecked"
@@ -64,11 +64,28 @@
      <el-dialog :visible.sync="qrcodeDialog" width="420px">
       <qrcode :q-text="qText" :q-size="qSize" ></qrcode>
     </el-dialog>
+    <el-dialog
+      title="提示"
+      :visible.sync="dialogTips"
+      width="40%">
+      <div class="tips-box">
+        <div class="title">问题:{{tipsData.title}}</div>
+        <div v-for="(item,index) in tipsData.label1" :key="index">{{(index+1)+'、'+item}}</div>
+        <div>{{tipsData.label2}}</div>
+        <el-radio-group v-model="tipsData.selected">
+            <el-radio class="radio" v-for="(itemData,indexData) in tipsData.answer" :label="indexData" :key="indexData">{{itemData}}</el-radio>
+        </el-radio-group>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogTips = false">取 消</el-button>
+        <el-button type="primary" @click="appendQuestionSubmitData">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
-import {getMedicalRecord,scaleConfirm} from '@/api/question'
+import {getMedicalRecord,scaleConfirm,getScaleSelectData,appendQuestionSubmit} from '@/api/question'
 import {getScaleTypeJson} from '@/api/getJson'
   import qrcode from '@/components/qrcode/qrcode'
   import question from './question';
@@ -100,13 +117,13 @@ import {getScaleTypeJson} from '@/api/getJson'
     data() {
       return {
         filterText:"",
-        selectedData:"",
+        selectedData:[],
+        scaleNoList:[],
         data: [],
         siblingsNumber:"",
-        defaultProps: {
-          children: 'children',
-          label: 'label'
-        },
+        tipsData:{},
+        dialogTips:false,
+        gender:true,
         qText:"",
         qSize:200,
         qrcodeDialog:false,
@@ -124,10 +141,7 @@ import {getScaleTypeJson} from '@/api/getJson'
     },
     created() {
        this.initData();
-       getScaleTypeJson().then(res=>{
-
-         this.data=res.data;
-       })
+      
     },
     methods: {
       qrcodeData(){
@@ -143,15 +157,39 @@ import {getScaleTypeJson} from '@/api/getJson'
       initData(){
         getMedicalRecord(this.medicalRecordId).then(res=>{
           if(res.code==200){
+              this.gender=res.dataList[0].patientVO.gender;
               this.questionNo=res.dataList[0].questionnaireNo;
+               this.scaleNoList=res.dataList[0].scaleNoList;
               this.completeQuestionnaire=res.dataList[0].completeQuestionnaire;
-               this.siblingsNumber=res.dataList[0].patientVO.siblingsNumber;
+              this.siblingsNumber=res.dataList[0].patientVO.siblingsNumber;
           }
         });
       },
       startQuestion(){
         this.scaleId=this.questionNo;
         this.dialogVisible=true;
+      },
+      openDialog(data){
+        this.initData();
+        this.dialogVisible=false;
+        this.dialogTips=true;
+        data.selected="";
+        this.tipsData=data;
+      },
+      appendQuestionSubmitData(){
+        let data={
+           medicalRecordId: this.medicalRecordId,
+           questionNumber: this.tipsData.appendQuestionNumber,
+           returnValue: this.tipsData.label1,
+           optionOrder: this.tipsData.selected,
+           optionValue: this.tipsData.answer[this.tipsData.selected]
+        }
+        appendQuestionSubmit(data).then(res=>{
+          if(res.code==200){
+            this.dialogTips=false;
+            this.$message.success("提交成功")
+          }
+        })
       },
       closeDialog(){
         this.initData();
@@ -160,45 +198,62 @@ import {getScaleTypeJson} from '@/api/getJson'
       handleRecord(questionnaire,questionnaireId){
         if(this.completeQuestionnaire){
            this.$router.push({path:'/ips/questionResult',
-          query: {
-            medicalRecordId: this.medicalRecordId,
-            questionnaire:questionnaire,
-            questionnaireId,questionnaireId
-          }
+            query: {
+              medicalRecordId: this.medicalRecordId,
+              questionnaire:questionnaire,
+              questionnaireId,questionnaireId,
+              gender:this.gender
+            }
           });
         }else{
           this.$message.warning("您得问卷还没做！")
         }
          
       },
+      checkIncludesData(selectedFocusList,focusList){
+
+        if(focusList){
+          for(let item of focusList){
+            if(selectedFocusList.includes(item)){
+              return true;
+            }
+          }
+        }
+        return false;
+      },
        handleNodeClick(data){
-        
+         let selectedData=this.$refs.tree.getCheckedNodes(true);
+          let focusIdList=[];
+         for(let item of selectedData){
+           if(item.focusIdList){
+            focusIdList=[...focusIdList,...item.focusIdList]
+           }
+           
+         }
          let keys=this.$refs.tree.getCheckedKeys(true);
          if(keys.includes(data.id)){
             this.$refs.tree.setChecked(data.id,false,false)
-         }else{
-            for(let item of this.data){
-              if(item.id==data.parentId){
-                for(let itemData of item.children){
-                  this.$refs.tree.setChecked(itemData.id,false,false)
-                }
-              }
+         }else {
+            // for(let item of this.data){
+            //   if(item.id==data.categoryId){
+            //     for(let itemData of item.questionnaireList){
+            //       this.$refs.tree.setChecked(itemData.id,false,false)
+            //     }
+            //   }
+            // }
+            if(this.checkIncludesData(focusIdList,data.focusIdList)){
+               this.$message.warning("您已经选择了同类型量表") 
+            }else{
+               this.$refs.tree.setChecked(data.id,true,false)
             }
-            this.$refs.tree.setChecked(data.id,true,false)
+           
          }
          this.selectedData=this.$refs.tree.getCheckedNodes(true);
       },
       handleNodeChecked(data){
-       let keys=this.$refs.tree.getCheckedKeys(true);
-      if(keys.includes(data.id)){
-          this.$refs.tree.setChecked(data.id,false,false)
-        }else{
-          this.$refs.tree.setChecked(data.id,true,false)
-        }
-       
-        //this.selectedData=this.$refs.tree.getCheckedNodes(true);
+        this.handleNodeClick(data)
       },
-       handleRemove(index){
+      handleRemove(index){
           this.selectedData.splice(index,1);
           let keys=[];
           for(let item  of this.selectedData){
@@ -206,7 +261,7 @@ import {getScaleTypeJson} from '@/api/getJson'
           }
           this.$refs.tree.setCheckedKeys(keys);
         },
-       filterNode(value, data) {
+      filterNode(value, data) {
         if (!value) return true;
         return data.label.indexOf(value) !== -1;
       },
@@ -214,22 +269,10 @@ import {getScaleTypeJson} from '@/api/getJson'
         this.$emit('prevStep')
       },
       handleNextItem(){
-        // let param={
-        //   medicalRecordId:this.medicalRecordId,
-        //   scaleNoList:this.$refs.tree.getCheckedKeys(true)
-        // }
         let param=this.$refs.tree.getCheckedKeys(true);
-        if(this.siblingsNumber=="1"){
-            for(let item in param){
-              if(param[item]==22){
-                param[item]=2201;
-              }
-            }
-        }
-        
-        if(param.length<1){
-          this.$message.warning("请选择量表!")
-          return
+        if(param.length==0){
+          this.$message.warning("请选择量表")
+          return;
         }
         scaleConfirm(param,this.medicalRecordId).then(res=>{
           if(res.code==200){
@@ -241,31 +284,47 @@ import {getScaleTypeJson} from '@/api/getJson'
       },
       handleNext() {
         if(this.completeQuestionnaire){
-          console.log(this.type)
           if(this.type==="A"){
              this.$emit('nextStep');
              return;
           }
-          getMedicalRecord(this.medicalRecordId).then(res=>{
-          if(res.code==200){
-              let scaleNoList=res.dataList[0].scaleNoList;
-              let completeScaleNoList=res.dataList[0].completeScaleNoList;
-              if(completeScaleNoList.length==0){
-                  this.dialogVisible2=true;
-                  this.$nextTick(function() {
-                      this.$refs.tree.setCheckedKeys(scaleNoList);
-                      this.selectedData=this.$refs.tree.getCheckedNodes(true);
-                  }) 
-              }else{
-                 this.$emit('nextStep');
-              }
-              
-          }
-        }).catch(err=>{
+         getScaleSelectData(this.medicalRecordId).then(res=>{
 
-        });
+           if(res.code==200){
+               let dataList=res.dataList;
+            let data=[];
+            for(let item of dataList){
+              let param={
+                  id: item.id,
+                  parentId:0,
+                  disabled: true,
+                  label: item.name,
+                  children:[]
+              }
+              for(let item1 of item.questionnaireList){
+                  let param1={
+                    id: item1.number,
+                    parentId:item1.categoryId,
+                    checked: true,
+                    label: item1.name,
+                    focusIdList:item1.focusIdList
+                  }
+                  param.children.push(param1)
+              }
+              data.push(param)
+            }
+            this.data=data;
+            this.dialogVisible2=true;
+            this.$nextTick(function() {
+                  this.$refs.tree.setCheckedKeys(this.scaleNoList);
+                  this.selectedData=this.$refs.tree.getCheckedNodes(true);
+             }) 
+
+           }
+           
+       })
+        
          
-          //this.$emit('nextStep');
         }else{
           this.$message.warning("您还没有做问卷！")
         }
@@ -333,5 +392,16 @@ import {getScaleTypeJson} from '@/api/getJson'
     position: absolute;
     right: -5px;
     top: -5px;
+  }
+  .tips-box{
+    line-height: 35px;
+    font-size: 16px;
+    padding: 0 18px;
+  }
+  .tips-box .title{
+    color: #000;
+  }
+  .tips-box .radio{
+    line-height: 35px;
   }
 </style>

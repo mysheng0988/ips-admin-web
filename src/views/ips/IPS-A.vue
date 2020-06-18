@@ -41,7 +41,7 @@
         <el-step title="设备检查"  @click.native="changeTab(1)"></el-step>
         <el-step title="初筛首访简易问卷"></el-step>
         <el-step title="量表"></el-step>
-        <el-step title="综合分析"></el-step>
+        <el-step title="评估与分析"></el-step>
       </el-steps>
       <main-pursue
         v-if="showStatus[0]"

@@ -39,9 +39,9 @@ export function additionalScreeningA(medicalRecordId) {
     method:'post',
   })
 }
-export function submitAdditionalQuestions(data,medicalRecordId) {
+export function submitAdditionalQuestions(data) {
   return request({
-    url:'ips/scale/additionalQuestions/'+medicalRecordId,
+    url:'ips/scale/additionalQuestions',
     method:'post',
     data:data
   })
@@ -49,6 +49,31 @@ export function submitAdditionalQuestions(data,medicalRecordId) {
 export function scaleConfirm(data,medicalRecordId) {
   return request({
     url:'ips/scale/scaleConfirm/'+medicalRecordId,
+    method:'post',
+    data:data
+  })
+}
+
+//获取量表分类
+export function getScaleSelectData(medicalRecordId) {
+  return request({
+    url:'ips/scale/list/recommend/scaleByCategory',
+    method:'get',
+    params:{medicalRecordId:medicalRecordId}
+  })
+}
+//获取已经选择量表
+export function getScaleSelectedData(medicalRecordId) {
+  return request({
+    url:'ips/scale/list/completion',
+    method:'get',
+    params:{medicalRecordId:medicalRecordId}
+  })
+}
+
+export function appendQuestionSubmit(data) {
+  return request({
+    url:'ips/questionnaire/appendQuestionSubmit',
     method:'post',
     data:data
   })

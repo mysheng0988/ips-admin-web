@@ -32,7 +32,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import {getRecordPatient} from "@/api/patient"
-import {getPursue,queryExperience} from "@/api/ips"
+import {getPursue,queryExperienceList} from "@/api/ips"
 import{getEEG} from "@/api/HRV"
 import {analysisData} from "@/api/analysis"
  import{scaleResult,getReportMsg,scaleResultNum} from "@/api/report"
@@ -150,6 +150,7 @@ import {analysisData} from "@/api/analysis"
       },
       created(){
         this.medicalRecordId=this.$route.query.id;
+        this.createTime=this.$route.query.createTime;
         if(this.medicalRecordId==""||this.medicalRecordId==undefined){
           this.medicalRecordId=36;
         }
@@ -164,12 +165,12 @@ import {analysisData} from "@/api/analysis"
       
       methods: {
           async initData(){
+             await this.getPursueData();
           let patient=await this.getPatientData();
-          await this.getExperienceList(patient.patientId)
-          await this.getPursueData();
+          
+          await this.getExperienceList(patient.patientId,this.createTime)
            await this.getReportMsgData();
           await this.getEEGData();
-         
           await this.getScaleResult();
           await this.getScaleNumResult();
         },
@@ -215,7 +216,7 @@ import {analysisData} from "@/api/analysis"
               if(res.code==200){
                   let pageNum=0;
                   let rowNum=0;
-                  let maxRowNum=24;
+                  let maxRowNum=25;
                   let data=res.dataList[0];
                  this.getAnalysisData(data);//报告分析总结模块
                    this.doctorDrugPlan(data);//医生治疗建议
@@ -262,14 +263,44 @@ import {analysisData} from "@/api/analysis"
                 //totalData=this.pageThenData(totalData,followUpRecommendations,0);
                 suggestData[pageNum]=[];
                 for(let item of totalData){
-                  let num=this.computeRowNum(item.content);
-                   rowNum+=num;
-                    if(rowNum>maxRowNum){
-                      rowNum=this.computeRowNum(item.content)+1;
+                  //todo
+                  // let num=this.computeRowNum(item.content);
+                  //  rowNum+=num;
+                  //   if(rowNum>maxRowNum){
+                  //     rowNum=this.computeRowNum(item.content)+1;
+                  //     pageNum++;
+                  //     suggestData[pageNum]=[];
+                  //   }
+                  //   suggestData[pageNum].push(item)
+                   let surplus=maxRowNum-rowNum;
+                  let contentNum=this.computeRowNum(item.content);
+                    if(contentNum-surplus==1){
+                      rowNum=1;
                       pageNum++;
                       suggestData[pageNum]=[];
+                        suggestData[pageNum].push(item)
+                    }else if(contentNum-surplus>1){
+                      let content1=item.content.substring(0,surplus*40);
+                      let dataObj1={
+                        imgPath:"",
+                        content:content1
+                      }
+                      suggestData[pageNum].push(dataObj1)
+                      rowNum=contentNum-surplus;
+                      let content2=item.content.substring(surplus*40);
+                      let dataObj2={
+                        imgPath:"",
+                        content:content2
+                      }
+                      pageNum++;
+                      suggestData[pageNum]=[];
+                      
+                        suggestData[pageNum].push(dataObj2)
+                        
+                    }else{
+                        rowNum+=contentNum;
+                        suggestData[pageNum].push(item)
                     }
-                    suggestData[pageNum].push(item)
                 }
                 this.suggestData=suggestData;
                  this.contentsData[3].pageNum=this.contentsData[2].pageNum+this.page.length;//治疗方案参考
@@ -297,7 +328,7 @@ import {analysisData} from "@/api/analysis"
         doctorDrugPlan(data){
            let pageNum=0;
            let rowNum=1;
-           let maxRowNum=24;
+           let maxRowNum=26;
            let drugData=[];
            let totalData=[];
            let doctorMedicationPlan={};
@@ -402,35 +433,76 @@ import {analysisData} from "@/api/analysis"
             let data=res.dataList;
             let scaleData=[];
             let pageNum=0;
-            let itemNum=0;
-            let pageMax=2;
+            let rowNum=0;
+            let maxRowNum=26;
+            let currentNum=0;
             scaleData[pageNum]=[]
             for(let item of data){
-              if(item.questionnaireNumber!=12){
-                let length=item.explanation.length;
-                
-                if(item.questionnaireName.indexOf("性质")>-1){
-                  itemNum=0
-                  pageNum++;
-                  scaleData[pageNum]=[]
-                }
-                if(item.chartData!=""){
-                  item.chartData=JSON.parse(item.chartData);
-                  if(item.type=="table"&&item.chartData.length <4){
-                    itemNum++;
-                  }
-                 if(item.type=="table"&&item.chartData.length >4){
-                    itemNum+=1
-                  }
-                }
-                if(itemNum>pageMax){
-                  itemNum=0
-                  pageNum++;
-                  scaleData[pageNum]=[]
-                }
-                scaleData[pageNum].push(item)
-                 itemNum++;
+              let copyItem={
+                type:"text",
+                explanation:[]
               }
+              if(item.questionnaireNumber!=12){
+                   currentNum=6;
+                  if(item.type=="dial"){
+                     item.chartData=JSON.parse(item.chartData);
+                    rowNum+=currentNum
+                  }else if(item.type=="Radar"){
+                    currentNum=6;
+                    item.chartData=JSON.parse(item.chartData);
+                    rowNum+=currentNum
+                  }else if(item.type=="table"){
+                     currentNum=3;
+                    item.chartData=JSON.parse(item.chartData);
+                    currentNum+=item.chartData.length+currentNum;
+                      let index=0;
+                    for(let item1 of item.explanation){
+                      currentNum+=this.computeRowNum(item1)
+                      if(currentNum<maxRowNum){
+                        index++;
+                      }
+                    }
+                    let explanation=item.explanation;
+                    item.explanation=explanation.slice(0,index);
+                    copyItem.explanation=explanation.slice(index);
+                    rowNum+=currentNum;
+                  }else if(item.type=="Histogram"){
+                     currentNum=9;
+                     item.chartData=JSON.parse(item.chartData);
+                     let index=0;
+                    for(let item1 of item.explanation){
+                      currentNum+=this.computeRowNum(item1)
+                      if(currentNum<maxRowNum){
+                        index++;
+                      }
+                    }
+                    let explanation=item.explanation;
+                    item.explanation=explanation.slice(0,index);
+                    copyItem.explanation=explanation.slice(index);
+                    rowNum+=currentNum;
+                  }else if(item.type=="text"){
+                     currentNum=5;
+                    for(let item1 of item.explanation){
+                      currentNum+=this.computeRowNum(item1)
+                    }
+                    rowNum+=currentNum;
+                  }
+                  if(rowNum>=maxRowNum){
+                    rowNum=currentNum
+                    pageNum++;
+                    scaleData[pageNum]=[]
+                  }
+                  scaleData[pageNum].push(item)
+                  if(copyItem.explanation.length>0){
+                    for(let item1 of copyItem.explanation){
+                      rowNum=this.computeRowNum(item1)
+                    }
+                    pageNum++;
+                    scaleData[pageNum]=[]
+                    scaleData[pageNum].push(copyItem)
+                  }
+                 
+               }
             }
             this.scaleData=scaleData;
              this.contentsData[8].pageNum=this.contentsData[7].pageNum-0+this.scaleData.length;//附录4:压力量表评估
@@ -452,20 +524,22 @@ import {analysisData} from "@/api/analysis"
            }
           })
         },
-        getExperienceList(patientId){
-         return queryExperience(patientId).then(res=>{
+        getExperienceList(patientId,createTime){
+         return queryExperienceList(patientId,createTime).then(res=>{
             if(res.code==200){
               this.experienceData=res.dataList;
               let exeList=[];
               let pageNum=0;
               let itemNum=0
               let pageMaxItem=3;
-              exeList[pageNum]={};
+             if(res.dataList.length>0){
+                 exeList[pageNum]={};
+              }
               for(let item of res.dataList){
                 let year=item.visitDate.substring(0,4);
                   let symptom=[];
-                  for(let item1 of item.symptomList){
-                      symptom.push(item1.name)
+                  for(let item1 of item.symptomsSet){
+                      symptom.push(item1)
                   }
                   let checkupList=[];
                   for(let item1 of item.checkupList){
@@ -521,7 +595,7 @@ import {analysisData} from "@/api/analysis"
           })
         },
         computeRowNum(text){
-            return Math.ceil(text.length/45)
+            return Math.ceil(text.length/40)
         },
         copyAnalysis(toatalData,imagePath,label,data){
           if(!data||data.length==0){
@@ -543,34 +617,79 @@ import {analysisData} from "@/api/analysis"
           }
           return toatalData;
         },
+        spreadJson2arr(data,obj,index){
+              if(typeof obj==="object"){
+              let dataObj={
+                  imgPath:"",
+                  content:obj.title
+                }
+                data.push(dataObj)
+                let index2=0;
+                for(let item of obj.data){
+                  index2++;
+                  this.spreadJson2arr(data,item,index2)
+                }
+              }else{
+                let dataObj={
+                  imgPath:"",
+                  content:obj,
+                  type:10
+                }
+                data.push(dataObj)
+              }
+          return data;
+        },
         getAnalysisData(data){
              let page=[];//数组长度为页面页数
              let rowNum=0;//页面行数
              let pageNum=0;//第多少页
-             let maxRowNum=15;//一页最大行数
+             let maxRowNum=22;//一页最大行数
              page[pageNum]=[];
-             let toatalData=[]
-             if(data.typeId=="4"){
-              toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-problem.png"),"焦点问题",data.focusProblem)
-              toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-nutrition.png"),"心身因素",data.psychosomaticFactors)
-              toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-society.png"),"社会功能",data.socialFunction)
-              toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-analysis.png"),"疾病成因分析",data.causes)
-              toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-diagnose.png"),"辅助诊断建议",data.initialDiagnosisVO)
-             }else{
-              toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-nutrition.png"),"心身因素",data.psychosomaticFactors)
-             }
-             for(let item of toatalData){
-               rowNum+=this.computeRowNum(item.content)
-               if(rowNum>maxRowNum){
-                 rowNum=this.computeRowNum(item.content);
-                 pageNum++;
-                  page[pageNum]=[];
+             let toatalData=[];
+              let dataObj={
+                imgPath:require("@/views/rep/img/icon-problem.png"),
+                content:"生理心理社会综合评估"
+              }
+               toatalData.push(dataObj)
+               let comprehensiveEvaluation=JSON.parse(data.comprehensiveEvaluation);
+               for(let item of comprehensiveEvaluation){
+                  toatalData=this.spreadJson2arr(toatalData,item,0)
                }
-               page[pageNum].push(item)
+              toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-analysis.png"),"综合分析",data.comprehensiveAnalysis)
+              toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-diagnose.png"),"辅助诊断建议",data.initialDiagnosisVO)
+             for(let item of toatalData){
+               let surplus=maxRowNum-rowNum;
+               let contentNum=this.computeRowNum(item.content);
+                if(contentNum-surplus==0){
+                   rowNum=1;
+                   pageNum++;
+                   page[pageNum]=[];
+                   page[pageNum].push(item)
+                }else if(contentNum-surplus>0){
+                  let content1=item.content.substring(0,surplus*40);
+                  let dataObj1={
+                    imgPath:"",
+                    content:content1
+                  }
+                   page[pageNum].push(dataObj1)
+                   rowNum=contentNum-surplus;
+                   let content2=item.content.substring(surplus*40);
+                  let dataObj2={
+                    imgPath:"",
+                    content:content2
+                  }
+                   pageNum++;
+                   page[pageNum]=[];
+                  
+                    page[pageNum].push(dataObj2)
+                    
+                }else{
+                     rowNum+=contentNum;
+                    page[pageNum].push(item)
+                }
+              
              }
             this.page=page;
-           
-
         },
       },
 
@@ -592,7 +711,4 @@ import {analysisData} from "@/api/analysis"
       border:1px solid #eeeeee;
       overflow: hidden;
    }
-
-
-
 </style>

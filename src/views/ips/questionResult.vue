@@ -40,7 +40,7 @@
       <div class="explain">指导语:{{data.explain}}</div>
      <div class="questionBox" v-for="(item,index) in data.problem" :key="index">
         <div class="question">{{index+1}}、{{item.question}}</div>
-        <div v-if="item.symptom" class="symptom">
+        <div v-if="item.type=='1'" class="symptom">
           <el-checkbox-group v-model="item.data" disabled>
             <el-checkbox v-for="(itemData,indexData) in item.symptom" :label="itemData" :key="indexData">{{itemData.question}}</el-checkbox>
           </el-checkbox-group>
@@ -51,12 +51,24 @@
             </el-radio-group>
           </div>
         </div>
-        <div v-else>
+        <div v-else-if="item.type=='0'">
           <el-radio-group v-model="item.answer" disabled>
             <div class="question" v-for="(itemData,indexData) in item.answers" :key="indexData">
               <el-radio :label="indexData" >{{itemData}}</el-radio>
             </div>
           </el-radio-group>
+        </div>
+         <div v-else-if="item.type=='2'">
+          <el-checkbox-group v-model="item.data" disabled v-if="gender">
+            <div class="question" v-for="(itemData,indexData) in item.symptom[1].data" :key="indexData">
+              <el-checkbox :label="indexData"  :checked="item.data.includes(itemData)">{{itemData}}</el-checkbox>
+            </div>
+          </el-checkbox-group>
+          <el-checkbox-group v-model="item.data" disabled v-else>
+            <div class="question" v-for="(itemData,indexData) in item.symptom[1].data" :key="indexData">
+              <el-checkbox :label="indexData"  :checked="item.data.includes(itemData)">{{itemData}}</el-checkbox>
+            </div>
+          </el-checkbox-group>
         </div>
      </div>
     </div>
@@ -104,7 +116,8 @@
     name: "questionResult",
     data() {
       return {
-        data:[]
+        data:[],
+        gender:true,
       }
     },
     created() {
@@ -113,14 +126,12 @@
           questionnaire:this.$route.query.questionnaire,
           questionnaireId:this.$route.query.questionnaireId,
         }
+        this.gender=this.$route.query.gender;
       this.getQuestionData(param);
     },
     methods: {
       getQuestionData(param){
-        
-        console.log(param)
         getQuestionnaire(param).then(res=>{
-           console.log(res)
            this.data=JSON.parse(res.dataList[0]);
          })
       }

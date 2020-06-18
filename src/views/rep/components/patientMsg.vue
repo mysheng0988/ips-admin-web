@@ -66,16 +66,14 @@
         <img class="img" src="@/views/rep/img/icon-symptom.png">
         <div class="content">
           <div class="title">伴随症状</div>
-          <div class="lable max-width" v-if="accompanyingSymptomsName==''">暂无伴随症状</div>
-          <div class="lable max-width" v-else>{{accompanyingSymptomsName}}</div>
+          <div class="lable max-width">{{accompanyingSymptomsName}}</div>
         </div>
       </div>
       <div class="symptom-content flex-center">
         <img class="img" src="@/views/rep/img/motion-symptom.png">
         <div class="content">
           <div class="title">运动症状</div>
-          <div class="lable max-width" v-if="mainPursue.motorSymptomsList&&mainPursue.motorSymptomsList.length==0">暂无运动症状</div>
-          <div class="lable max-width" v-else><span >{{motorSymptomsName}}</span></div>
+          <div class="lable max-width" ><span >{{motorSymptomsName}}</span></div>
         </div>
       </div>
     </div>
@@ -113,7 +111,10 @@
     },
     computed:{
       accompanyingSymptomsName:function(){
-       return this.arrayMergeData(this.mainPursue.accompanyingSymptomsList,this.mainPursue.accompanyingSymptomsSupplementList)
+        if(this.mainPursue.accompanyingSymptomsSet&&this.mainPursue.accompanyingSymptomsSet.length>0){
+          return this.mainPursue.accompanyingSymptomsSet.join("、");
+        }
+         return "暂无伴随症状"
       },
       mainSymptomsName:function () {
         return this.arrayMergeData(this.mainPursue.mainSymptomsList,this.mainPursue.mainSymptomsSupplementList)
@@ -122,14 +123,11 @@
         return this.arrayMergeData(this.mainPursue.clinicalSpecialistDiagnosisList,this.mainPursue.clinicalSpecialistDiagnosisSupplementList)
       },
       motorSymptomsName:function () {
-        let strArr=[];
-        if(this.mainPursue.motorSymptomsList){
-          for(let item of this.mainPursue.motorSymptomsList){
-            strArr.push(item.name)
-          }
+        if(this.mainPursue.motorSymptomsSet&&this.mainPursue.motorSymptomsSet.length>0){
+          return this.mainPursue.motorSymptomsSet.join("、")
         }
 
-        return strArr.join("、");
+        return "暂无运动症状";
       }
     },
     methods:{
