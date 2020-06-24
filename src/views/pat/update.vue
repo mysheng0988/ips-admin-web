@@ -129,8 +129,8 @@
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="人群分类："   >
-              <el-select  placeholder="请选择" v-model="patObj.crowdRole" multiple clearable class="input-width" >
+            <el-form-item label="人群分类："  prop="crowdRole" >
+              <el-select  placeholder="请选择" @change="crowdRoleChange" v-model="patObj.crowdRole" multiple clearable class="input-width" >
                 <el-option v-for="(item,index) in optionRow" :key="index"
                      :label="item"
                      :value="item"
@@ -232,7 +232,7 @@
     caregiver: "",
     childrenNumber: 0,
     childrenSituation: "",
-    crowdRole: [],
+    crowdRole: ["无"],
     address: "",
     dominantHand: false,
     education: "",
@@ -386,11 +386,23 @@
 
 
     methods: {
+      crowdRoleChange(){
+        if(this.patObj.crowdRole.length>1&&this.patObj.crowdRole.includes("无")){
+          let index=0;
+           for(let item of this.patObj.crowdRole ){
+             if(item=="无"){
+                this.patObj.crowdRole.splice(index,1); 
+             }
+             index++
+           }
+        }
+        
+       },
       genderChange(){
         if(this.patObj.gender){
-          this.optionRow=["驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"];
+          this.optionRow=["无","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"];
         }else{
-         this.optionRow= ["哺乳","妊娠期妇女","育龄期妇女","产妇","孕妇","妊娠期妇女（前三个月）","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"]
+         this.optionRow= ["无","哺乳","妊娠期妇女","育龄期妇女","产妇","孕妇","妊娠期妇女（前三个月）","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"]
         }
         this.patObj.crowdRole=[]
       },

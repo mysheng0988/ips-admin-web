@@ -7,22 +7,23 @@
         <div v-for="(item2,index2) in experienceData" :key="'exe-'+index2">
           <experience :experience-data="item2" :page-num="contentsData[1].pageNum-0+index2" ></experience>
         </div>
+         <nerve-examine  :medical-record-id="medicalRecordId+''" :page-num="contentsData[2].pageNum" ></nerve-examine>
+        <eeg-examine v-if="eegData"  :medical-record-id="medicalRecordId+''" :page-num="contentsData[3].pageNum" ></eeg-examine>
+        <div v-for="(item,index) in scaleData" :key="'scale'+index">
+           <scale-assess :data="item" :page-num="contentsData[4].pageNum-0+index" ></scale-assess>
+        </div>
+        <assessment v-if="pressureData" :data="pressureData" :page-num="contentsData[5].pageNum" ></assessment>
+        <assessment2 v-if="pressureData2" :data="pressureData2" :page-num="contentsData[5].pageNum-0+1"></assessment2>
         <div v-for="(item,index) in page" :key="index">
-          <rep-analysis  :page-num="contentsData[2].pageNum-0+index" :analysis-data="item"></rep-analysis>
+          <rep-analysis  :page-num="contentsData[6].pageNum-0+index" :analysis-data="item"></rep-analysis>
         </div>
         <div v-for="(item,index) in drugData" :key="'drug'+index">
-            <suggest-drug :data="item" :page-num="contentsData[3].pageNum-0+index" ></suggest-drug>
+            <suggest-drug :data="item" :page-num="contentsData[7].pageNum-0+index" ></suggest-drug>
         </div>
         <div v-for="(item,index) in suggestData" :key="'ni'+index">
-          <patient-ni :data="item" :page-num="contentsData[4].pageNum-0+index" ></patient-ni>
+          <patient-ni :data="item" :page-num="contentsData[8].pageNum-0+index" ></patient-ni>
         </div>
-        <nerve-examine  :medical-record-id="medicalRecordId+''" :page-num="contentsData[5].pageNum" ></nerve-examine>
-        <eeg-examine v-if="eegData"  :medical-record-id="medicalRecordId+''" :page-num="contentsData[6].pageNum" ></eeg-examine>
-        <div v-for="(item,index) in scaleData" :key="'scale'+index">
-           <scale-assess :data="item" :page-num="contentsData[7].pageNum-0+index" ></scale-assess>
-        </div>
-        <assessment v-if="pressureData" :data="pressureData" :page-num="contentsData[8].pageNum" ></assessment>
-        <assessment2 v-if="pressureData2" :data="pressureData2" :page-num="contentsData[8].pageNum-0+1"></assessment2>
+       
         <rep-end></rep-end>
     </div>
         <el-button type="danger" @click="getPdf('pdfCentent',patientVo.realName)">导出PDF</el-button>
@@ -104,7 +105,27 @@ import {analysisData} from "@/api/analysis"
                hidden:false,
             },
              {
-              pageName:"报告分析总结",
+              pageName:"自主神经检查",
+              pageNum:0,
+               hidden:false,
+            },
+             {
+              pageName:"EEG检测",
+              pageNum:0,
+               hidden:false,
+            },
+             {
+              pageName:"量表评估",
+              pageNum:0,
+               hidden:false,
+            },
+             {
+              pageName:"压力量表评估",
+              pageNum:0,
+              hidden:true,
+            },
+             {
+              pageName:"评估与分析",
               pageNum:0,
                hidden:false,
             },
@@ -114,29 +135,9 @@ import {analysisData} from "@/api/analysis"
                hidden:false,
             },
              {
-              pageName:"附录1:患者教育",
+              pageName:"附录:患者教育",
               pageNum:0,
                hidden:false,
-            },
-             {
-              pageName:"附录2:自主神经检查",
-              pageNum:0,
-               hidden:false,
-            },
-             {
-              pageName:"附录3:EEG检测",
-              pageNum:0,
-               hidden:false,
-            },
-             {
-              pageName:"附录4:量表评估",
-              pageNum:0,
-               hidden:false,
-            },
-             {
-              pageName:"附录5:压力量表评估",
-              pageNum:0,
-              hidden:true,
             }
           ],
           page:[],
@@ -151,6 +152,7 @@ import {analysisData} from "@/api/analysis"
       created(){
         this.medicalRecordId=this.$route.query.id;
         this.createTime=this.$route.query.createTime;
+         console.log(this.createTime)
         if(this.medicalRecordId==""||this.medicalRecordId==undefined){
           this.medicalRecordId=36;
         }
@@ -165,14 +167,14 @@ import {analysisData} from "@/api/analysis"
       
       methods: {
           async initData(){
-             await this.getPursueData();
+          await this.getPursueData();
           let patient=await this.getPatientData();
-          
-          await this.getExperienceList(patient.patientId,this.createTime)
-           await this.getReportMsgData();
-          await this.getEEGData();
+          await this.getExperienceList(patient.patientId,this.createTime);
+           await this.getEEGData();
           await this.getScaleResult();
           await this.getScaleNumResult();
+          await this.getReportMsgData();
+         
         },
         getEEGData(){
           return getEEG(this.medicalRecordId).then(res=>{
@@ -186,7 +188,7 @@ import {analysisData} from "@/api/analysis"
         getScaleNumResult(){
            return scaleResultNum(this.medicalRecordId,{questionnaireNumbers:12}).then(res=>{
               let rowNum=0;
-              let maxRow=15;
+              let maxRow=20;
               if(res.code==200){
                 let pressureData=res.dataList[0];
                 pressureData.conclusion=JSON.parse(pressureData.conclusion);
@@ -260,18 +262,8 @@ import {analysisData} from "@/api/analysis"
                      let neurotransmitterRegulators=JSON.parse(data.neurotransmitterRegulators)
                     totalData=this.pageThenData(totalData,neurotransmitterRegulators,0);
                  }
-                //totalData=this.pageThenData(totalData,followUpRecommendations,0);
                 suggestData[pageNum]=[];
                 for(let item of totalData){
-                  //todo
-                  // let num=this.computeRowNum(item.content);
-                  //  rowNum+=num;
-                  //   if(rowNum>maxRowNum){
-                  //     rowNum=this.computeRowNum(item.content)+1;
-                  //     pageNum++;
-                  //     suggestData[pageNum]=[];
-                  //   }
-                  //   suggestData[pageNum].push(item)
                    let surplus=maxRowNum-rowNum;
                   let contentNum=this.computeRowNum(item.content);
                     if(contentNum-surplus==1){
@@ -303,25 +295,26 @@ import {analysisData} from "@/api/analysis"
                     }
                 }
                 this.suggestData=suggestData;
-                 this.contentsData[3].pageNum=this.contentsData[2].pageNum+this.page.length;//治疗方案参考
-                this.contentsData[4].pageNum=this.contentsData[3].pageNum+this.drugData.length;
-                this.contentsData[5].pageNum=this.contentsData[4].pageNum+this.suggestData.length;//附录2:自主神经检查
                 if(this.eegData){
-                  this.contentsData[6].pageNum=this.contentsData[7].pageNum+1;//附录3:EEG检测--有
-                  this.contentsData[7].pageName="附录4:量表评估"
-                   this.contentsData[8].pageName="附录5:压力量表评估"
+                  this.contentsData[3].pageNum=this.contentsData[2].pageNum+1;//EEG检测--有
                 }else{
-                   this.contentsData[6].pageNum=this.contentsData[5].pageNum;//附录3:EEG检测--没有
-                   this.contentsData[6].hidden=true;
-                    this.contentsData[7].pageName="附录3:量表评估"
-                     this.contentsData[8].pageName="附录4:压力量表评估"
+                   this.contentsData[3].pageNum=this.contentsData[2].pageNum;//:EEG检测--没有
+                   this.contentsData[3].hidden=true;
                 }
-                 this.contentsData[7].pageNum=this.contentsData[6].pageNum+1;
+                this.contentsData[4].pageNum=this.contentsData[3].pageNum+1;//量表评估
+                this.contentsData[5].pageNum=this.contentsData[4].pageNum+this.scaleData.length;//压力量表
+               if(this.pressureData==""){
+                  this.contentsData[6].pageNum=this.contentsData[5].pageNum
+               }else if(this.pressureData!=""&&this.pressureData2==""){
+      
+                 this.contentsData[6].pageNum=this.contentsData[5].pageNum+1;
+              }else if(this.pressureData!=""&&this.pressureData!=""){
                
-
+                this.contentsData[6].pageNum=this.contentsData[5].pageNum+2;
               }
-
-
+               this.contentsData[7].pageNum=this.contentsData[6].pageNum+this.page.length;
+               this.contentsData[8].pageNum=this.contentsData[7].pageNum+this.drugData.length;
+              }
             })
         },
         //医生药物治疗方案
@@ -446,11 +439,26 @@ import {analysisData} from "@/api/analysis"
                    currentNum=6;
                   if(item.type=="dial"){
                      item.chartData=JSON.parse(item.chartData);
+                     let num=-3;
+                      for(let item1 of item.explanation){
+                        num+=this.computeRowNum2(item1)
+                       }
+                      if(num>0){
+                          currentNum+=num
+                      }
                     rowNum+=currentNum
                   }else if(item.type=="Radar"){
                     currentNum=6;
                     item.chartData=JSON.parse(item.chartData);
+                     let num=-3;
+                     for(let item1 of item.explanation){
+                      num+=this.computeRowNum2(item1)
+                    }
+                     if(num>0){
+                        currentNum+=num
+                     }
                     rowNum+=currentNum
+                    
                   }else if(item.type=="table"){
                      currentNum=3;
                     item.chartData=JSON.parse(item.chartData);
@@ -481,7 +489,7 @@ import {analysisData} from "@/api/analysis"
                     copyItem.explanation=explanation.slice(index);
                     rowNum+=currentNum;
                   }else if(item.type=="text"){
-                     currentNum=5;
+                     currentNum=3;
                     for(let item1 of item.explanation){
                       currentNum+=this.computeRowNum(item1)
                     }
@@ -531,43 +539,33 @@ import {analysisData} from "@/api/analysis"
               let exeList=[];
               let pageNum=0;
               let itemNum=0
-              let pageMaxItem=3;
+              let pageMaxItem=2;
              if(res.dataList.length>0){
                  exeList[pageNum]={};
               }
               for(let item of res.dataList){
                 let year=item.visitDate.substring(0,4);
-                  let symptom=[];
-                  for(let item1 of item.symptomsSet){
-                      symptom.push(item1)
-                  }
-                  let checkupList=[];
-                  for(let item1 of item.checkupList){
-                      checkupList.push(item1.name)
-                  }
                   let diagnosisList=[]
                   for(let item1 of item.diagnosisList){
                       diagnosisList.push(item1.name)
                   }
+                  let param={
+                      month:item.visitDate.substring(5,10),
+                      symptom:item.symptomsSet.join(","),
+                      checkup:item.inspectionItemNameSet.join(","),
+                      hospitalName:item.hospitalName,
+                      diagnosis:diagnosisList.join(","),
+                      programs:item.treatmentPrograms,
+                      cureItem:item.treatmentEffect
+                    }
                 if(itemNum<=pageMaxItem){
 
                   itemNum++;
                   if(exeList[pageNum][year]){
-                   let param={
-                      month:item.visitDate.substring(5,10),
-                      symptom:symptom.join(","),
-                      diagnosis:checkupList.join(",")+"诊断为:"+diagnosisList.join(","),
-                      cureItem:item.treatmentPrograms+","+item.treatmentEffect,
-                    }
+                   
                     exeList[pageNum][year].push(param);
                   }else{
                     exeList[pageNum][year]=[];
-                    let param={
-                      month:item.visitDate.substring(5,10),
-                      symptom:symptom.join(","),
-                      diagnosis:checkupList.join(",")+"诊断为:"+diagnosisList.join(","),
-                      cureItem:item.treatmentPrograms+","+item.treatmentEffect,
-                    }
                     exeList[pageNum][year].push(param);
                   }
 
@@ -575,27 +573,23 @@ import {analysisData} from "@/api/analysis"
                   itemNum=0;
                   pageNum++;
                   exeList[pageNum]={};
-                   exeList[pageNum][year]=[];
-                    let param={
-                      month:item.visitDate.substring(5,10),
-                      symptom:symptom.join(","),
-                      diagnosis:checkupList.join(",")+"诊断为:"+diagnosisList.join(","),
-                      cureItem:item.treatmentPrograms+","+item.treatmentEffect,
-                    }
-                    exeList[pageNum][year].push(param);
+                  exeList[pageNum][year]=[];
+                  exeList[pageNum][year].push(param);
                 }
               }
               this.experienceData=exeList;
             }
              this.contentsData[1].pageNum=2;//就诊经历
              this.contentsData[1].hidden=this.experienceData.length==0?true:false;
-             //this.contentsData[2].pageNum=2-0+this.experienceData.length;//三维评估
-             this.contentsData[2].pageNum=this.contentsData[1].pageNum+this.experienceData.length;//报告分析总结
+             this.contentsData[2].pageNum=this.contentsData[1].pageNum+this.experienceData.length;//自主神经检查
           }).catch(error => {
           })
         },
         computeRowNum(text){
             return Math.ceil(text.length/40)
+        },
+        computeRowNum2(text){
+            return Math.ceil(text.length/22)
         },
         copyAnalysis(toatalData,imagePath,label,data){
           if(!data||data.length==0){
@@ -619,11 +613,11 @@ import {analysisData} from "@/api/analysis"
         },
         spreadJson2arr(data,obj,index){
               if(typeof obj==="object"){
-              let dataObj={
+              let dataObj1={
                   imgPath:"",
                   content:obj.title
                 }
-                data.push(dataObj)
+                data.push(dataObj1)
                 let index2=0;
                 for(let item of obj.data){
                   index2++;
@@ -633,7 +627,7 @@ import {analysisData} from "@/api/analysis"
                 let dataObj={
                   imgPath:"",
                   content:obj,
-                  type:10
+                  type:index,
                 }
                 data.push(dataObj)
               }
@@ -643,7 +637,7 @@ import {analysisData} from "@/api/analysis"
              let page=[];//数组长度为页面页数
              let rowNum=0;//页面行数
              let pageNum=0;//第多少页
-             let maxRowNum=22;//一页最大行数
+             let maxRowNum=24;//一页最大行数
              page[pageNum]=[];
              let toatalData=[];
               let dataObj={
@@ -655,9 +649,15 @@ import {analysisData} from "@/api/analysis"
                for(let item of comprehensiveEvaluation){
                   toatalData=this.spreadJson2arr(toatalData,item,0)
                }
+              //   let tipsObj={
+              //    imgPath:"",
+              //    content:"对于检出条目，请做进一步深入评估，或进行临床专科诊疗。"
+              //  }
+              //   toatalData.push(tipsObj)
               toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-analysis.png"),"综合分析",data.comprehensiveAnalysis)
               toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-diagnose.png"),"辅助诊断建议",data.initialDiagnosisVO)
-             for(let item of toatalData){
+            
+            for(let item of toatalData){
                let surplus=maxRowNum-rowNum;
                let contentNum=this.computeRowNum(item.content);
                 if(contentNum-surplus==0){
@@ -666,22 +666,23 @@ import {analysisData} from "@/api/analysis"
                    page[pageNum]=[];
                    page[pageNum].push(item)
                 }else if(contentNum-surplus>0){
-                  let content1=item.content.substring(0,surplus*40);
+                  let content1=item.content.substring(0,surplus*38);
+      
                   let dataObj1={
                     imgPath:"",
-                    content:content1
+                    content:content1,
+                    type:item.type
                   }
                    page[pageNum].push(dataObj1)
                    rowNum=contentNum-surplus;
-                   let content2=item.content.substring(surplus*40);
+                   let content2=item.content.substring(surplus*38);
                   let dataObj2={
                     imgPath:"",
                     content:content2
                   }
                    pageNum++;
                    page[pageNum]=[];
-                  
-                    page[pageNum].push(dataObj2)
+                   page[pageNum].push(dataObj2)
                     
                 }else{
                      rowNum+=contentNum;

@@ -1,12 +1,12 @@
 <template> 
   <div class="form-pdf">
     <div class="pdf-bar"></div>
-    <div class="label-title">报告分析总结/report Analysis</div>
+    <div class="label-title">评估与分析/Evaluation and Analysis</div>
     <div class="content-box flex" v-for="(item,index) in analysisData" :key="index" >
         <img class="img" :src="item.imgPath" v-if="item.imgPath!=''"/>
         <div class="img" v-else></div>
         <div class="content ">
-          <div :class="item.imgPath!=''?'label':'indent'" v-if="item.type">{{item.content}}</div> 
+          <div :class="item.imgPath!=''?'label':'indent'" v-if="item.type>0">{{item.content}}</div> 
           <div :class="item.imgPath!=''?'label':''" v-else>{{item.content}}</div>  
         </div>
     </div>
@@ -69,14 +69,15 @@
     
   }
   .content-box .img{
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+    margin: 5px 10px 0 0;
     overflow: hidden;
     vertical-align: middle;
   }
   .content-box .content{
-    flex:1;;
+    flex:1;
+    line-height: 35px;
     font-size: 15px;
     color: #666;
   }
@@ -96,7 +97,7 @@
     line-height: 45px;
   }
   .indent{
-   text-indent:1em
+   text-indent:2em
   }
 </style>
 

@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import {getMedicalRecord,scaleConfirm,getScaleSelectData,appendQuestionSubmit} from '@/api/question'
+import {getMedicalRecord,scaleConfirm,getScaleSelectData,appendQuestionSubmit,appendQuestion} from '@/api/question'
 import {getScaleTypeJson} from '@/api/getJson'
   import qrcode from '@/components/qrcode/qrcode'
   import question from './question';
@@ -176,6 +176,43 @@ import {getScaleTypeJson} from '@/api/getJson'
         data.selected="";
         this.tipsData=data;
       },
+      openScaleSelectData(){
+        getScaleSelectData(this.medicalRecordId).then(res=>{
+
+           if(res.code==200){
+               let dataList=res.dataList;
+            let data=[];
+            for(let item of dataList){
+              let param={
+                  id: item.id,
+                  parentId:0,
+                  disabled: true,
+                  label: item.name,
+                  children:[]
+              }
+              for(let item1 of item.questionnaireList){
+                  let param1={
+                    id: item1.number,
+                    parentId:item1.categoryId,
+                    checked: true,
+                    label: item1.name,
+                    focusIdList:item1.focusIdList
+                  }
+                  param.children.push(param1)
+              }
+              data.push(param)
+            }
+            this.data=data;
+            this.dialogVisible2=true;
+            this.$nextTick(function() {
+                  this.$refs.tree.setCheckedKeys(this.scaleNoList);
+                  this.selectedData=this.$refs.tree.getCheckedNodes(true);
+             }) 
+
+           }
+           
+       })
+      },
       appendQuestionSubmitData(){
         let data={
            medicalRecordId: this.medicalRecordId,
@@ -188,6 +225,7 @@ import {getScaleTypeJson} from '@/api/getJson'
           if(res.code==200){
             this.dialogTips=false;
             this.$message.success("提交成功")
+            this.openScaleSelectData()
           }
         })
       },
@@ -288,41 +326,19 @@ import {getScaleTypeJson} from '@/api/getJson'
              this.$emit('nextStep');
              return;
           }
-         getScaleSelectData(this.medicalRecordId).then(res=>{
 
-           if(res.code==200){
-               let dataList=res.dataList;
-            let data=[];
-            for(let item of dataList){
-              let param={
-                  id: item.id,
-                  parentId:0,
-                  disabled: true,
-                  label: item.name,
-                  children:[]
-              }
-              for(let item1 of item.questionnaireList){
-                  let param1={
-                    id: item1.number,
-                    parentId:item1.categoryId,
-                    checked: true,
-                    label: item1.name,
-                    focusIdList:item1.focusIdList
-                  }
-                  param.children.push(param1)
-              }
-              data.push(param)
-            }
-            this.data=data;
-            this.dialogVisible2=true;
-            this.$nextTick(function() {
-                  this.$refs.tree.setCheckedKeys(this.scaleNoList);
-                  this.selectedData=this.$refs.tree.getCheckedNodes(true);
-             }) 
+          appendQuestion(this.medicalRecordId).then(res=>{
+             if(res.code==200){
+               this.dialogVisible=false;
+              this.dialogTips=true;
+             
+              let data=res.dataList[0];
+              data.selected="";
+              this.tipsData=data;
+             }
+          })
+         
 
-           }
-           
-       })
         
          
         }else{

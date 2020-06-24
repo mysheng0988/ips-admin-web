@@ -57,7 +57,7 @@
         <el-form-item label="检查:"  prop="checkup" >
           <el-select
             style="width: 100%"
-            v-model="expObj.checkupIdList"
+            v-model="expObj.inspectionItemNameSet"
             multiple
             filterable
             remote
@@ -68,7 +68,7 @@
               v-for="item in optionCheck"
               :key="item.id"
               :label="item.name"
-              :value="item.id">
+              :value="item.name">
             </el-option>
           </el-select>
         </el-form-item>
@@ -90,7 +90,7 @@
             </el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="治疗方案:" prop="treatmentPrograms">
+        <el-form-item label="治疗方案:">
           <el-input
             class="textarea"
             placeholder="请输入详细内容"
@@ -101,7 +101,7 @@
             show-word-limit
             clearable></el-input>
         </el-form-item>
-         <el-form-item label="效果:"  prop="treatmentEffect" >
+         <el-form-item label="效果:"   >
           <el-select  placeholder="请选择" v-model="expObj.treatmentEffect" clearable class="input-width">
             <el-option label="有效" value="有效"></el-option>
             <el-option label="部分有效" value="部分有效"></el-option>
@@ -128,7 +128,7 @@
   
   const defaultExp={
     symptomsSet:[],
-    checkupIdList:[],
+    inspectionItemNameSet:[],
     diagnosisIdList:[],
     hospital: "",
     hospitalId: "",
@@ -184,7 +184,7 @@
               {required: true, message: '请选择时间', trigger: 'blur'},
             ],
             diagnosisIdList: [{required: true, message: '请输入关键词检索诊断', trigger: 'blur' }],
-            checkupIdList:[{required: true, message: '请输入关键词检索', trigger: 'blur' }],
+            inspectionItemNameSet:[{required: true, message: '请输入关键词检索', trigger: 'blur' }],
             symptomsSet: [{required: true, message: '请选择症状', trigger: 'blur' }],
             hospitalId: [{required: true, message: '请选择医院', trigger: 'blur'}],
             treatmentEffect:[{required: true, message: '请选择治疗方案', trigger: 'blur'}],

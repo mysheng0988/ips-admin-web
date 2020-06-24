@@ -7,12 +7,12 @@
         <div v-for="(item2,index2) in experienceData" :key="'exe-'+index2">
           <experience :experience-data="item2" :page-num="contentsData[1].pageNum-0+index2" ></experience>
         </div>
-        <div v-for="(item,index) in page" :key="index">
-          <rep-analysis  :page-num="contentsData[2].pageNum-0+index" :analysis-data="item"></rep-analysis>
-        </div>
-        <nerve-examine  :medical-record-id="medicalRecordId+''" :page-num="contentsData[3].pageNum" ></nerve-examine>
+         <nerve-examine  :medical-record-id="medicalRecordId+''" :page-num="contentsData[2].pageNum" ></nerve-examine>
         <div v-for="(item,index) in scaleData" :key="'scale'+index">
-           <scale-assess :data="item" :page-num="contentsData[4].pageNum-0+index" ></scale-assess>
+           <scale-assess :data="item" :page-num="contentsData[3].pageNum-0+index" ></scale-assess>
+        </div>
+        <div v-for="(item,index) in page" :key="index">
+          <rep-analysis  :page-num="contentsData[4].pageNum-0+index" :analysis-data="item"></rep-analysis>
         </div>
         <rep-end></rep-end>
     </div>
@@ -82,19 +82,19 @@ import {analysisData} from "@/api/analysis"
                hidden:false,
             },
              {
-              pageName:"报告分析总结",
+              pageName:"自主神经检查",
               pageNum:0,
                hidden:false,
             },
-             {
-              pageName:"附录1:自主神经检查",
-              pageNum:0,
-               hidden:false,
-            },
-             {
-              pageName:"附录2:量表评估",
+              {
+              pageName:"量表评估",
               pageNum:0,
               hidden:false,
+            },
+             {
+              pageName:"评估与分析",
+              pageNum:0,
+               hidden:false,
             }
           ],
           page:[],
@@ -119,11 +119,10 @@ import {analysisData} from "@/api/analysis"
          async initData(){
             await this.getPursueData();
           let patient=await this.getPatientData();
-          await this.getExperienceList(patient.patientId)
-         
+          await this.getExperienceList(patient.patientId,this.createTime)
            await this.getScaleResult();
           await this.getReportMsgData();
-           await this.getScaleNumResult();
+          // await this.getScaleNumResult();
         },
         getScaleNumResult(){
             scaleResultNum(this.medicalRecordId,{questionnaireNumbers:12}).then(res=>{
@@ -162,10 +161,8 @@ import {analysisData} from "@/api/analysis"
                   let data=res.dataList[0];
                   this.getAnalysisData(data);//报告分析总结模块
                
-                this.contentsData[3].pageNum=this.contentsData[2].pageNum+1;//附录2:自主神经检查
-                this.contentsData[4].pageNum=this.contentsData[3].pageNum+1;//附录4:量表评估
-                //this.contentsData[9].pageNum=this.contentsData[8].pageNum+this.scaleData.length;//附录4:压力量表评估
-        
+                this.contentsData[3].pageNum=this.contentsData[2].pageNum+1;//量表评估
+                this.contentsData[4].pageNum=this.contentsData[3].pageNum+1;//综合分析
               }
               
                
@@ -271,12 +268,27 @@ import {analysisData} from "@/api/analysis"
                   if(item.type=="dial"){
                      item.chartData=JSON.parse(item.chartData);
                     rowNum+=currentNum
-                  }else if(item.type=="table"){
-                     currentNum=6;
+                  }else if(item.type=="Radar"){
+                    currentNum=6;
                     item.chartData=JSON.parse(item.chartData);
-                    rowNum+=item.chartData.length+currentNum;
+                    rowNum+=currentNum
+                  }else if(item.type=="table"){
+                     currentNum=3;
+                    item.chartData=JSON.parse(item.chartData);
+                    currentNum+=item.chartData.length+currentNum;
+                      let index=0;
+                    for(let item1 of item.explanation){
+                      currentNum+=this.computeRowNum(item1)
+                      if(currentNum<maxRowNum){
+                        index++;
+                      }
+                    }
+                    let explanation=item.explanation;
+                    item.explanation=explanation.slice(0,index);
+                    copyItem.explanation=explanation.slice(index);
+                    rowNum+=currentNum;
                   }else if(item.type=="Histogram"){
-                     currentNum=6;
+                     currentNum=9;
                      item.chartData=JSON.parse(item.chartData);
                      let index=0;
                     for(let item1 of item.explanation){
@@ -317,34 +329,6 @@ import {analysisData} from "@/api/analysis"
              this.contentsData[4].pageNum=this.contentsData[3].pageNum-0+this.scaleData.length;//附录4:压力量表评估
           })
         },
-        // getScaleResult(){
-        //   scaleResult(this.medicalRecordId).then(res=>{
-        //     let data=res.dataList;
-        //     let scaleData=[];
-        //     let pageNum=0;
-        //     let itemNum=0;
-        //     let pageMax=3;
-        //     scaleData[pageNum]=[]
-        //     for(let item of data){
-        //       if(item.questionnaireNumber!=12){
-        //         itemNum++;
-        //         if(itemNum>pageMax){
-        //           itemNum=1
-        //           pageNum++;
-        //           scaleData[pageNum]=[]
-        //         }
-        //         if(item.chartData!=""){
-        //             item.chartData=JSON.parse(item.chartData);
-        //             if(item.chartData.length>4){
-        //               itemNum++;
-        //             }
-        //           }
-        //           scaleData[pageNum].push(item)
-        //       }
-        //     }
-        //     this.scaleData=scaleData;
-        //   })
-        // },
         getPatientData(){
          return getRecordPatient(this.medicalRecordId).then(res=>{
             if(res.code==200){
@@ -361,11 +345,9 @@ import {analysisData} from "@/api/analysis"
            }
           })
         }, 
-        getExperienceList(){
-          return queryExperience(this.medicalRecordId).then(res=>{
+       getExperienceList(patientId,createTime){
+          return queryExperience(this.medicalRecordId,createTime).then(res=>{
             if(res.code==200){
-             // this.experienceData=res.dataList;
-             
               let exeList=[];
               let pageNum=0;
               let itemNum=0
@@ -375,64 +357,45 @@ import {analysisData} from "@/api/analysis"
               }
               for(let item of res.dataList){
                 let year=item.visitDate.substring(0,4);
-                  let symptom=[];
-                  for(let item1 of item.symptomList){
-                      symptom.push(item1.name)
-                  }
-                  let checkupList=[];
-                  for(let item1 of item.checkupList){
-                      checkupList.push(item1.name)
-                  }
                   let diagnosisList=[]
                   for(let item1 of item.diagnosisList){
                       diagnosisList.push(item1.name)
                   }
+               let param={
+                      month:item.visitDate.substring(5,10),
+                      symptom:item.symptomsSet.join(","),
+                      checkup:item.inspectionItemNameSet.join(","),
+                      hospitalName:item.hospitalName,
+                      diagnosis:diagnosisList.join(","),
+                      programs:item.treatmentPrograms,
+                      cureItem:item.treatmentEffect
+                    }
                 if(itemNum<=pageMaxItem){
-          
+
                   itemNum++;
                   if(exeList[pageNum][year]){
-                   let param={
-                      month:item.visitDate.substring(5,10),
-                      symptom:symptom.join(","),
-                      diagnosis:checkupList.join(",")+"诊断为:"+diagnosisList.join(","),
-                      cureItem:item.treatmentPrograms+","+item.treatmentEffect,
-                    }
+                   
                     exeList[pageNum][year].push(param);
                   }else{
                     exeList[pageNum][year]=[];
-                    let param={
-                      month:item.visitDate.substring(5,10),
-                      symptom:symptom.join(","),
-                      diagnosis:checkupList.join(",")+"诊断为:"+diagnosisList.join(","),
-                      cureItem:item.treatmentPrograms+","+item.treatmentEffect,
-                    }
                     exeList[pageNum][year].push(param);
                   }
-                 
+
                 }else{
                   itemNum=0;
                   pageNum++;
                   exeList[pageNum]={};
-                   exeList[pageNum][year]=[];
-                    let param={
-                      month:item.visitDate.substring(5,10),
-                      symptom:symptom.join(","),
-                      diagnosis:checkupList.join(",")+"诊断为:"+diagnosisList.join(","),
-                      cureItem:item.treatmentPrograms+","+item.treatmentEffect,
-                    }
-                    exeList[pageNum][year].push(param);
+                  exeList[pageNum][year]=[];
+                  exeList[pageNum][year].push(param);
                 }
-                
-
               }
-              this.experienceData=exeList;
-               console.log(this.experienceData)
+              this.experienceData=exeList; 
              
             }
              let length=this.experienceData.length;
              this.contentsData[1].pageNum=2;//就诊经历
              this.contentsData[1].hidden=this.experienceData.length==0?true:false;
-             this.contentsData[2].pageNum=2-0+this.experienceData.length;//三维评估
+             this.contentsData[2].pageNum=2-0+this.experienceData.length;//设备检测
              this.contentsData[3].pageNum=this.contentsData[2].pageNum+1;//报告分析总结
           }).catch(error => {
           })
@@ -475,7 +438,8 @@ import {analysisData} from "@/api/analysis"
               }else{
                 let dataObj={
                   imgPath:"",
-                  content:index+"、"+obj
+                  content:obj,
+                   type:index
                 }
                 data.push(dataObj)
               }
@@ -497,6 +461,11 @@ import {analysisData} from "@/api/analysis"
                for(let item of comprehensiveEvaluation){
                   toatalData=this.spreadJson2arr(toatalData,item,0)
                }
+               let tipsObj={
+                 imgPath:"",
+                 content:"对于检出条目，请做进一步深入评估，或进行临床专科诊疗。"
+               }
+                toatalData.push(tipsObj)
               // toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-analysis.png"),"综合分析",data.comprehensiveAnalysis)
               // toatalData= this.copyAnalysis(toatalData,require("@/views/rep/img/icon-diagnose.png"),"辅助诊断建议",data.initialDiagnosisVO)
              for(let item of toatalData){
@@ -511,7 +480,8 @@ import {analysisData} from "@/api/analysis"
                   let content1=item.content.substring(0,surplus*40);
                   let dataObj1={
                     imgPath:"",
-                    content:content1
+                    content:content1,
+                     type:item.type
                   }
                    page[pageNum].push(dataObj1)
                    rowNum=contentNum-surplus;
@@ -522,8 +492,7 @@ import {analysisData} from "@/api/analysis"
                   }
                    pageNum++;
                    page[pageNum]=[];
-                  
-                    page[pageNum].push(dataObj2)
+                  page[pageNum].push(dataObj2)
                     
                 }else{
                      rowNum+=contentNum;

@@ -230,7 +230,14 @@ export const constantRouterMap = [
         path: 'dep',
         name: 'dep',
         component: () => import('@/views/user/depManagement'),
-        meta: {title: '科室管理', icon: 'icon-dep',roleId:[13]}
+        meta: {title: '科室管理', icon: 'icon-dep',roleId:[13]},
+      },
+      {
+        path: 'gls',
+        name: 'gls',
+        component: () => import('@/views/gls/gls'),
+        meta: {title: '郭老师测试', icon: 'icon-dep',roleId:[13]},
+        hidden:false
       },
     ]
   },

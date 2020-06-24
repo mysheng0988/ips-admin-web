@@ -3,7 +3,7 @@
     <div class="pdf-bar"></div>
     <div class="content-box">
       <div class="label-title">
-        <p>附录.量表评估</p>
+        <p>量表评估</p>
         <p>S<span>CALE ASSESSMENT</span></p>
       </div>
       <div class="content-title">压力自评量表（SSQ-53）</div>

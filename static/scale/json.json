@@ -1,517 +1,121 @@
-{
-	"code": 200,
-	"message": "操作成功",
-	"dataList": [{
-		"id": 1,
-		"name": "营养状况",
-		"order": 1,
-		"enable": true,
-		"remark": "营养状况",
-		"createTime": "2020-06-11 07:18:12",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:18:12",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 9,
-			"number": 9,
-			"name": "营养不良通用筛查表",
-			"categoryId": 1,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 25,
-			"number": 24,
-			"name": "营养初次问诊表",
-			"categoryId": 1,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": true
-		}]
-	}, {
-		"id": 2,
-		"name": "应激事件",
-		"order": 2,
-		"enable": true,
-		"remark": "应激事件",
-		"createTime": "2020-06-11 07:19:26",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:19:26",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 28,
-			"number": 27,
-			"name": "生活事件量表",
-			"categoryId": 2,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 3,
-		"name": "应激程度",
-		"order": 3,
-		"enable": true,
-		"remark": "应激程度",
-		"createTime": "2020-06-11 07:19:38",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:19:38",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 6,
-			"number": 6,
-			"name": "斯坦福急性应激反应问卷",
-			"categoryId": 3,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 4,
-		"name": "压力状态",
-		"order": 4,
-		"enable": true,
-		"remark": "压力状态",
-		"createTime": "2020-06-11 07:19:53",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:19:53",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 12,
-			"number": 12,
-			"name": "压力自评量表",
-			"categoryId": 4,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 5,
-		"name": "心身反应模式",
-		"order": 5,
-		"enable": true,
-		"remark": "心身反应模式",
-		"createTime": "2020-06-11 07:20:08",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:20:08",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 14,
-			"number": 14,
-			"name": "防御方式问卷",
-			"categoryId": 5,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 16,
-			"number": 16,
-			"name": "应对方式问卷",
-			"categoryId": 5,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 24,
-			"number": 23,
-			"name": "特质应对方式问卷",
-			"categoryId": 5,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 6,
-		"name": "重要客体的影响",
-		"order": 6,
-		"enable": true,
-		"remark": "重要客体的影响",
-		"createTime": "2020-06-11 07:20:22",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:20:22",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 22,
-			"number": 22,
-			"name": "家庭教养方式量表",
-			"categoryId": 6,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 7,
-		"name": "人格特征",
-		"order": 7,
-		"enable": true,
-		"remark": "人格特征",
-		"createTime": "2020-06-11 07:20:39",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:20:39",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 15,
-			"number": 15,
-			"name": "A型行为量表",
-			"categoryId": 7,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 8,
-		"name": "社会功能",
-		"order": 8,
-		"enable": true,
-		"remark": "社会功能",
-		"createTime": "2020-06-11 07:20:55",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:20:55",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 10,
-			"number": 10,
-			"name": "社会适应能力量表",
-			"categoryId": 8,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 11,
-			"number": 11,
-			"name": "生活满意度量表",
-			"categoryId": 8,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 9,
-		"name": "社会支持",
-		"order": 9,
-		"enable": true,
-		"remark": "社会支持",
-		"createTime": "2020-06-11 07:21:12",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:21:12",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 21,
-			"number": 21,
-			"name": "领悟社会支持评定量表",
-			"categoryId": 9,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 10,
-		"name": "焦虑情绪",
-		"order": 10,
-		"enable": true,
-		"remark": "焦虑情绪",
-		"createTime": "2020-06-11 07:21:39",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:21:39",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 1,
-			"number": 1,
-			"name": "GAD-7筛查量表",
-			"categoryId": 10,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 2,
-			"number": 2,
-			"name": "汉密尔顿焦虑量表",
-			"categoryId": 10,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 30,
-			"number": 29,
-			"name": "焦虑自评量表",
-			"categoryId": 10,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 11,
-		"name": "焦虑性质",
-		"order": 11,
-		"enable": true,
-		"remark": "焦虑性质",
-		"createTime": "2020-06-11 07:21:49",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:21:49",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 19,
-			"number": 19,
-			"name": "焦虑性质量表",
-			"categoryId": 11,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 12,
-		"name": "抑郁性质",
-		"order": 12,
-		"enable": true,
-		"remark": "抑郁性质",
-		"createTime": "2020-06-11 07:22:04",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:22:04",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 18,
-			"number": 18,
-			"name": "抑郁性质问卷",
-			"categoryId": 12,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 13,
-		"name": "抑郁情绪",
-		"order": 13,
-		"enable": true,
-		"remark": "抑郁情绪",
-		"createTime": "2020-06-11 07:22:21",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:22:21",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 4,
-			"number": 4,
-			"name": "PHQ-9筛查量表",
-			"categoryId": 13,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 5,
-			"number": 5,
-			"name": "汉密尔顿抑郁量表",
-			"categoryId": 13,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 29,
-			"number": 28,
-			"name": "抑郁自评量表",
-			"categoryId": 13,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}, {
-			"id": 31,
-			"number": 30,
-			"name": "贝克抑郁自评量表",
-			"categoryId": 13,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 14,
-		"name": "惊恐发作",
-		"order": 14,
-		"enable": true,
-		"remark": "惊恐发作",
-		"createTime": "2020-06-11 07:22:35",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:22:35",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 3,
-			"number": 3,
-			"name": "惊恐障碍严重度量表",
-			"categoryId": 14,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": true
-		}]
-	}, {
-		"id": 15,
-		"name": "强迫症状",
-		"order": 15,
-		"enable": true,
-		"remark": "强迫症状",
-		"createTime": "2020-06-11 07:22:47",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:22:47",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 13,
-			"number": 13,
-			"name": "YALE-BROWN强迫量表",
-			"categoryId": 15,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": true
-		}]
-	}, {
-		"id": 16,
-		"name": "躯体化",
-		"order": 16,
-		"enable": true,
-		"remark": "躯体化",
-		"createTime": "2020-06-11 07:23:06",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:23:06",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 7,
-			"number": 7,
-			"name": "简易自评量表SCL-12",
-			"categoryId": 16,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": true
-		}, {
-			"id": 27,
-			"number": 26,
-			"name": "躯体化症状自评量表",
-			"categoryId": 16,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}, {
-		"id": 17,
-		"name": "睡眠状况",
-		"order": 17,
-		"enable": true,
-		"remark": "睡眠状况",
-		"createTime": "2020-06-11 07:23:19",
-		"createUid": 0,
-		"modifyTime": "2020-06-11 07:23:19",
-		"modifyUid": 0,
-		"questionnaireList": [{
-			"id": 8,
-			"number": 8,
-			"name": "阿森斯失眠量表",
-			"categoryId": 17,
-			"priority": 1,
-			"enable": true,
-			"createTime": "2020-06-11 07:14:48",
-			"createUid": 0,
-			"modifyTime": "2020-06-11 07:14:48",
-			"modifyUid": 0,
-			"checked": false
-		}]
-	}],
-	"success": true
-}
+[
+	{
+		"data": [
+			"过敏体质：中度，具体表现为：呼吸道、消化道、皮肤等易过敏"
+		],
+		"title": "体质"
+	},
+	{
+		"data": [
+			"急性应激反应程度：遭受急性、严重的打击事件后受到重度影响",
+			"生活事件总剌激量=528分，正性事件： =0分，负性事件：（ 恋爱或订婚、恋爱失败、破裂、结婚、自己（爱人）怀孕、自己（爱人）流产、家庭增添新成员、与爱人父母不和、夫妻感情不好、夫妻分居（因不和）、性生活不满意或独身、夫妻两地分居（工作需要））=528分。"
+		],
+		"title": "应激"
+	},
+	{
+		"data": [
+			"总体心理压力水平为10级，其中：",
+			"生理：重度，具体表现为：食欲不振、睡一大觉后还觉得疲劳、心慌、胸闷、憋气、食量明显增大、腹泻或便秘、容易感冒、头痛、月经失调、眼睛容易疲劳、胃部不舒服、胸痛、嗓子疼、耳鸣、口腔溃疡、手脚发冷、肩、颈、背部僵硬酸痛、睡得不好、腹部胀痛。",
+			"情绪：重度，具体表现为：坐立不安、责备自己或别人、不能专心做事、感到忧愁、容易心烦意乱、容易发怒、对很多事情过分担心、对性失去兴趣、情绪低落、对以前喜欢做的事情提不起兴趣、无缘无故地感到害怕、反复想要不要结束生命、有快要崩溃的感觉、高兴不起来、容易紧张、孤独。",
+			"认知：重度，具体表现为：未来没有希望、考虑问题理不清头绪、反应变迟钝了、自己很没用、生活很没意思、工作中出现失误，是自己的问题、记忆力下降、不知如何应付生活困境。",
+			"行为：重度，具体表现为：在很多事情上依赖别人、容易发牢骚、不爱说话、吸烟量增加、陪伴家人的时间明显减少、一做事就觉得累、有自虐行为、想摔东西、想哭、对别人或小动物有粗暴行为。"
+		],
+		"title": "压力状态"
+	},
+	{
+		"data": [
+			"疾病了解程度：对疾病部分了解"
+		],
+		"title": "疾病认知"
+	},
+	{
+		"data": [
+			"心理反应与生理反应关系：有压力或情绪波动时心理反应与生理反应关系出现身体不适"
+		],
+		"title": "心身反应模式"
+	},
+	{
+		"data": [
+			"父亲：惩罚、严厉、拒绝、否认、过分干涉、过度保护",
+			"母亲：惩罚、严厉、拒绝、否认、过分干涉、过度保护"
+		],
+		"title": "重要客体的影响"
+	},
+	{
+		"data": [
+			"情感消耗：情感处于轻度消耗状态",
+			"身体消耗：身体处于轻度消耗状态",
+			"脑力消耗：脑力处于中度消耗状态",
+			"整体消耗状态：整体处于重度消耗状态"
+		],
+		"title": "心身消耗状态"
+	},
+	{
+		"data": [
+			"自我感觉不好"
+		],
+		"title": "自体状态"
+	},
+	{
+		"data": [
+			"特质焦虑：程度为轻度",
+			"典型A型行为："
+		],
+		"title": "人格特征"
+	},
+	{
+		"data": [
+			"作息规律性：作息大部分规律",
+			"运动规律性：运动大部分规律",
+			"饮食规律性：饮食有点不规律"
+		],
+		"title": "健康生活方式"
+	},
+	{
+		"data": [
+			"学习、工作、生活胜任能力：一般"
+		],
+		"title": "社会功能"
+	},
+	{
+		"data": [
+			"生化、声光影响：居住、工作和学习环境中有中度生化或声光影响"
+		],
+		"title": "周围环境"
+	},
+	{
+		"data": [
+			"抑郁情绪：轻度抑郁",
+			"躯体化：主观躯体感受与临床检查重度不符，躯体症状伴有严重情绪因素。常感头晕、头胀、心悸、胸闷气急，窒息感，胃纳差，腹胀，强烈生命恐惧感",
+			"焦虑情绪：重度",
+			"焦虑性质：分离焦虑、阉割焦虑、超我焦虑、被害焦虑、失整合焦虑、丧失爱的焦虑"
+		],
+		"title": "精神情绪状态"
+	},
+	{
+		"data": [
+			"交感神经：中-重度升高",
+			"副交感神经：中重度升高",
+			"平衡状态：自主神经处于失衡状态，可见瞳孔扩张、颌下腺抑制、心率加快、气管扩张、冠状动脉舒张、皮肤血管舒张、肌肉紧张度增加、胃收缩抑制、肠蠕动抑制、肝糖分泌增加、肾上腺素分泌增加，失眠，多梦；",
+			"心率变异性：重度升高",
+			"喉部堵塞感,气急,恶心"
+		],
+		"title": "自主神经状态"
+	},
+	{
+		"data": [
+			"入睡困难：轻度",
+			"早醒：轻度",
+			"睡眠质量对日间影响：轻度",
+			"睡眠浅：中度"
+		],
+		"title": "睡眠状况"
+	},
+	{
+		"data": [
+			"自述内分泌状况：差",
+			"具体表现为：长痘及皮肤变化"
+		],
+		"title": "内分泌状况"
+	}
+]

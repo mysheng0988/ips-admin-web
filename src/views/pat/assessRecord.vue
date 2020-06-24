@@ -130,12 +130,14 @@
     },
     methods: {
       readReport(data){
+       
         let path=data.examinationTypeCode=="20001"?"siftPdf":"pdf";
         this.$router.push({
           path: '/rep/'+path,
           query: {
             id: data.id,
-            name:data.patientVO.realName
+            name:data.patientVO.realName,
+            createTime:data.createTime.substring(0,10)+" 00:00:00"
           }
         })
       },

@@ -206,7 +206,6 @@
       handleAddQusetion(){
   
            let list=[];
-          console.log(this.problemData)
           for(let item of this.problemData){
             let param={
                 medicalRecordId: this.medicalRecordId,
@@ -244,7 +243,7 @@
         }else{
           additionalQuestions(this.medicalRecordId).then(res=>{
            if(res.code==200){
-             this.problemData=res.dataList[0];
+             this.problemData=res.dataList;
               this.problemNum=0;
              this.dialogVisible2=true;
            }else{

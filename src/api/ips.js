@@ -25,7 +25,7 @@ export function queryExperienceList(patientId,createTime) {
 }
 export function queryCheckUp(data) {
   return request({
-    url:'base/medicalExaminationItem/list',
+    url:'base/inspectionItem/list',
     method:'get',
     params:{queryParam:data}
   })
@@ -129,6 +129,13 @@ export function getPursue(medicalRecordId) {
 export function queryHospital(matchingString) {
   return request({
     url:"base/hospital/list/fuzzyMatching?matchingString="+matchingString,
+    method:'get',
+  })
+}
+
+export function lastMainPursue(patientId){
+  return request({
+    url:"ips/patientComplaint/latest/patientId/"+patientId,
     method:'get',
   })
 }

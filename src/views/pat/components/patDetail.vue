@@ -113,7 +113,7 @@
         </div>
         <el-row :gutter="10">
           <el-col :span="8">
-            <el-form-item label="婚姻状况："  prop="maritaStatus" >
+            <el-form-item label="婚姻状况："  >
               <el-select  placeholder="请选择" v-model="patObj.maritaStatus"  clearable class="input-width">
                 <el-option label="未婚" value="未婚"></el-option>
                 <el-option label="已婚" value="已婚"></el-option>
@@ -130,8 +130,8 @@
             </el-form-item>
           </el-col>
           <el-col :span="8">
-            <el-form-item label="人群分类："  >
-              <el-select  placeholder="请选择" multiple v-model="patObj.crowdRole"   clearable class="input-width" >
+            <el-form-item label="人群分类：" prop="crowdRole" >
+              <el-select  placeholder="请选择" multiple v-model="patObj.crowdRole"  @change="crowdRoleChange"  clearable class="input-width" >
                 <el-option v-for="(item,index) in optionRow" :key="index"
                      :label="item"
                      :value="item"
@@ -332,6 +332,7 @@
           </div>
         <span slot="footer" class="dialog-footer">
           <el-button @click="dialogVisible=false">取消</el-button>
+          <el-button type="success" @click="M1AuthenKeyData">M1卡认证</el-button>
           <el-button type="primary" @click="readCardMsg" :loading="loadingbut">确认刷卡</el-button>
         </span>
       </el-dialog>
@@ -350,7 +351,7 @@
     getDoctorList,
     updatePatient,
     getMedicalRecordPatient} from '@/api/patient';
-  import{readCardReset} from "@/api/cardRead"
+  import{readCardReset,readCardWriteData,M1AuthenKey} from "@/api/cardRead"
   import { Message, MessageBox } from 'element-ui'
   const defaultPatient = {
     pid:null,
@@ -360,7 +361,7 @@
     caregiver: "父母",
     childrenNumber: 0,
     childrenSituation: "",
-    crowdRole: [],
+    crowdRole: ["无"],
     address: "",
     dominantHand: false,
     education: "",
@@ -448,7 +449,7 @@
         cardState:false,
         doctorList:[],
         examinationList:[],
-        optionRow:["驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"],
+        optionRow:["无","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"],
         deptList:[],
         cureList:[],
         showBase:true,
@@ -552,33 +553,74 @@
 
 
     methods: {
-     
+      crowdRoleChange(){
+        if(this.patObj.crowdRole.length>1&&this.patObj.crowdRole.includes("无")){
+          let index=0;
+           for(let item of this.patObj.crowdRole ){
+             if(item=="无"){
+                this.patObj.crowdRole.splice(index,1); 
+             }
+             index++
+           }
+        }
+        
+       },
+       M1AuthenKeyData(){
+          M1AuthenKey().then(res=>{
+            if(res.retcode==200){
+              this.$message.success("认证成功")
+            }else if(res.code==200){
+               this.$message.success("认证成功")
+            }
+          })
+       },
        readCardMsg(){
          this.loadingbut=true;
-        readCardReset().then(res=>{
+        readCardWriteData().then(res=>{
            this.loadingbut=false;
           this.cardState=true;
           this.medObj.cardNo=""
-          if(res.retcode==0){
-             let cardMsg=parseInt(res.CardSn1,16);
+          if(res.retcode=='0'){
+             let cardMsg=res.data;
             this.medObj.cardNo=cardMsg;
             this.onSubmit()
           }else if(res.code==200){
-             let cardMsg=parseInt(res.data.CardSn1,16);
+             let cardMsg=res.data.data;
             this.medObj.cardNo=cardMsg;
             this.onSubmit()
           }else{
-            this.$message.error("刷卡失败")
+            this.$message.error("刷卡失败111")
           }
         }).catch(res=>{
            this.loadingbut=false;
         })
       },
+      //  readCardMsg(){
+      //    this.loadingbut=true;
+      //   readCardReset().then(res=>{
+      //      this.loadingbut=false;
+      //     this.cardState=true;
+      //     this.medObj.cardNo=""
+      //     if(res.retcode==0){
+      //        let cardMsg=parseInt(res.CardSn1,16);
+      //       this.medObj.cardNo=cardMsg;
+      //       this.onSubmit()
+      //     }else if(res.code==200){
+      //        let cardMsg=parseInt(res.data.CardSn1,16);
+      //       this.medObj.cardNo=cardMsg;
+      //       this.onSubmit()
+      //     }else{
+      //       this.$message.error("刷卡失败")
+      //     }
+      //   }).catch(res=>{
+      //      this.loadingbut=false;
+      //   })
+      // },
       genderChange(){
         if(this.patObj.gender){
-          this.optionRow=["驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"];
+          this.optionRow=["无","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"];
         }else{
-         this.optionRow= ["哺乳","妊娠期妇女","育龄期妇女","产妇","孕妇","妊娠期妇女（前三个月）","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"]
+         this.optionRow= ["无","哺乳","妊娠期妇女","育龄期妇女","产妇","孕妇","妊娠期妇女（前三个月）","驾驶员","机器操纵者","高空作业者","从事危险工作者","精细工作者"]
         }
          this.patObj.crowdRole=[]
       },
@@ -634,9 +676,8 @@
                 this.patObj.nation=cardMsg.nation;
               }
               this.patObj.gender =(this.patObj.cardNo.substring(16,17)%2)==0?false:true
-             
-            sessionStorage.setItem("cardMsg",null)
           }
+          sessionStorage.setItem("cardMsg",null)
           return this.patObj.pid;
         })
       },

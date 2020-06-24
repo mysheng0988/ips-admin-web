@@ -393,12 +393,7 @@ export default {
                 this.cheakedNum(new Date().getMonth() + 1) +
                 "-" +
                  this.cheakedNum(new Date().getDate()) +
-                " " +
-                 this.cheakedNum(new Date().getHours()) +
-                ":" +
-                this.cheakedNum(new Date().getMinutes())  +
-                ":" +
-                 this.cheakedNum(new Date().getSeconds());
+                "  00:00:00";
           this.$store.commit("delete_tabs", this.$route.path);
           this.$router.push({
             path: "/rep/pdf",
@@ -602,7 +597,7 @@ export default {
     },
     filterNode(value, data) {
       if (!value) return true;
-      return data.label.indexOf(value) !== -1;
+      return data.name.indexOf(value) !== -1;
     },
     handlePrev() {
       this.$emit("prevStep");

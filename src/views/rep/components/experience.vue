@@ -7,9 +7,12 @@
                
              </el-timeline-item>
               <el-timeline-item  v-for="(item1,index1) in item" :key="index+'-'+index1" :timestamp="item1.month" placement="top" color="#1B9BC0">
-                <p>{{item1.symptom}}</p>
-                <p>{{item1.diagnosis}}</p>
-                <p>{{item1.cureItem}}</p>
+                <p v-if="item1.symptom!=''">自述症状为：{{item1.symptom}}</p>
+                <p>就诊过的医院为：{{item1.hospitalName}}</p>
+                <p v-if="item1.checkup!=''">做过的检查有:{{item1.checkup}}</p>
+                <p>诊断的结果为:{{item1.diagnosis}}</p>
+                <p>治疗方案为：{{item1.programs}}</p>
+                <p v-if="item1.cureItem!=''"> 治疗的效果为：{{item1.cureItem}}</p>
               </el-timeline-item>
             </template>
            

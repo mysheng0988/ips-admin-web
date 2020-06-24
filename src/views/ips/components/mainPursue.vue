@@ -164,7 +164,7 @@
             </el-table-column>
             <el-table-column label="检查" align="center">
               <template slot-scope="scope">
-                <p v-for="(item,index) in scope.row.checkupList" :key="index">{{item.name}}</p>
+                <p v-for="(item,index) in scope.row.inspectionItemNameSet" :key="index">{{item}}</p>
               </template>
             </el-table-column>
             <el-table-column label="诊断" align="center">
@@ -299,6 +299,7 @@
     getPursue,
     updatePursue,
     getStressPatient,
+    lastMainPursue,
     deleteExperience} from '@/api/ips';
   import {queryHospital} from "@/api/manage"
   import {getICD11} from '@/api/icd'
@@ -429,10 +430,10 @@
             {required: true, message: '请选择临床专科诊断', trigger: 'change'},
           ],
           firstOnsetTime: [
-            {required: true, message: '请选择首次发病时间', trigger: 'blur'},
+            {required: true, message: '请选择首次发作时间', trigger: 'blur'},
           ],
           recentOnsetTime: [
-            {required: true, message: '请选择末次发病时间', trigger: 'blur'},
+            {required: true, message: '请选择最近发作时间', trigger: 'blur'},
           ],
           illnessDegree: [
             {required: true, message: '选择严重程度', trigger: 'change'},
@@ -452,22 +453,37 @@
       ])
     },
     mounted(){
-      console.log(this.type)
       this.getExperienceList();
       this.queryFamily();
       this.getSymptoms("1");
       this.getSymptoms("2");
       this.getSymptoms("3");
-      this.getPursueData();
+      this.initData();
       this.getStressList();
     },
     methods: {
+      async initData(){
+        let mainPursue=await this.getPursueData();
+        if(mainPursue.length==0){
+          this.getLastMainPursue()
+        }
+      },
+      getLastMainPursue(){
+        lastMainPursue(this.patientId).then(res=>{
+            if(res.code==200){
+              this.pursueObj=res.dataList[0];
+              this.pursueObj.id=null;
+            // this.clinicalSpecialist=this.pursueObj.clinicalSpecialistDiagnosisSupplementList.join(",")
+           }
+        })
+      },
       getPursueData(){
-        getPursue(this.medicalRecordId).then(res=>{
+         return getPursue(this.medicalRecordId).then(res=>{
            if(res.code==200){
             this.pursueObj=res.dataList[0];
              this.clinicalSpecialist=this.pursueObj.clinicalSpecialistDiagnosisSupplementList.join(",")
            }
+           return res.dataList;
         })
       },
       queryFamily(){

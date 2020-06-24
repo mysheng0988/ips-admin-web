@@ -78,3 +78,11 @@ export function appendQuestionSubmit(data) {
     data:data
   })
 }
+
+
+export function appendQuestion(medicalRecordId) {
+  return request({
+    url:'ips/questionnaire/appendQuestion/'+medicalRecordId,
+    method:'get',
+  })
+}

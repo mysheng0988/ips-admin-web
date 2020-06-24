@@ -4,7 +4,7 @@
     "id": 1,
     "scaleTitle": "初筛首访简易问卷",
     "type": "3",
-    "explain": "根据近半年的情况如实作答。",
+    "explain": "根据过去两周的情况，请选择一个最符合您的选项。",
     "problem": [
       {
         "questionNum": "1",

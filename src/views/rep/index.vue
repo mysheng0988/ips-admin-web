@@ -160,7 +160,7 @@
           query: {
             id: data.medicalRecordId,
             name:data.patientName,
-            createTime:data.createTime
+            createTime:data.createTime.substring(0,10)+" 00:00:00"
           }
         })
       },

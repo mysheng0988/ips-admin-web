@@ -11,9 +11,15 @@ export function readCardReset() {
     method:'get'
   })
 }
-export function readCardData() {
+export function M1AuthenKey() {
   return request({
-    url:'api/M1ReadBlock?BlockNo=9',
+    url:'api/M1AuthenKey?KeyType=0&BlockNo=38&Key=ffffffffffff',
+    method:'get'
+  })
+}
+export function readCardWriteData() {
+  return request({
+    url:'api/M1ReadBlock?BlockNo=38',
     method:'get'
   })
 }

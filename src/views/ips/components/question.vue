@@ -10,7 +10,7 @@
           <el-checkbox v-for="(item,index) in problemData.symptom" :label="item" :key="index">{{item.question}}</el-checkbox>
         </el-checkbox-group>
         <div class="symptom" v-for="(item,index) in problemData.data" :key="index">
-         ({{index+1}})、{{item.question}}
+         ({{index+1}}) {{item.question}}
           <el-radio-group v-model="item.answer">
               <el-radio v-for="(itemData,indexData) in item.answers" :label="indexData" :key="indexData">{{itemData}}</el-radio>
           </el-radio-group>
@@ -211,11 +211,7 @@
           submitQuestion(param).then(res=>{
              this.loading=false;
             if(res.code==200){
-              if(res.dataList.length==0){
                 this.$emit('closeDialog');
-              }else{
-                this.$emit('openDialog',res.dataList[0]);
-              }
                this.$message.success(res.message)
             }else{
               this.$message.warning(res.message)
