@@ -127,7 +127,7 @@
           clearable></el-input> -->
       </el-form-item>
        <el-form-item label="建议药物:"  prop="mainComplaint">
-           <div class="bottom" v-for="(item,index) in outPut.suggestedDrugs" :key="index">{{index+1}}.{{item.diagnosis}}:{{item.drugName}}--{{item.dosage}}是否优选{{item.whetherPreferred}}<p>建议:{{item.medicationAdvice}}</p></div>
+           <div class="bottom" v-for="(item,index) in outPut.suggestedDrugs" :key="index">{{index+1}}.{{item.diagnosis}}|<span style="color:blue">{{item.drugName}}</span>|{{item.dosage}}是否优选{{item.whetherPreferred}}<span><span style="color:red">建议</span>{{item.medicationAdvice}}</span></div>
         <!-- <el-input
           placeholder="请输入内容"
           v-model="outPut.suggestedDrugs"

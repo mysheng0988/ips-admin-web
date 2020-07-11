@@ -30,7 +30,7 @@
     <el-dialog
       title="答题卡"
       :visible.sync="dialogVisible"
-     destroy-on-close
+       :close-on-click-modal="false"
       width="700px">
       <question-scale :scale-id="scaleId"  :medical-record-id="medicalRecordId"
         :patient-id="patientId" @closeDialog="closeDialog" ref="scale"></question-scale>

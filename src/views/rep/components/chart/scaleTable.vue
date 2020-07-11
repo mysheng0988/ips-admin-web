@@ -6,7 +6,7 @@
             :data="data.chartData"
             :show-header="false"
             style="width: 100%">
-            <el-table-column v-for="(item,index) in dataKeys.length" :key="index" align="center" >
+            <el-table-column v-for="(item,index) in dataKeys.length" :key="index" :width="index<2?100:''" align="center" >
               <template slot-scope="scope">{{scope.row['item'+[index]]}}</template>
             </el-table-column>
             <!-- <el-table-column>

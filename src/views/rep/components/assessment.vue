@@ -141,7 +141,7 @@
     height: 72px;
     text-align: left;
     font-size: 30px;
-     color: #48A3DA;
+    color: #48A3DA;
   }
   .label-title span{
     font-size: 14px;

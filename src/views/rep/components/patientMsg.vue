@@ -134,9 +134,9 @@ export default {
     mainSymptomsName: function() {
       if (
         this.mainPursue.mainSymptomsSet &&
-        this.mainPursue.motorSymptomsSet.length > 0
+        this.mainPursue.mainSymptomsSet.length > 0
       ) {
-        return this.mainPursue.motorSymptomsSet.join("、");
+        return this.mainPursue.mainSymptomsSet.join("、");
       }
       return "";
     },

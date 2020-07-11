@@ -1,5 +1,5 @@
 <template>
-  <div  class="app-container">
+  <div  >
     <div class="pdf-container" id="pdfCentent" ref="content">
         <rep-index :patient-data="patientData" :patient-vo="patientVo"></rep-index>
         <contents :data="contentsData"></contents>
@@ -26,8 +26,8 @@
        
         <rep-end></rep-end>
     </div>
-        <el-button type="danger" @click="getPdf('pdfCentent',patientVo.realName)">导出PDF</el-button>
-        <el-button type="danger" @click="handleWindowPrint('#pdfCentent',patientVo.realName)">浏览器导出PDF</el-button>
+        <!-- <el-button type="danger" @click="getPdf('pdfCentent',patientVo.realName)">导出PDF</el-button> -->
+        <!-- <el-button type="danger" @click="outPut">浏览器导出PDF</el-button> -->
   </div>
 </template>
 <script>
@@ -165,19 +165,6 @@ import {analysisData} from "@/api/analysis"
       },
       
       methods: {
-          handleWindowPrint(ele, fileName){
-
-              this.$router.push({
-                 path:"/pdf2",
-                query: {
-                  id: this.medicalRecordId,
-                  name:fileName,
-                  createTime:this.createTime
-                }
-              })
-                
-
-          },
           async initData(){
           await this.getPursueData();
           let patient=await this.getPatientData();
@@ -186,6 +173,10 @@ import {analysisData} from "@/api/analysis"
           await this.getScaleResult();
           await this.getScaleNumResult();
           await this.getReportMsgData();
+          setTimeout( ()=>{
+                    window.print();
+                   this.$router.go(-1);
+                },20 )
          
         },
         getEEGData(){

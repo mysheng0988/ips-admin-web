@@ -26,6 +26,7 @@
    .form-pdf.contents{
       padding: 70px;
       background:url("../img/contents.png")no-repeat;
+      page-break-after:always;
       background-size: 100% 100%;
    }
    .box-label{

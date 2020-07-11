@@ -393,7 +393,7 @@ export default {
                 this.cheakedNum(new Date().getMonth() + 1) +
                 "-" +
                  this.cheakedNum(new Date().getDate()) +
-                "  00:00:00";
+                " 00:00:00";
           this.$store.commit("delete_tabs", this.$route.path);
           this.$router.push({
             path: "/rep/pdf",

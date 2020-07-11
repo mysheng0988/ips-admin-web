@@ -1,7 +1,7 @@
 <template> 
   <div class="form-pdf end">
     <div class="pdf-container">
-      <div class="title">Medical manual</div>
+      <!-- <div class="title">Medical manual</div> -->
       <div class="msg-content flex-wrap">
          <div class="conent" v-if="hospitalData">
             <!-- <div>{{info.hospitalName}}</div> -->

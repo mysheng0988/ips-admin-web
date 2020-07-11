@@ -156,7 +156,8 @@
       readReport(data){
         let path=data.typeId==4?"pdf":"siftPdf";
         this.$router.push({
-          path: '/rep/'+path,
+           path: '/rep/'+path,
+          // path:"/pdf2",
           query: {
             id: data.medicalRecordId,
             name:data.patientName,

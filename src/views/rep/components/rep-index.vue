@@ -40,6 +40,7 @@
      position: relative;
      width: 768px;
      height: 1091px;
+     page-break-after:always;
      text-align: left;
      border: 1px solid #eee;
      background:url("../img/rep-index.png") no-repeat;

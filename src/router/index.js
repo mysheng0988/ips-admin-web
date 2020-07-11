@@ -6,7 +6,8 @@ Vue.use(Router)
 /* Layout */
 import Layout from '../views/layout/Layout'
 export const constantRouterMap = [
-  {path: '/login', component: () => import('@/views/login/index'), hidden: true},
+  {path: '/pdf2', component: () => import('@/views/rep/pdf2'), hidden: true, meta: {title: '报告分析', icon: 'home',roleId:[1,13,18]}},
+  {path: '/login', component: () => import('@/views/login/index'), hidden: true,roleId:[1,13,18]},
   {
     path: '',
     component: Layout,

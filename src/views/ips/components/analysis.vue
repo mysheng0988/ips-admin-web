@@ -240,7 +240,9 @@
         this.data["complete"]=false;
         this.data["isRecommendedMedicationTips"]=this.checkList;
         let data=this.data;
-        data.comprehensiveAnalysis=JSON.stringify(data.comprehensiveAnalysis);
+        data.comprehensiveEvaluation=JSON.stringify(data.comprehensiveEvaluation);
+        // console.log(data.comprehensiveEvaluation)
+        // return;
         updataData(data).then(res=>{
            loading.close();
             if(res.code==200){
