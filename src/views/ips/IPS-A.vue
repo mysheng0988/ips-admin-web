@@ -8,7 +8,7 @@
       </el-row>
       <el-row :gutter="10">
         <el-col :span="6">
-          <div>姓名：<span>{{patientVO.realName}}</span></div>
+          <div>姓名：<span></span></div>
         </el-col>
         <el-col :span="6">
           <div>年龄：<span>{{age}}</span></div>
@@ -36,89 +36,59 @@
       </el-row>
     </el-card>
     <el-card class="operate-container" shadow="never">
-      <el-steps :active="active" finish-status="success" align-center>
-        <el-step title="主诉" @click.native="changeTab(0)"></el-step>
-        <el-step title="设备检查"  @click.native="changeTab(1)"></el-step>
-        <el-step title="初筛首访简易问卷"></el-step>
-        <el-step title="量表"></el-step>
-        <el-step title="评估与分析"></el-step>
-      </el-steps>
-      <main-pursue
-        v-if="showStatus[0]"
-        :is-edit="isEdit"
-        :patient-id="patientId+''"
-        :key="patientId"
-        :medical-record-id="medicalRecordId+''"
-        next-title="设备检查"
-        @nextStep="nextStep">
-      </main-pursue>
-      <hrv
-        v-if="showStatus[1]"
-        :is-edit="isEdit"
-        :key="patientId"
-        :patient-id="patientId+''"
-        :medical-record-id="medicalRecordId+''"
-        @nextStep="nextStep"
-        prev-title="主诉"
-        next-title="初筛首访简易问卷"
-        @prevStep="prevStep">
-      </hrv>
-      <easy-question
-        v-if="showStatus[2]"
-         type="A"
-        :key="patientId"
-        :patient-id="patientId+''"
-        :medical-record-id="medicalRecordId+''"
-        prev-title="设备检查"
-        next-title="量表"
-        @nextStep="nextStep"
-        @prevStep="prevStep">
-      </easy-question>
-      <scale
-        v-if="showStatus[3]"
-         type="A"
-       :patient-id="patientId+''"
-        :key="patientId"
-        :medical-record-id="medicalRecordId+''"
-        prev-title="初筛首访简易问卷"
-        next-title="综合分析"
-        @nextStep="nextStep"
-        @prevStep="prevStep">
-      </scale>
-      <analysis
-        v-if="showStatus[4]"
-        type="A"
-        :patient-id="patientId+''"
-        :key="patientId"
-        :medical-record-id="medicalRecordId+''"
-        prev-title="量表"
-        next-title=""
-        @nextStep="nextStep"
-        @prevStep="prevStep">
-      </analysis>
+        <el-form  ref="productInfoForm" label-width="120px" >
+        <el-form-item style="text-align: center" >
+          <div class="ips-input">植物神经功能检测--》检测科室:{{info.deptName}}</div>
+          <el-button type="primary" @click="verificationCode" >获取验证码</el-button>
+          <el-button type="primary" ><a href="HRV://">开始检测</a></el-button>
+          <el-button type="primary" @click="handleResult">记录结果</el-button>
+        </el-form-item>
+         <el-form-item  style="text-align: center">
+        <div class="ips-input">初筛首访问卷</div>
+        <el-button type="primary" @click="startQuestion">开始问卷</el-button>
+        <el-button type="primary" class="disable" @click="handleRecord(true,questionNo)">测试记录</el-button>
+        <el-button type="primary"  @click="qrcodeData">扫码答题</el-button>
+      </el-form-item>
+      <el-form-item style="text-align: center" > 
+        <el-button type="primary">完成并提交</el-button>
+      </el-form-item>
+    </el-form>
     </el-card>
+    <el-dialog
+      title="问卷"
+      :visible.sync="dialogVisible"
+      width="700px">
+      <question :scale-id="scaleId"  :medical-record-id="medicalRecordId"
+        :patient-id="patientId" @closeDialog="closeDialog" ></question>
+
+    </el-dialog>
+     <el-dialog :visible.sync="qrcodeDialog" width="420px">
+      <qrcode :q-text="qText" :q-size="qSize" ></qrcode>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+ import {getHRV,getVerificationCode} from '@/api/HRV'
+ import{getUserInfo} from '@/api/pat'
   import {getRecordPatient} from "@/api/patient";
-  import mainPursue from './components/mainPursue';
-  import hrv from './components/hrv';
-  import eeg from './components/eeg';
-  import easyQuestion from './components/easyQuestion';
-  import scale from './components/scale';
-  import analysis from './components/analysis';
-  import curePlan from './components/curePlan';
   import { Message, MessageBox } from 'element-ui'
+  import question from './components/question';
+   import qrcode from '@/components/qrcode/qrcode'
   export default {
     name: "IPS-A",
-    components: {mainPursue, hrv, eeg,easyQuestion,scale,analysis,curePlan},
+     components: {question,qrcode},
     data() {
       return {
         active:0,
         showStatus: [true, false, false,false,false],
         listLoading: false,
         patientId:"",
+        qrcodeDialog:false,
+        qText:"",
+        scaleId:"",
+        qSize:200,
+        dialogVisible:false,
         medicalRecordId:"",
         total:0,
         patient:"",
@@ -155,6 +125,10 @@
       } 
     },   
     computed:{
+      info () {
+        console.log(this.$store.state.user)
+        return this.$store.state.user.info
+      },
       age:function () {
         if(this.patientVO.birthday!=""&&this.patientVO.birthday){
           let age=this.patientVO.birthday.substring(0,4);
@@ -165,10 +139,43 @@
       }
     },
     methods: {
+       closeDialog(){
+        //this.initData();
+        this.dialogVisible=false;
+      },
+      qrcodeData(){
+        let medicalRecordId=this.medicalRecordId;
+        let patientId=this.patientId;
+        this.qText="https://ips.xsyxsy.com/patient/"+patientId+"/"+medicalRecordId;
+        this.qrcodeDialog=true;
+      },
+       handleResult(){
+          this.getHRVData()
+      },
+      startQuestion(){
+        this.dialogVisible=true;
+      },
       changeTab(index){
         // this.active=index;
         // this.hideAll();
         // this.showStatus[index] = true;
+      },
+       getHRVData(){
+
+        getHRV(this.medicalRecordId).then(res=>{
+          if(res.code==200){
+              this.dialogVisible=true;
+              this.hrvPath="data:image/png;base64,"+res.dataList[0].resultImageUrl;
+          }
+        })
+      },
+      verificationCode(){
+        getVerificationCode().then(res=>{
+          if(res.code==200){
+            this.$copyText(res.dataList[0]);
+            this.$message.success("验证码:"+res.dataList[0]+",已复制到剪切板！")
+          }
+        })
       },
      getPatientData(){
         getRecordPatient(this.medicalRecordId).then(res=>{
@@ -244,5 +251,13 @@
   .active{
     border:1px solid #1197D6;
     color: #1197D6;
+  }
+   .ips-input{
+    margin: 0 10px;
+    width: 400px;
+    display: inline-block;
+    border: 1px solid #eeee;
+    border-radius: 10px;
+    color: #999;
   }
 </style>

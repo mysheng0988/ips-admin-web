@@ -35,7 +35,7 @@ export function updatePatient(data) {
 //下拉查询科室
 export function getDeptList(hospitalId) {
   return request({
-    url:'base/dept/list/hospitalId/'+hospitalId,
+    url:'base/dept/list/organizationId/'+hospitalId,
     method:'get',
   })
 }

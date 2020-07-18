@@ -202,6 +202,45 @@ export const constantRouterMap = [
     ]
   },
   {
+    path:'/que',
+    component: Layout,
+    redirect: '/que/index',
+    name: 'que',
+    meta: {title: '题库管理', icon: 'param',roleId:[1,18,13]},
+    children: [
+      {
+        path: 'index',
+        name: 'index',
+        component: () => import('@/views/que/index'),
+        meta: {title: '题库列表', icon: 'sms-ad',roleId:[1,18,13]}
+      },
+      {
+        path: 'add',
+        name: 'add',
+        component: () => import('@/views/que/add'),
+        meta: {title: '增加问题',icon:'sms-new',roleId:[1,18,13]},
+      },
+      {
+        path: 'temp',
+        name: 'temp',
+        component: () => import('@/views/que/template'),
+        meta: {title: '增加模板',icon:'sms-new',roleId:[1,18,13]},
+      },
+      {
+        path: 'tIndex',
+        name: 'tIndex',
+        component: () => import('@/views/que/tempIndex'),
+        meta: {title: '模板列表',icon:'sms-new',roleId:[1,18,13]},
+      },
+      {
+        path: 'detail',
+        name: 'detail',
+        component: () => import('@/views/que/tempDetail'),
+        meta: {title: '模板详情',icon:'sms-new',roleId:[1,18,13]},
+      },
+    ]
+  },
+  {
     path:'/user',
     component: Layout,
     redirect: '/user/account',

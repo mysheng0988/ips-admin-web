@@ -77,6 +77,7 @@
         loginForm: {
           username: '',
           password: '',
+          roleId:[13,18]
         },
         loginRules: {
           username: [{required: true, trigger: 'blur', validator: validateUserName}],

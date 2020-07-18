@@ -1,35 +1,13 @@
 <template>
   <div class="app-container">
     <el-form :inline="true" :model="listQuery" size="small" >
-        <!-- <el-form-item >
-          <el-input  placeholder="患者编号" v-model="listQuery.pid"></el-input>
-        </el-form-item>
-        <el-form-item >
-          <el-input placeholder="患者姓名" v-model="listQuery.realName"></el-input>
-        </el-form-item>
-        <el-form-item>
-          <el-date-picker
-              v-model="createDate"
-              type="daterange"
-              range-separator="至"
-              start-placeholder="起始日期"
-              end-placeholder="结束日期"
-              value-format="yyyy-MM-dd"
-              @change="handleTimeChange">
-          </el-date-picker>
-        </el-form-item> -->
+    
         <el-form-item label="测评状态:" >
           <el-radio-group v-model="listQuery.examinationStatus" @change="queryData">
             <el-radio label="102" >全部</el-radio>
             <el-radio label="0" >待测评</el-radio>
             <el-radio label="101" >测评中</el-radio>
           </el-radio-group>
-          <!-- <el-select placeholder="请选择" v-model="listQuery.examinationStatus" clearable>
-            <el-option label="全部" value=""></el-option>
-            <el-option label="未测评" value="1"></el-option>
-            <el-option label="测评中" value="2"></el-option>
-            <el-option label="已完成" value="3"></el-option>
-          </el-select> -->
         </el-form-item>
         <!-- <el-form-item>
           <el-button type="success" round class="search-btn" @click="queryData()">查询</el-button>
@@ -47,18 +25,18 @@
           <template slot-scope="scope">{{scope.row.patientId}}</template>
         </el-table-column>
         <el-table-column label="患者姓名" align="center">
-          <template slot-scope="scope">{{scope.row.patientVO.realName }}</template>
+          <template slot-scope="scope">{{scope.row.sysUserVO.realName }}</template>
         </el-table-column>
         <el-table-column label="出生日期"  align="center">
-          <template slot-scope="scope">{{scope.row.patientVO.birthday }}</template>
+          <template slot-scope="scope">{{scope.row.sysUserVO.birthday }}</template>
         </el-table-column>
         <el-table-column label="年龄"  align="center">
           <template slot-scope="scope">
-            {{scope.row.patientVO.birthday|formatAge}}
+            {{scope.row.sysUserVO.birthday|formatAge}}
           </template>
         </el-table-column>
         <el-table-column label="性别" align="center">
-          <template slot-scope="scope">{{scope.row.patientVO.gender |formatGender}}</template>
+          <template slot-scope="scope">{{scope.row.sysUserVO.gender |formatGender}}</template>
         </el-table-column>
          <el-table-column label="测评项目"  align="center">
           <template slot-scope="scope">{{scope.row.examinationTypeCode |formatExamination}}</template>
@@ -170,7 +148,7 @@
         if(birthday){
           let age=birthday.substring(0,4);
           let year=new Date().getFullYear();
-          return year-age-1;
+          return year-age;
         }
        return ""
       },
@@ -219,7 +197,7 @@
           query: {
             id: data.patientId,
             medicalRecordId:data.id,
-            name:data.patientVO.realName,
+            name:data.sysUserVO.realName,
           }
         })
       },
