@@ -25,18 +25,22 @@
           <template slot-scope="scope">{{scope.row.patientId}}</template>
         </el-table-column>
         <el-table-column label="患者姓名" align="center">
-          <template slot-scope="scope">{{scope.row.sysUserVO.realName }}</template>
+          <template slot-scope="scope">{{scope.row.realName }}</template>
         </el-table-column>
         <el-table-column label="出生日期"  align="center">
-          <template slot-scope="scope">{{scope.row.sysUserVO.birthday }}</template>
+          <template slot-scope="scope">{{scope.row.birthday }}</template>
         </el-table-column>
+        
         <el-table-column label="年龄"  align="center">
           <template slot-scope="scope">
-            {{scope.row.sysUserVO.birthday|formatAge}}
+            {{scope.row.age}}
           </template>
         </el-table-column>
         <el-table-column label="性别" align="center">
-          <template slot-scope="scope">{{scope.row.sysUserVO.gender |formatGender}}</template>
+          <template slot-scope="scope">{{scope.row.gender |formatGender}}</template>
+        </el-table-column>
+         <el-table-column label="手机号码"  align="center">
+          <template slot-scope="scope">{{scope.row.mobileNumber }}</template>
         </el-table-column>
          <el-table-column label="测评项目"  align="center">
           <template slot-scope="scope">{{scope.row.examinationTypeCode |formatExamination}}</template>
@@ -197,7 +201,7 @@
           query: {
             id: data.patientId,
             medicalRecordId:data.id,
-            name:data.sysUserVO.realName,
+            name:data.realName,
           }
         })
       },

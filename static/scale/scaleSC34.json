@@ -1,0 +1,176 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC34",
+    "scaleTitle": "躯体症状筛查量表（PHQ-15）",
+    "type": "1",
+    "explain": "指导语：在过去的4周中，你有多大程度受以下问题困扰？",
+    "problem": [
+      {
+        "questionNum": "1",
+        "question": "胃痛",
+        "answers": [
+          "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "question": "背痛",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "question": "胳膊、腿或关节疼痛（膝关节、髋关节，等等）",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "question": "常感到疲劳，或沒劲",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "question": "入睡困难，总是醒着，或睡得太多",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "question": "痛经或月经期间其他问题(男性选择没有困扰)",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "question": "性生活中有疼痛或其他问题",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "question": "头痛",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "question": "胸痛",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "10",
+        "question": "头晕",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "11",
+        "question": "昏倒过一段时间",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "12",
+        "question": "感到心脏砰砰动或跳得很快",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "13",
+        "question": "呼吸急促",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "14",
+        "question": "便秘、腹泻或肠道不适",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "15",
+        "question": "恶心、嗳气（打嗝）或消化不良",
+        "answers": [
+           "没有困扰",
+          "少许困扰",
+          "十分困扰"
+        ],
+        "answer": "",
+        "nextNum": 0
+      }
+    ]
+  }
+}

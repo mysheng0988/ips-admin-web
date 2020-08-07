@@ -1,0 +1,2651 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC27",
+    "scaleTitle": "生活事件量表（ＬＥＳ）",
+    "type": "2",
+    "explain": "下面是每个人都有可能遇到的一些日常生活事件，究竟是好事还是坏事，可根据个人情况自行判断。这些事件可能对个人有精神上的影响（体验为紧张、压力、兴奋或苦恼等），影响程度各不相同，影响持续的时间也不一样。请你根据自己的情况，实事求是地回答下列问题。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "question": "恋爱或订婚",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "question": "恋爱失败、破裂",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "question": "结婚",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "question": "自己（爱人）怀孕",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "question": "自己（爱人）流产",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "question": "家庭增添新成员",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "question": "与爱人父母不和",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "question": "夫妻感情不好",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "question": "夫妻分居（因不和）",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "10",
+        "question": "性生活不满意或独身",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "11",
+        "question": "夫妻两地分居（工作需要）",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "12",
+        "question": "配偶一方有外遇",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "13",
+        "question": "夫妻重归于好",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "14",
+        "question": "超指标生育",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "15",
+        "question": "本人（爱人）做绝育手术）",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "16",
+        "question": "配偶死亡",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "17",
+        "question": "离婚",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "18",
+        "question": "子女升学（就业）失败",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "19",
+        "question": "子女管教困难",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "20",
+        "question": "子女长期离家",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "21",
+        "question": "父母不和",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "22",
+        "question": "家庭经济困难",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "23",
+        "question": "欠债500元以上",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "24",
+        "question": "经济情况显著改善",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "25",
+        "question": "家庭成员重病或重伤",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "26",
+        "question": "家庭成员死亡",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "27",
+        "question": "本人重病或重伤",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "28",
+        "question": "住房紧张",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "29",
+        "question": "待业、无业",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "30",
+        "question": "开始就业",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "31",
+        "question": "高考失败",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "32",
+        "question": "扣发奖金或罚款",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "33",
+        "question": "突出的个人成就",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "34",
+        "question": "晋升、提级",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "35",
+        "question": "对现职工作不满意",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "36",
+        "question": "工作学习中压力大（如成绩不好）",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "37",
+        "question": "与上级关系紧张",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "38",
+        "question": "与同事邻居不和",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "39",
+        "question": "第一次远走他乡",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "40",
+        "question": "生活规律重大变动（饮食、睡眠规律改变）",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "41",
+        "question": "本人退休、离休或未安排具体工作",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "42",
+        "question": "好友重病或重伤",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "43",
+        "question": "好友死亡",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "44",
+        "question": "被人误会、错怪、诬告、议论",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "45",
+        "question": "介入民事法律纠纷",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "46",
+        "question": "被拘留、受审",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "47",
+        "question": "失窃、财产损失",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "48",
+        "question": "意外惊吓、发生事故、自然灾害",
+        "data": [
+          {
+            "label": "两年内发生次数",
+            "type": "1",
+            "answer": 0,
+            "nextNum": 0
+          },
+          {
+            "label": "性质",
+            "type": "0",
+            "answers": [
+              "好事",
+              "坏事"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "精神影响程度",
+            "type": "0",
+            "answers": [
+              "无影响",
+              "轻度",
+              "中度",
+              "重度",
+              "极重"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "影响持续时间",
+            "type": "0",
+            "answers": [
+              "三个月内",
+              "半年内",
+              "一年内",
+              "一年以上"
+            ],
+            "answer": "",
+            "nextNum": 0
+          },
+          {
+            "label": "备注",
+            "type": "2",
+            "answer": "",
+            "nextNum": 0
+          }
+        ],
+        "answer": "",
+        "nextNum": 0
+      }
+    ]
+  }
+}

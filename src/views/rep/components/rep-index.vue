@@ -1,11 +1,11 @@
 <template> 
    <div class="index-pdf">
-     <div class="title">IPS系统心身{{patientData.examinationTypeCode=="20001"?"筛查":"综合"}}报告</div>
-     <div class="dept">来源科室：{{patientData.fromDeptName}}</div>
-     <div class="user-msg" >{{patientVo.realName}} 
-        <span>{{patientVo.gender?"男":"女"}}</span> 
-         {{patientVo.birthday|formatAge}} </div>
-     <div class="case-num">病例号:{{patientData.beHospitalizedNumber}}</div>
+     <div class="title">IPS系统心身综合报告</div>
+     <div class="dept">来源科室：{{patientData.currentDeptName}}</div>
+     <div class="user-msg" >{{patientData.realName}} 
+        <span>{{patientData.gender?"男":"女"}}</span> 
+         {{patientData.age}} </div>
+     <div class="case-num">{{patientData.outpatient?"门诊号":"住院号"}}：{{patientData.beHospitalizedNumber}}</div>
    </div>
 </template>
 <script>

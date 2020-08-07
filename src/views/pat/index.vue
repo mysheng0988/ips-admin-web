@@ -27,7 +27,7 @@
             <svg-icon icon-class="reset-icon" class-name="search-icon"></svg-icon>重置
           </el-button>
           <el-button icon="el-icon-search" type="success" class="search-btn" @click="queryData()">查询</el-button>
-          <el-button type="success" class="search-btn" @click="dialogVisible = true">
+          <el-button type="success" class="search-btn" @click="addPatient">
             <svg-icon icon-class="patient" class-name="search-icon"></svg-icon>患者登记
           </el-button>
           <!-- <el-button type="info" round class="search-btn" @click="M1WriteBlockData">写卡</el-button> -->
@@ -47,7 +47,7 @@
           <template slot-scope="scope">{{scope.$index+1}}</template>
         </el-table-column>-->
         <el-table-column label="编号" width="80" align="center">
-          <template slot-scope="scope">{{scope.row.pid}}</template>
+          <template slot-scope="scope">{{scope.row.id}}</template>
         </el-table-column>
         <el-table-column label="患者姓名" align="center">
           <template slot-scope="scope">{{scope.row.realName }}</template>
@@ -60,6 +60,9 @@
         </el-table-column>
         <el-table-column label="出生日期" align="center">
           <template slot-scope="scope">{{scope.row.birthday }}</template>
+        </el-table-column>
+        <el-table-column label="手机号码" align="center">
+          <template slot-scope="scope">{{scope.row.mobileNumber }}</template>
         </el-table-column>
         <el-table-column label="身份证号" align="center">
           <template slot-scope="scope">{{scope.row.cardNo }}</template>
@@ -106,7 +109,7 @@
         :total="total"
       ></el-pagination>
     </div>
-    <el-dialog title="刷卡验证" :visible.sync="dialogVisible" width="60%">
+    <el-dialog title="患者登记" :visible.sync="dialogVisible" width="60%">
       <div class="cardContent">
         <!-- <el-image class="img" :src="require('@/views/pat/imgs/cardID.png')"></el-image>
         <p class="flag">请将磁卡置于机器上方</p>
@@ -145,7 +148,6 @@
                   placeholder="请输入身份证号"
                   maxlength="18"
                   show-word-limit
-                  @blur="cardNoChange"
                 ></el-input>
               </el-form-item>
             </el-col>
@@ -453,7 +455,7 @@ export default {
         beHospitalizedNumber: [
           {
             required: true,
-            message: "必填字段",
+            message: "不能为空且必须是数字",
             trigger: "blur",
             validator: validateNumber
           }
@@ -485,7 +487,7 @@ export default {
         cardNo: [
           { required: true, message: "请输入身份证号码", trigger: "blur" },
           {
-            pattern: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
+            pattern: /^[0-9]{18}$/,
             message: "身份证格式不正确",
             trigger: "blur"
           }
@@ -531,6 +533,13 @@ export default {
     }
   },
   methods: {
+    addPatient(){
+      this.patObj=Object.assign({},defaultPat);
+      this.dialogVisible=true;
+       this.$nextTick(function() {
+        this.$refs.patForm.clearValidate();
+      });
+    },
      payByCard(formName) {
       this.cardState = false;
       this.medObj.cardNo = "";
@@ -659,7 +668,7 @@ export default {
       this.$router.push({
         path: "/pat/assessRecord",
         query: {
-          id: data.pid,
+          id: data.id,
           name: data.realName
         }
       });
@@ -725,6 +734,7 @@ export default {
                   if(res.code==200){
                     this.dialogVisible=false;
                     this.patObj=Object.assign({},defaultPat)
+                    this.getList();
                   }
               })
           }else{

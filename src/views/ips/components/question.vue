@@ -1,33 +1,15 @@
 <template>
-  <div v-loading.fullscreen.lock="loading">
+  <div v-loading.lock="loading">
     <div class="answer-box" >
-      <div class="title">{{data.scaleTitle}}</div>
-      <div class="explain">指导语:{{data.explain}}</div>
+      <div class="title">{{data.name}}</div>
+      <div class="explain">{{data.instruction}}</div>
       <el-progress v-if="percentage" :percentage="percentage" :format="formatPercentage"></el-progress>
-      <div class="question">题目:{{problemData.question}}</div>
-      <div v-if="problemData.type=='1'" class="symptom">
-        <el-checkbox-group v-model="problemData.data" >
-          <el-checkbox v-for="(item,index) in problemData.symptom" :label="item" :key="index">{{item.question}}</el-checkbox>
-        </el-checkbox-group>
-        <div class="symptom" v-for="(item,index) in problemData.data" :key="index">
-         ({{index+1}}) {{item.question}}
-          <el-radio-group v-model="item.answer">
-              <el-radio v-for="(itemData,indexData) in item.answers" :label="indexData" :key="indexData">{{itemData}}</el-radio>
-          </el-radio-group>
-        </div>
-      </div>
-       <div v-if="problemData.type=='2'" class="symptom">
-          <el-checkbox-group   v-model="problemData.data" v-if="gender">
-            <el-checkbox v-for="(item1,index1) in problemData.symptom[1].data" :label="item1" :key="index1">{{item1}}</el-checkbox>
-          </el-checkbox-group>
-          <el-checkbox-group   v-model="problemData.data" v-else>
-            <el-checkbox v-for="(item1,index1) in problemData.symptom[0].data" :label="item1" :key="index1">{{item1}}</el-checkbox>
-          </el-checkbox-group>
-      </div>
-     <div v-else>
-       <el-radio-group v-model="problemData.answer" @change="handleChange">
-         <div class="question" v-for="(item,index) in problemData.answers" :key="index">
-           <el-radio :label="index" >{{item}}</el-radio>
+      <div class="explain">{{problemData.instruction}}</div>
+      <div class="question" v-if="problemData.question">题目:{{problemData.question.question}}</div>
+     <div>
+       <el-radio-group v-if="problemData.question" v-model="problemData.question.answer" >
+         <div class="question" v-for="(item,index) in problemData.question.answers" :key="index"  >
+           <el-radio @change="handleChange" :label="index" >{{item}}</el-radio>
          </div>
        </el-radio-group>
      </div>
@@ -42,21 +24,18 @@
 </template>
 
 <script>
+  import { getTempDetail } from "@/api/questionnaireBank";
   import {getQuestionJson} from '@/api/getJson'
-  import {submitQuestion} from '@/api/question'
+  import {submitQuestion,screeningQuestionSubmit,getQuestionnaireDetail} from '@/api/question'
     export default {
       name: "question",
       props: {
         scaleId: {
-            type: Number,
+            type: String,
           },
         medicalRecordId:{
           type:String,
           value:""
-        },
-        gender:{
-          type:Boolean,
-          value:true,
         },
         patientId:{
           type:String,
@@ -74,8 +53,7 @@
       },
        watch:{
          scaleId(newName, oldName) {
-
-            this.handleChangeJSON();
+           this.handleChangeJSON();
          }
       },
       mounted(){
@@ -93,11 +71,19 @@
       },
       methods:{
          handleChangeJSON(){
-            getQuestionJson(this.scaleId).then(res=>{
-            this.data=res.data;
-            this.problemData=this.data.problem[this.questionNum];
-            this.questionLength=this.data.problem.length;
-          })
+            this.loading=true;
+            getQuestionnaireDetail( {medicalRecordId:this.medicalRecordId,questionnaireId: this.scaleId}).then(res => {
+               this.loading=false
+              if (res.code == 200) {
+                let data = res.dataList[0];
+                for (let item of data.questionList) {
+                  item.question = JSON.parse(item.question);
+                }
+                this.data = data;
+                this.problemData=this.data.questionList[this.questionNum];
+                this.questionLength=this.data.questionList.length;
+              }
+            });
 
         },
         handleChange(){
@@ -126,12 +112,18 @@
           if(this.questionNum<=0){
             this.$message.warning("当前是第一题")
           }else{
-            if(this.problemData.prevNum!=0){
-              this.questionNum=this.problemData.prevNum;
-               this.problemData=this.data.problem[this.questionNum]
+            if(this.problemData.preQuestionNum!=0){
+               for(let x=0;x<this.data.questionList.length;x++){
+                  if(this.problemData.preQuestionNum==this.data.questionList[x].preQuestionNum){
+                    this.questionNum=x;
+                    break;
+                  }
+              }
+              this.questionNum=this.problemData.preQuestionNum;
+               this.problemData=this.data.questionList[this.questionNum]
             }else{
                this.questionNum--;
-              this.problemData=this.data.problem[this.questionNum];
+              this.problemData=this.data.questionList[this.questionNum];
             }
 
           }
@@ -139,27 +131,23 @@
         },
          nextQuestion(){
           if(this.questionNum<this.questionLength-1){
-            if(this.problemData.data&&this.problemData.data.length>0&&this.problemData.type=="1"){
-              for(let item of this.problemData.data){
-                if(item.answer===""){
-                  this.$message.warning("请选择答案");
-                  return
-                }
-              }
-            }
-            if(this.problemData.type!="2"&&this.problemData.answer===""){
+            if(this.problemData.question.answer===""){
                this.$message.warning("请选择答案")
             }else{
-              if(this.problemData.nextNum!=0&&this.problemData.answer==4){
-                  for(let x=this.questionNum+1;x<this.problemData.nextNum;x++){
-                       this.data.problem[x].answer=4;
+              if(this.problemData.nextQuestionNum!=0&&this.problemData.question.answer==0){
+                for(let x=this.questionNum;x<this.data.questionList.length;x++){
+                this.data.questionList[x].question.answer=0;
+                
+                  if(this.problemData.nextQuestionNum==this.data.questionList[x].questionNum){
+                    this.questionNum=x;
+                    break;
                   }
-                 this.questionNum=this.problemData.nextNum;
-                 this.problemData=this.data.problem[this.questionNum];
+                }
+                this.problemData=this.data.questionList[this.questionNum];
 
               }else{
                  this.questionNum++
-                this.problemData=this.data.problem[this.questionNum];
+                this.problemData=this.data.questionList[this.questionNum];
               }
             }
 
@@ -168,50 +156,52 @@
           }
         },
         submitData(){
-          if(this.problemData.answer===""){
+          if(this.problemData.question.answer===""){
             this.$message.warning("请选择答案!")
             return;
           }
           let param={
-            questionnaireNo:this.data.id,
+            questionnaireId:this.data.id,
+            questionnaireNumber:this.data.number,
             medicalRecordId:this.medicalRecordId,
             patientId:this.patientId,
             questionResultList:[],
-            resultContent:JSON.stringify(this.data),
+            questionnaireAnswer:{
+              condition:this.data.condition,
+              instruction:this.data.instruction,
+              medicalRecordId:this.medicalRecordId,
+              name:this.data.name,
+              number:this.data.number,
+              questionnaireId:this.data.id,
+              type:this.data.type,
+              userId:this.patientId,
+              questions:[]
+            }
           }
-          for(let item of this.data.problem){
+          for(let item of this.data.questionList){
              let qr={}
+             let qas={}
             if(item.type=='0'){
-              qr.optionOrder=item.answer;
-              qr.optionValue=item.answers[item.answer];
-              qr.order=item.questionNum;
-            }else if(item.type=='1'){
-               let arr=[];
-               let score=0;
-              for(let itemData of item.data){
-                 arr.push(itemData.question)
-                 score=+itemData.answer;
-              }
-              qr.order=item.questionNum;
-              qr.returnValue=arr.join(",");
-              if(item.data.length>0){
-                  qr.optionOrder=Math.round(score/item.data.length);
-              }else{
-                 qr.optionOrder=0;
-              }
-            }else if(item.type=="2"){
-               qr.optionOrder=item.data.length;
-               qr.optionValue=item.data.join(",");
-               qr.returnValue=item.data.join(",");
-               qr.order=item.questionNum;
+              qr.displayOrder=item.displayOrder;
+              qr.optionOrderList=[item.question.answer];
+              qr.optionValue=[item.question.answers[item.question.answer]];
+              qr.questionNum=item.questionNum;
+              qr.remark="",
+              qr.returnValue=[""];
+              qas.answer=JSON.stringify(item.question);
+              qas.medicalRecordId=this.medicalRecordId;
+              qas.questionNum=item.questionNum;
+              qas.questionnaireId=this.data.id;
+              qas.userId=this.patientId;
             }
             param.questionResultList.push(qr);
+            param.questionnaireAnswer.questions.push(qas)
           }
           this.loading=true;
-          submitQuestion(param).then(res=>{
+          screeningQuestionSubmit(param).then(res=>{
              this.loading=false;
             if(res.code==200){
-                this.$emit('closeDialog');
+                this.$emit('closeDialog',res.dataList);
                this.$message.success(res.message)
             }else{
               this.$message.warning(res.message)
@@ -250,6 +240,7 @@
   }
   .question{
     line-height: 45px;
+    font-size: 18px;
   }
   .question label{
     line-height: 40px;
@@ -265,8 +256,10 @@
   }
   .symptom{
     line-height: 45px;
+      font-size: 18px;
   }
   .el-checkbox{
     margin-right: 5px;
+    font-size: 18px;
   }
 </style>

@@ -1,0 +1,443 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC17",
+    "scaleTitle": "青少年生活事件量表（ASLEC）",
+    "type": "1",
+    "explain": "过去l2个月内，你和你的家庭是否发生过下列事件请仔细阅读下列每一个项目，如某事件发生过，并根据事件给你造成的苦恼程度在B-E选项中选择相应的项目。如果某事件未发生，选择A项即可。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "被人误会或错怪",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "受人歧视冷遇",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "考试失败或不理想",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "与同学或好友发生纠纷",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "生活习惯(饮食、休息等)明显变化",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "不喜欢上学",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "恋爱不顺利或失恋",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "label": "",
+        "question": "长期远离家人不能团聚",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "label": "",
+        "question": "学习负担重",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "10",
+        "label": "",
+        "question": "与老师关系紧张",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "11",
+        "label": "",
+        "question": "本人患急重病",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "12",
+        "label": "",
+        "question": "亲友患急重病",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "13",
+        "label": "",
+        "question": "亲友死亡",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "14",
+        "label": "",
+        "question": "被盗或丢失东西",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "15",
+        "label": "",
+        "question": "当众丢面子",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "16",
+        "label": "",
+        "question": "家庭经济困难",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "17",
+        "label": "",
+        "question": "家庭内部有矛盾",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "18",
+        "label": "",
+        "question": "预期的评选(如三好学生)落空",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "19",
+        "label": "",
+        "question": "受批评或处分",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "20",
+        "label": "",
+        "question": "转学或休学",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "21",
+        "label": "",
+        "question": "被罚款",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "22",
+        "label": "",
+        "question": "升学压力",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "23",
+        "label": "",
+        "question": "与人打架",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "24",
+        "label": "",
+        "question": "遭父母打骂",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "25",
+        "label": "",
+        "question": "家庭给你施加学习压力",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "26",
+        "label": "",
+        "question": "意外惊吓，事故",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "27",
+        "label": "",
+        "question": "如有其他事件请说明",
+        "answers": [
+          "未发生",
+          "没有",
+          "轻度",
+          "中度",
+          "重度",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}

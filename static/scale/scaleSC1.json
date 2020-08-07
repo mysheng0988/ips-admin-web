@@ -1,0 +1,109 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC1",
+    "scaleTitle": "GAD-7筛查量表",
+    "type": "1",
+    "explain": "根据过去两周的情况，请您选择下列症状出现的频率。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "紧张、焦虑或愤怒",
+        "answers": [
+          "根本没有",
+          "有些天存在这些感觉",
+          "超过一半的时间都是如此",
+          "基本每天都是如此"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "易被激怒",
+        "answers": [
+          "根本没有",
+          "有些天存在这些感觉",
+          "超过一半的时间都是如此",
+          "基本每天都是如此"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "害怕什么可怕的事情发生",
+        "answers": [
+          "根本没有",
+          "有些天存在这些感觉",
+          "超过一半的时间都是如此",
+          "基本每天都是如此"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "担心很多事情",
+        "answers": [
+          "根本没有",
+          "有些天存在这些感觉",
+          "超过一半的时间都是如此",
+          "基本每天都是如此"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "疲劳，坐不住",
+        "answers": [
+          "根本没有",
+          "有些天存在这些感觉",
+          "超过一半的时间都是如此",
+          "基本每天都是如此"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "不能停止或不能控制地担心",
+        "answers": [
+          "根本没有",
+          "有些天存在这些感觉",
+          "超过一半的时间都是如此",
+          "基本每天都是如此"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "很难放松",
+        "answers": [
+          "根本没有",
+          "有些天存在这些感觉",
+          "超过一半的时间都是如此",
+          "基本每天都是如此"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}

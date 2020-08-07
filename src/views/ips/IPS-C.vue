@@ -7,30 +7,24 @@
         </el-col>
       </el-row>
       <el-row :gutter="10">
-        <el-col :span="6">
-          <div>姓名：<span>{{patientVO.realName}}</span></div>
+        <el-col :span="8">
+          <div>姓名：<span>{{patient.realName}}</span></div>
         </el-col>
-        <el-col :span="6">
-          <div>年龄：<span>{{age}}</span></div>
+        <el-col :span="8">
+          <div>年龄：<span>{{patient.age}}</span>岁</div>
         </el-col>
-        <el-col :span="6">
-          <div>性别：<span>{{patientVO.gender?"男":"女"}}</span></div>
-        </el-col>
-        <el-col :span="6">
-          <div>身高：<span>{{patientVO.height}}cm</span></div>
-        </el-col>
+        <el-col :span="8">
+          <div>性别：<span>{{patient.gender?"男":"女"}}</span></div>
+        </el-col> 
       </el-row>
       <el-row :gutter="10">
-        <el-col :span="6">
-          <div>体重：<span>{{patientVO.weight}}kg</span></div>
-        </el-col>
-        <el-col :span="6">
+        <el-col :span="8">
           <div>来源医生：<span>{{patient.fromRealName}}</span></div>
         </el-col>
-        <el-col :span="6">
+        <el-col :span="8">
           <div>来源科室：<span>{{patient.fromDeptName}}</span></div>
         </el-col>
-        <el-col :span="6">
+        <el-col :span="8">
           <div>测评项目：<span>{{patient.examinationTypeCode|examinationFormat}}</span></div>
         </el-col>
       </el-row>
@@ -50,6 +44,7 @@
         :patient-id="patientId+''"
         :key="patientId"
         type="C"
+        :gender="patient.gender"
         :medical-record-id="medicalRecordId+''"
         next-title="设备检查"
         @nextStep="nextStep">
@@ -155,7 +150,7 @@
       this.patientId=this.$route.query.id;
       this.medicalRecordId=this.$route.query.medicalRecordId;
       this.getPatientData();
-      //this.getPatientData();
+
     
     },
     computed:{
@@ -190,7 +185,6 @@
         getRecordPatient(this.medicalRecordId).then(res=>{
           if(res.code==200){
             this.patient=res.dataList[0];
-            this.patientVO=res.dataList[0].patientVO;
             let active=res.dataList[0].examinationStatus  
             if(active>9){
               this.active=res.dataList[0].examinationStatus/10;

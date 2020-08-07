@@ -1,0 +1,215 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC21",
+    "scaleTitle": "领悟社会支持量表(PSSS)",
+    "type": "1",
+    "explain": "请您根据自己的实际情况，选择最符合您自身情况的选项。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "在我遇到问题时有些人（领导、亲戚、同事）会出现在我的身旁",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "我能够与有些人（领导、亲戚、同事）共享快乐与忧伤",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "我的家庭能够切实具体地给我帮助",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "在需要时我能够从家庭获得感情上的帮助和支持",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "当我有困难时有些人（领导、亲戚、同事）是安慰我的真正源泉",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "我的朋友们能真正的帮助我",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "在发生困难时我可以依靠我的朋友们",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "label": "",
+        "question": "我能与自己的家庭谈论我的难题",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "label": "",
+        "question": "我的朋友们能与我分享快乐与忧伤",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "10",
+        "label": "",
+        "question": "在我的生活中有些人（领导、亲戚、同事）关心着我的感情",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "11",
+        "label": "",
+        "question": "我的家庭能心甘情愿协助我作出各种决定",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "12",
+        "label": "",
+        "question": "我能与朋友们讨论自己的难题",
+        "answers": [
+          "极不同意",
+          "很不同意",
+          "稍不同意",
+          "中立",
+          "稍同意",
+          "很同意",
+          "极同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}

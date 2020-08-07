@@ -1,0 +1,96 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC11",
+    "scaleTitle": "生活满意度量表（SWLS）",
+    "type": "1",
+    "explain": "请仔细阅读下列题目，选择一个最符合您的答案。 请不要有什么顾虑，认真按您自己的意见回答这些问题。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "我的生活大致符合我的理想",
+        "answers": [
+          "非常不同意",
+          "不同意",
+          "少许不同意",
+          "中立",
+          "少许同意",
+          "同意",
+          "非常同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "我的生活状况非常圆满 ",
+        "answers": [
+          "非常不同意",
+          "不同意",
+          "少许不同意",
+          "中立",
+          "少许同意",
+          "同意",
+          "非常同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "我满意自己的生活",
+        "answers": [
+          "非常不同意",
+          "不同意",
+          "少许不同意",
+          "中立",
+          "少许同意",
+          "同意",
+          "非常同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "直到现在为止，我都能够得到我在生活上希望拥有的重要东西",
+        "answers": [
+          "非常不同意",
+          "不同意",
+          "少许不同意",
+          "中立",
+          "少许同意",
+          "同意",
+          "非常同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "如果我能重新活过，差不多没有东西我想改变",
+        "answers": [
+          "非常不同意",
+          "不同意",
+          "少许不同意",
+          "中立",
+          "少许同意",
+          "同意",
+          "非常同意"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}

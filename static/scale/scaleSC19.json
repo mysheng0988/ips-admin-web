@@ -1,0 +1,611 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC19",
+    "scaleTitle": "焦虑性质问卷",
+    "type": "1",
+    "explain": "根据下列问题，选择最符合您自身情况的描述。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "与别人相处时我害怕迷失自己",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "我常常感受不到自己的存在，这让我十分痛苦",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "我害怕与别人亲密接触",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "我害怕我的父母或恋人不再爱我",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "我害怕与他人交往这会让我不自在",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "当我和别人相处亲密时我会常常想要逃离",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "如果我的父母或恋人不能时时关注我这会让我崩溃",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "label": "",
+        "question": "外界的一切都是危险的",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "label": "",
+        "question": "我强烈的感到有人会伤害我",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "10",
+        "label": "",
+        "question": "别人会闯入我家里做出伤害我的行为",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "11",
+        "label": "",
+        "question": "我不敢在外面吃饭担心会有人给我下药",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "12",
+        "label": "",
+        "question": "每一个与我主动说话的人都是有目的的",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "13",
+        "label": "",
+        "question": "我感到常常有人在背后议论我",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "14",
+        "label": "",
+        "question": "会有人想要设计圈套欺骗我的钱财",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "15",
+        "label": "",
+        "question": "我担心他会突然离开我甚至抛弃我",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "16",
+        "label": "",
+        "question": "我担心我达不到他的要求，他会不再爱我",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "17",
+        "label": "",
+        "question": "我害怕我在他心里不再重要",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "18",
+        "label": "",
+        "question": "我担心他突然出车祸",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "19",
+        "label": "",
+        "question": "我担心他患有重病突然离世",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "20",
+        "label": "",
+        "question": "与他分开我无法应对周围的一切，这会让我不安和痛苦",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "21",
+        "label": "",
+        "question": "我担心他不再支持我的想法了",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "22",
+        "label": "",
+        "question": "我担心他不再理解我的看法了",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "23",
+        "label": "",
+        "question": "我担心他不再陪我在一起了",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "24",
+        "label": "",
+        "question": "我担心他不再照顾我了",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "25",
+        "label": "",
+        "question": "我担心他不再爱我了",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "26",
+        "label": "",
+        "question": "我害怕成为众人的焦点",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "27",
+        "label": "",
+        "question": "我不敢表现的太出色即使我具备这样的能力",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "28",
+        "label": "",
+        "question": "我很害怕我的同性父母",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "29",
+        "label": "",
+        "question": "我无法胜任这样的工作因为我是男孩/女孩",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "30",
+        "label": "",
+        "question": "我常常因为我的性别感到自卑",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "31",
+        "label": "",
+        "question": "我不敢表达我真实的想法，避免我受到他人的伤害",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "32",
+        "label": "",
+        "question": "我不喜欢我的同性父母，我感到他对我充满敌意",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "33",
+        "label": "",
+        "question": "我不敢拒绝同性父母或权威的要求",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "34",
+        "label": "",
+        "question": "我因父母打我而怀恨在心而感到内疚",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "35",
+        "label": "",
+        "question": "当我和好朋友吵架时会感到自责",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "36",
+        "label": "",
+        "question": "当我不能为他人提供力所能及的帮助时感到内疚",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "37",
+        "label": "",
+        "question": "我常常希望和别人公平竞争",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "38",
+        "label": "",
+        "question": "我比别人获得更多帮助时我会感到不道德，难以接受",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "39",
+        "label": "",
+        "question": "我会尽力满足别人对我的需求，否则我会很难过",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "40",
+        "label": "",
+        "question": "我常常以自己的道德准则来要求自己",
+        "answers": [
+          "没有",
+          "很轻",
+          "中等",
+          "偏重",
+          "严重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}

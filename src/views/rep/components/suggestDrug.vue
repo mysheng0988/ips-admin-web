@@ -6,9 +6,18 @@
         <p>治疗方案参考</p>
         <p>T<span>REATMENT PLAN REFERENCE</span></p>
       </div>
-       <template v-for="(item,index) in data">
-        <div :class="item.type==0?'content-title':'content'"  :key="'d'+index" >{{item.content}}</div>
-      </template>
+       <div v-for="(item,index) in data"  :key="'d'+index" >
+        <div v-if="item.type==0" class="item.type==0?'content-title':'content'" >{{item.content}}</div>
+          <div class="sign-box" v-else-if="item.type==100">
+          <div class="sign-name">测评师(签字):</div>
+          <div class="sign-content flex-wrap" >
+            <div>此报告仅供参考,不作为临床诊断。</div>
+            <div>测评师:{{item.name}}</div>
+            <div>测评时间:{{item.createTime}}</div>
+          </div>
+        </div>
+        <div v-else class="content" >{{item.content}}</div>
+      </div>
     </div>
     <div class="pageNum">-{{pageNum}}-</div>   
   </div>
@@ -78,6 +87,25 @@
      font-size: 15px;
     line-height: 30px;
   }
+  .sign-box{
+  padding: 0 70px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+.sign-box .sign-name{
+   text-align: right;
+   line-height: 60px;
+   margin-right: 150px;
+   font-size:24px;
+}
+.sign-box .sign-content{
+  border-top:1px solid #ddd;
+  line-height: 30px;
+  font-size:14px;
+  color:#999;
+}
 </style>
 
 

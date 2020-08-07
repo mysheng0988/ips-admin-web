@@ -1,0 +1,266 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC25",
+    "scaleTitle": "创伤后应激障碍自评量表（PCL-C）",
+    "type": "1",
+    "explain": "下表中的问题和症状是人们通常对一些紧张生活经历的反应。请仔细阅读，选出近1个月内以下症状对您的影响程度。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "过去的一段压力性事件的经历引起的反复发生令人不安的记忆、想法或形象",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "过去的一段压力性事件的经历引起的反复发生令人不安的梦境",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "过去的一段压力性事件的经历仿佛突然间又发生了、又感觉到了(好像您再次体验)",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "当有些事情让您想起过去的一段压力性事件的经历时，你会非常局促不安",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "当有些事清让您想起过去的一段压力性事件的经历时，有身体反应(比如心悸、呼吸困难、出汗)",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "避免想起或谈论过去的那段压力性事件经历或避免产生与之相关的感觉",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "避免那些能使您想起那段压力性事件经历的活动和局面",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "label": "",
+        "question": "记不起压力性经历的重要内容",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "label": "",
+        "question": "对您过去喜欢的活动失去兴趣",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "10",
+        "label": "",
+        "question": "感觉与其他人疏远或脱离",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "11",
+        "label": "",
+        "question": " 感觉到感情麻木或不能对与您亲近的人有爱的感觉",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "12",
+        "label": "",
+        "question": "感觉好像您的将来由于某种原因将被突然中断",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "13",
+        "label": "",
+        "question": "入睡困难或易醒",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "14",
+        "label": "",
+        "question": "易怒或怒气爆发",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "15",
+        "label": "",
+        "question": "注意力很难集中",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "16",
+        "label": "",
+        "question": "处于过度机警或警戒状态",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "17",
+        "label": "",
+        "question": "感觉神经质或易受惊",
+        "answers": [
+          "一点也不",
+          "有一点",
+          "中度的",
+          "相当程度的",
+          "极度的"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}

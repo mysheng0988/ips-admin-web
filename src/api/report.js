@@ -37,3 +37,30 @@ export function getReportListData(data) {
     data: data.condition
   })
 }
+
+
+export function getReportAssess(medicalRecordId) {
+  return request({
+    url:'ips/questionnaire/assess/'+medicalRecordId,
+    method:'get',
+  })
+}
+
+export function getReportPatMsg(medicalRecordId) {
+  return request({
+    url:'ips/report/module/1/'+medicalRecordId,
+    method:'get',
+  })
+}
+export function getReportModuleTwo(medicalRecordId) {
+  return request({
+    url:'ips/report/module/2/'+medicalRecordId,
+    method:'get',
+  })
+}
+export function getReportModuleSix(medicalRecordId) {
+  return request({
+    url:'ips/report/module/6/'+medicalRecordId,
+    method:'get',
+  })
+}

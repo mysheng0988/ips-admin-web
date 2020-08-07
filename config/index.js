@@ -9,7 +9,7 @@ module.exports = {
     proxyTable: {
       '/base': {
        // target: 'http://121.36.46.3/',//后端接口地址
-        target: 'http://192.168.101.2',//后端接口地址
+        target: 'http://192.168.101.2:8888',//后端接口地址
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
           '^/base': '/base',//重写,
@@ -17,7 +17,7 @@ module.exports = {
       },
       '/ips': {
         //target: 'http://121.36.46.3/',//后端接口地址
-        target: 'http://192.168.101.2',//后端接口地址
+        target: 'http://192.168.101.2:8888',//后端接口地址
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
           '^/ips': '/ips',//重写,
@@ -25,7 +25,7 @@ module.exports = {
       },
       '/questionnaireBank': {
         //target: 'http://121.36.46.3/',//后端接口地址
-        target: 'http://192.168.101.2',//后端接口地址
+        target: 'http://192.168.101.2:8888',//后端接口地址
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
           '^/questionnaireBank': '/questionnaireBank',//重写,
@@ -33,7 +33,7 @@ module.exports = {
       },
       '/kg': {
         //target: 'http://121.36.46.3',//后端接口地址
-        target: 'http://192.168.101.71:5000',//后端接口地址
+        target: 'http://192.168.101.111:5000',//后端接口地址
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
           '^/kg': '/kg',//重写,

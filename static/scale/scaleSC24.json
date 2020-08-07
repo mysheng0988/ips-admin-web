@@ -1,0 +1,121 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC24",
+    "scaleTitle": "营养初次问诊表",
+    "type": "1",
+    "explain": "请根据您自身的实际情况，回答下列问题。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "你吃早饭的习惯是",
+        "answers": [
+          "每天吃",
+          "偶尔吃",
+          "从不吃"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "一日三餐进餐的时间是否规律",
+        "answers": [
+          "十分规律",
+          "偶尔没规律",
+          "经常不规律"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "每天所吃食物的搭配情况",
+        "answers": [
+          "肉多蔬菜少",
+          "蔬菜多肉少",
+          "荤素均衡"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "你是否偏食",
+        "answers": [
+          "偏食严重",
+          "很少偏食",
+          "不偏食"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "除一日三餐外的其它摄食情况",
+        "answers": [
+          "除了喝水基本不吃零食",
+          "经常吃零食",
+          "经常吃烧烤等油炸食物"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "经常吃鸡蛋或者喝牛奶吗",
+        "answers": [
+          "天天吃",
+          "一周3～4次",
+          "一周1～2次",
+          "基本不怎么吃"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "经常吃水果吗",
+        "answers": [
+          "天天吃",
+          "一周3～4次",
+          "一周1～2次",
+          "基本不怎么吃"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "label": "",
+        "question": "你的喝水情况如何",
+        "answers": [
+          "经常喝水",
+          "经常喝饮料",
+          "不怎么喝水也不喜欢喝饮料"
+        ],
+        "answer": "",
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "label": "",
+        "question": "你经常喝酒吗",
+        "answers": [
+          "经常喝酒",
+          "偶尔喝一次酒",
+          "不喝酒"
+        ],
+        "answer": "",
+        "nextNum": 0
+      }
+    ]
+  }
+}

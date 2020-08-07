@@ -1,13 +1,13 @@
 <template>
   <div class="app-container">
     <div class="container">
-    <div class="answer-box" v-if="data.type==1" >
-      <div class="title">{{data.scaleTitle}}</div>
-      <div class="explain">指导语:{{data.explain}}</div>
-      <div class="questionBox" v-for="(item,index) in data.problem" :key="index">
-        <div class="question">{{index+1}}、{{item.question}}</div>
-        <el-radio-group v-model="item.answer" disabled >
-          <div class="question" v-for="(itemData,indexData) in item.answers" :key="indexData">
+    <div class="answer-box" v-if="data.type==0" >
+      <div class="title">{{data.name}}</div>
+      <div class="explain">指导语:{{data.instruction}}</div>
+      <div class="questionBox" v-for="(item,index) in data.questions" :key="index">
+        <div class="question">{{index+1}}、{{item.answer.question}}</div>
+        <el-radio-group v-model="item.answer.answer" disabled >
+          <div class="question" v-for="(itemData,indexData) in item.answer.answers" :key="indexData">
             <el-radio :label="indexData" >{{itemData}}</el-radio>
           </div>
         </el-radio-group>
@@ -132,7 +132,11 @@
     methods: {
       getQuestionData(param){
         getQuestionnaire(param).then(res=>{
-           this.data=JSON.parse(res.dataList[0]);
+          let data=res.dataList[0];
+          for(let item of data.questions ){
+            item.answer=JSON.parse(item.answer)
+          }
+           this.data=data;
          })
       }
     }

@@ -42,3 +42,27 @@ export function updataReportData(data) {
     data:data
   })
 }
+
+
+
+export function medicationsTreatment(params) {
+  return request({
+    url:'ips/report/medicationsTreatment/'+params.medicalRecordId,
+    method:'put',
+  })
+}
+//药品过滤
+export function filterParam(medicalRecordId) {
+  return request({
+    url:'ips/report/filterParam/'+medicalRecordId,
+    method:'get',
+  })
+}
+//保存过滤药品
+export function saveMedicationsTreatment(data) {
+  return request({
+    url:'ips/report/medicationsTreatment',
+    method:'put',
+    data:data
+  })
+}

@@ -6,9 +6,9 @@
       <el-progress v-if="percentage" :percentage="percentage" :format="formatPercentage"></el-progress>
       <div class="question" v-if="problemData.label!=''">{{problemData.label}}</div>
       <div class="question">问题：{{problemData.question}}</div>
-      <el-radio-group v-model="problemData.answer" @change="handleChange" >
-        <div class="question" v-for="(item,index) in problemData.answers" :key="index">
-          <el-radio :label="index" >{{item}}</el-radio>
+      <el-radio-group v-model="problemData.answer" >
+        <div class="question" v-for="(item,index) in problemData.answers" :key="index" >
+          <el-radio :label="index" @change="handleChange" >{{item}}</el-radio>
         </div>
       </el-radio-group>
     </div>
@@ -52,9 +52,9 @@
         </div>
       </div>
      <div v-else>
-       <el-radio-group v-model="problemData.answer" @change="handleChange">
-         <div class="question" v-for="(item,index) in problemData.answers" :key="index">
-           <el-radio :label="index" >{{item}}</el-radio>
+       <el-radio-group v-model="problemData.answer">
+         <div class="question" v-for="(item,index) in problemData.answers" :key="index"  >
+           <el-radio @change="handleChange" :label="index" >{{item}}</el-radio>
          </div>
        </el-radio-group>
      </div>
@@ -271,26 +271,26 @@
                optionValue:[],
                returnValue:[],
                remark:"",
-               order:"",
+               displayOrder:"",
              }
             if(this.data.type==1){
               qr.optionOrderList.push(item.answer);
               qr.optionValue.push(item.answers[item.answer]);
               qr.returnValue.push(item.question);
-              qr.order=item.questionNum;
+              qr.displayOrder=item.questionNum;
             } else if(this.data.type==3){
               if(item.data.length!=0){
                 for(let itemData of item.data){
                   qr.optionOrderList.push(itemData.answer);
                   qr.optionValue.push(itemData.answers[item.answer]);
                   qr.returnValue.push(itemData.question);
-                  qr.order=item.questionNum;
+                  qr.displayOrder=item.questionNum;
                 }
               }else{
                 qr.optionOrderList.push(0);
                 qr.optionValue.push("无");
                 qr.returnValue.push("");
-                qr.order=item.questionNum;
+                qr.displayOrder=item.questionNum;
               }
 
             } else if(this.data.type==4){
@@ -299,7 +299,7 @@
               qr.optionValue.push(item.answers[item.answer[0]]);
               qr.optionValue.push(item.answers[item.answer[1]]);
               qr.returnValue.push(item.question);
-              qr.order=item.questionNum;
+              qr.displayOrder=item.questionNum;
 
             }else{
               for(let itemData of item.data){
@@ -310,7 +310,7 @@
                     qr.remark=itemData.answer;
                   }
                   qr.returnValue.push(item.question);
-                  qr.order=item.questionNum;
+                  qr.displayOrder=item.questionNum;
               }
             }
             param.questionResultList.push(qr);
@@ -362,6 +362,7 @@
   }
   .question{
     line-height: 45px;
+      font-size: 18px;
   }
   .question label{
     line-height: 40px;
@@ -376,6 +377,7 @@
   .symptom{
     margin-left: 20px;
     line-height: 45px;
+      font-size: 18px;
   }
   .el-checkbox{
     margin-right: 5px;

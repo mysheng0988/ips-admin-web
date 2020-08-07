@@ -76,7 +76,8 @@ export default {
   },
   created() {
       let id=this.$route.query.id;
-      getTempInfo(id).then(res=>{
+      if(id){
+         getTempInfo(id).then(res=>{
           if(res.code==200){
               this.templeteObj=res.dataList[0];
           }else{
@@ -84,6 +85,8 @@ export default {
           }
           
       })
+      }
+     
   },
   methods: {
     saveTempData() {
@@ -94,6 +97,7 @@ export default {
           questionnaireQuestions=[...questionnaireQuestions,...item.questionnaireQuestionList]
       }
       let param = {
+        id:this.templeteObj.id,
         number: this.templeteObj.number,
         name:this.templeteObj.name,
         type: this.templeteObj.type,
@@ -107,7 +111,7 @@ export default {
           this.templeteObj = Object.assign({}, defaultTemplete);
           this.templeteObj.questionnaireQuestions=[];
            this.$store.commit("delete_tabs", this.$route.path);
-            this.$router.push("/que/tempIndex");
+            this.$router.push("/que/tIndex");
         }})  
       }else{
           insertQuestionnaire(param).then(res => {
@@ -115,7 +119,7 @@ export default {
           this.templeteObj = Object.assign({}, defaultTemplete);
           this.templeteObj.questionnaireQuestions=[];
           this.$store.commit("delete_tabs", this.$route.path);
-          this.$router.push("/que/tempIndex");
+          this.$router.push("/que/tIndex");
         }
       });
       }
@@ -130,28 +134,28 @@ export default {
           preQuestionNum:0,
           questionnaireQuestionList: []
         };
-        this.templeteObj.questionnaireQuestions.push(param);
+        this.templeteObj.questionList.push(param);
         this.instruction = "";
       } else {
         this.$message.warning("请输入题号");
       }
     },
     handleClose(index, index1) {
-      this.templeteObj.questionnaireQuestions[index].questionnaireQuestionList.splice(index1, 1);
+      this.templeteObj.questionList[index].questionnaireQuestionList.splice(index1, 1);
     },
     addQusetionNum(index) {
-      if (this.templeteObj.questionnaireQuestions[index].questionNum) {
+      if (this.templeteObj.questionList[index].questionNum) {
         let param = {
-          instruction: this.templeteObj.questionnaireQuestions[index].instruction,
-          questionNum: this.templeteObj.questionnaireQuestions[index]
+          instruction: this.templeteObj.questionList[index].instruction,
+          questionNum: this.templeteObj.questionList[index]
             .questionNum,
-          nextQuestionNum: this.templeteObj.questionnaireQuestions[index].nextQuestionNum,
-          preQuestionNum: this.templeteObj.questionnaireQuestions[index].preQuestionNum
+          nextQuestionNum: this.templeteObj.questionList[index].nextQuestionNum,
+          preQuestionNum: this.templeteObj.questionList[index].preQuestionNum
         };
-        this.templeteObj.questionnaireQuestions[index].questionnaireQuestionList.push(param);
-        this.templeteObj.questionnaireQuestions[index].questionNum++;
-        this.templeteObj.questionnaireQuestions[index].nextQuestionNum = 0;
-        this.templeteObj.questionnaireQuestions[index].preQuestionNum = 0;
+        this.templeteObj.questionList[index].questionnaireQuestionList.push(param);
+        this.templeteObj.questionList[index].questionNum++;
+        this.templeteObj.questionList[index].nextQuestionNum = 0;
+        this.templeteObj.questionList[index].preQuestionNum = 0;
       } else {
         this.$message.warning("请输入题号");
       }

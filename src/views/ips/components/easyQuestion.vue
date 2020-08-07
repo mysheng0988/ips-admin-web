@@ -4,21 +4,21 @@
       <el-form-item  style="text-align: center">
         <div class="ips-input">{{questionNo==1?"初筛首访问卷":"首访问卷"}}</div>
         <el-button type="primary" @click="startQuestion">{{completeQuestionnaire?'重测问卷':'开始问卷'}}</el-button>
-         <el-button type="primary" :class="completeQuestionnaire?'':'disable'" @click="handleRecord(true,questionNo)">测试记录</el-button>
+         <!-- <el-button type="primary" :class="completeQuestionnaire?'':'disable'" @click="handleRecord(true,questionNo)">测试记录</el-button> -->
          <el-button type="primary"  @click="qrcodeData">扫码答题</el-button>
       </el-form-item>
       <el-form-item style="text-align: center">
-        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
+        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
         <el-button type="primary" size="medium" @click="handleNext">下一步，{{nextTitle}}</el-button>
       </el-form-item>
     </el-form>
     <el-dialog
       title="问卷"
       :visible.sync="dialogVisible"
-      width="700px">
-      <question :scale-id="scaleId"  :medical-record-id="medicalRecordId"
+      width="60%">
+      <question2 :scale-id="scaleId+''"  :medical-record-id="medicalRecordId"
         :gender="gender"
-        :patient-id="patientId" @closeDialog="closeDialog" @openDialog="openDialog"></question>
+        :patient-id="patientId" @closeDialog="closeDialog" @openDialog="openDialog"></question2>
 
     </el-dialog>
     <el-dialog
@@ -61,8 +61,10 @@
         <el-button type="primary" @click="handleNextItem()">继续测试量表</el-button>
       </span>
     </el-dialog>
-     <el-dialog :visible.sync="qrcodeDialog" width="420px">
-      <qrcode :q-text="qText" :q-size="qSize" ></qrcode>
+    <el-dialog :visible.sync="qrcodeDialog" width="240px">
+      <!-- <qrcode :q-text="qText" :q-size="qSize" ></qrcode> -->
+        <el-image class="qrcode" :src="qrcodePath"></el-image>
+        <p class="qrcode-text">扫码关注公众号答题</p>
     </el-dialog>
     <el-dialog
       title="提示"
@@ -88,10 +90,11 @@
 import {getMedicalRecord,scaleConfirm,getScaleSelectData,appendQuestionSubmit,appendQuestion} from '@/api/question'
 import {getScaleTypeJson} from '@/api/getJson'
   import qrcode from '@/components/qrcode/qrcode'
-  import question from './question';
+  import question2 from './question2';
+   import qrcodePath from "../../../assets/images/qrcode-gzh.jpg"
   export default {
     name: "easyQuestion",
-    components: {question,qrcode},
+    components: {question2,qrcode},
     props: {
       type: {
         type: String,
@@ -119,6 +122,7 @@ import {getScaleTypeJson} from '@/api/getJson'
         filterText:"",
         selectedData:[],
         scaleNoList:[],
+        qrcodePath:qrcodePath,
         data: [],
         siblingsNumber:"",
         tipsData:{},
@@ -130,7 +134,7 @@ import {getScaleTypeJson} from '@/api/getJson'
         dialogVisible:false,
         dialogVisible2:false,
         completeQuestionnaire:false,
-        scaleId:"",
+        scaleId:"2",
         questionNo:""
       };
     },
@@ -157,16 +161,15 @@ import {getScaleTypeJson} from '@/api/getJson'
       initData(){
         getMedicalRecord(this.medicalRecordId).then(res=>{
           if(res.code==200){
-              this.gender=res.dataList[0].patientVO.gender;
               this.questionNo=res.dataList[0].questionnaireNo;
                this.scaleNoList=res.dataList[0].scaleNoList;
               this.completeQuestionnaire=res.dataList[0].completeQuestionnaire;
-              this.siblingsNumber=res.dataList[0].patientVO.siblingsNumber;
           }
         });
       },
       startQuestion(){
-        this.scaleId=this.questionNo;
+        //this.scaleId=this.questionNo;
+       // console.log( this.scaleId)
         this.dialogVisible=true;
       },
       openDialog(data){
@@ -411,7 +414,7 @@ import {getScaleTypeJson} from '@/api/getJson'
   }
   .tips-box{
     line-height: 35px;
-    font-size: 16px;
+    font-size: 18px;
     padding: 0 18px;
   }
   .tips-box .title{
@@ -419,5 +422,13 @@ import {getScaleTypeJson} from '@/api/getJson'
   }
   .tips-box .radio{
     line-height: 35px;
+  }
+   .qrcode-text{
+    margin-bottom:  20px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+    font-weight: bold;
   }
 </style>

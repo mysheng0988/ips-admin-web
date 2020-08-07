@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-  import qrcode from '@/assets/images/logo-qrcode.png'
+  import qrcode from "@/assets/images/qrcode-gzh.jpg"
   import {getHospitalData} from '@/api/manage'
    import {mapGetters} from 'vuex'
   export default {
@@ -28,7 +28,6 @@
       data:{
         
       },
-
     },
     data(){
       return {
@@ -42,7 +41,7 @@
       ])
     },
     mounted(){
-      getHospitalData(this.info.hospitalId).then(res=>{
+      getHospitalData(this.info.organizationId).then(res=>{
         if(res.code==200){
          
           this.hospitalData=res.dataList[0]

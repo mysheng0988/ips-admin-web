@@ -152,7 +152,6 @@ export default {
       getTempDetail(num).then(res => {
         if (res.code == 200) {
           let data = res.dataList[0];
-          console.log(data.questionList);
           for (let item of data.questionList) {
             item.question = JSON.parse(item.question);
           }

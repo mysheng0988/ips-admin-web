@@ -27,7 +27,7 @@
           <template slot-scope="scope">{{scope.$index+1}}</template>
         </el-table-column>
          <el-table-column label="患者姓名" align="center">
-          <template slot-scope="scope">{{scope.row.patientVO.realName}}</template>
+          <template slot-scope="scope">{{scope.row.realName}}</template>
         </el-table-column>
         <el-table-column label="创建时间" align="center">
           <template slot-scope="scope">{{scope.row.createTime}}</template>
@@ -136,7 +136,7 @@
           path: '/rep/'+path,
           query: {
             id: data.id,
-            name:data.patientVO.realName,
+            name:data.realName,
             createTime:data.createTime.substring(0,10)+" 00:00:00"
           }
         })

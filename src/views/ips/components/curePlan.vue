@@ -13,11 +13,11 @@
               <p>{{index+1}}、{{item.title}}:</p>
               <p v-for="(item1,index2) in item.data" :key="index2">{{item1}}</p>
             </div>
-            <p v-else>{{item}}</p>
+            <p v-else>{{index+1}}、{{item}}</p>
           </div>
         </div>
       </el-form-item>
-      <el-form-item label="躯体化症状药物方案:" v-if="initData.somatizationSymptomsDrugRegimen.data&&initData.somatizationSymptomsDrugRegimen.data.length>0">
+      <el-form-item label="躯体化症状药物方案:" v-if="initData.somatizationSymptomsDrugRegimen&&initData.somatizationSymptomsDrugRegimen.data&&initData.somatizationSymptomsDrugRegimen.data.length>0">
         <div class="text-box">
           <div v-for="(item1,index1) in initData.somatizationSymptomsDrugRegimen.data" :key="index1">
             <div class="box-title">{{item1.title}}</div>
@@ -218,7 +218,7 @@
         </div>
       </el-form-item>
       <el-form-item style="text-align: center">
-        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
+        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
         <el-button type="primary" size="medium" @click="submitReportData">确认签名</el-button>
       </el-form-item>
     </el-form>
@@ -278,7 +278,10 @@ import {
   saveContraindications,
   saveFilter,
   updataData,
-  updataReportData
+  updataReportData,
+  medicationsTreatment,
+  saveMedicationsTreatment,
+  filterParam
 } from "@/api/analysis";
 const defaultPlan = {
   id: "",
@@ -292,11 +295,12 @@ const defaultPlan = {
   complete: true,
   followUpRecommendations: {
     data: [
-      "第1周随访，观察疗效、药物反应，根据随访情况可能需调整用药方案和心理治疗内容。",
-      "第2周随访，观察疗效、药物反应，根据随访情况可能需调整用药方案和心理治疗内容。",
-      "第1个月随访，观察疗效、药物反应，根据随访情况可能需调整用药方案和心理治疗内容。",
-      "第2个月随访，观察疗效、药物反应，根据随访情况可能需调整用药方案和心理治疗内容。",
-      "第3个月随访，观察疗效、药物反应，根据随访情况可能需调整用药方案和心理治疗内容。"
+       "通过远程随访平台定期了解患者病情变化，指导患者合理用药或科学康复：",
+      "1、定期采集患者病情变化、相关临床指标和用药情况、药物不良反应发生情况。",
+      "2、根据疾病改善情况、相关临床指标和用药情况、药物不良反应发生情况，给予患者个体化用药指导、心理/物理治疗指导和生活方式指导。",
+      "3、了解患者对药物的了解程度，对患者进行用药教育。因患者依从性差导致的问题，通过与患者沟通和教育改善依从性。",
+      "4、根据患者病情变化及药物不良反应等情况给与患者个体化药物治疗方案调整建议。",
+     
     ]
   } //随访建议
 };
@@ -409,35 +413,51 @@ export default {
       this.selectedDurgLeft = [];
     },
     leftDrugChange(val) {
-      this.selectedDurgLeft.push(val);
+      if(val.length==0){
+        this.selectedDurgLeft=[]
+      }else{
+         this.selectedDurgLeft.push(val);
+      }
+     
     },
     drugProgram() {
-      if (this.data.length == 0) {
-        saveContraindications([], this.medicalRecordId).then(res => {
+      //if (this.data.length == 0) {
+        filterParam(this.medicalRecordId).then(res => {
           if (res.code == 200) {
-            this.data2 = [];
-            for (let item of res.dataList) {
+            this.data=res.dataList[0].contraindicationsList;
+           // this.data2=res.dataList[0].avoidInteractionDrugNameSet;
+            this.dialogVisible = true;
+             this.data2 = [];
+             for (let item of res.dataList[0].avoidInteractionDrugNameSet) {
               let param = {};
               param.key = item;
               param.label = item;
               this.data2.push(param);
             }
-            this.dialogVisible = false;
-            this.dialogVisible2 = true;
+            // this.dialogVisible = false;
+            // this.dialogVisible2 = true;
           }
         });
-      } else {
-        this.dialogVisible = true;
-      }
+      // } else {
+      //   this.dialogVisible = true;
+      // }
     },
     saveFilterData() {
-      this.selectedDurg;
+       let param1 = this.$refs.tree.getCheckedNodes(true);
+       let tabooDiseases=[];
+       for(let item of param1){
+         tabooDiseases.push(item.name)
+       }
       if (this.selectedDurgLeft.length != 0) {
         this.$message.warning("选择药物！");
         return;
       }
-      let param = this.selectedDurg;
-      saveFilter(param, this.medicalRecordId).then(res => {
+        let param={
+         avoidInteractionDrugs:this.selectedDurg,
+         tabooDiseases:tabooDiseases,
+         medicalRecordId:this.medicalRecordId,
+       }
+      saveMedicationsTreatment(param).then(res => {
         this.drugPlan = [];
         if (res.code == 200) {
           this.drugPlan = res.dataList;
@@ -445,30 +465,31 @@ export default {
         } else {
           this.drugPlan.push(res.message);
           this.dialogVisible2 = false;
-          // this.$message.warning(res.message)
         }
       });
     },
     saveContraindicationsData() {
-      let param = this.$refs.tree.getCheckedNodes(true);
-      saveContraindications(param, this.medicalRecordId).then(res => {
-        if (res.code == 200) {
-          this.data2 = [];
-          for (let item of res.dataList) {
-            let param = {};
-            param.key = item;
-            param.label = item;
-            this.data2.push(param);
-          }
-          this.dialogVisible = false;
-          this.dialogVisible2 = true;
-        } else {
-          this.dialogVisible = false;
-          this.dialogVisible2 = false;
-          this.drugPlan[0] = res.message;
-          //this.$message.warning(res.message)
-        }
-      });
+     
+      this.dialogVisible = false;
+      this.dialogVisible2 = true;
+      // saveContraindications(param, this.medicalRecordId).then(res => {
+      //   if (res.code == 200) {
+      //     this.data2 = [];
+      //     for (let item of res.dataList) {
+      //       let param = {};
+      //       param.key = item;
+      //       param.label = item;
+      //       this.data2.push(param);
+      //     }
+      //     this.dialogVisible = false;
+      //     this.dialogVisible2 = true;
+      //   } else {
+      //     this.dialogVisible = false;
+      //     this.dialogVisible2 = false;
+      //     this.drugPlan[0] = res.message;
+      //     //this.$message.warning(res.message)
+      //   }
+      // });
     },
     addText1(key) {
       this.initData[key].data.push("");
@@ -520,15 +541,12 @@ export default {
       });
       let param = {};
       param.medicalRecordId = this.medicalRecordId;
-      param.source = 1;
-      param.patientId = this.patientId;
-      analysisFirstData(param)
+      medicationsTreatment(param)
         .then(res => {
           loading.close();
-          let data = {};
           if (res.code == 200) {
-            data = res.dataList[0];
-            this.data = data.contraindicationsList;
+           let data = res.dataList[0];
+            //this.data = data.contraindicationsList;
             this.initData.id = data.id;
             this.initData.medicalRecordId = data.medicalRecordId;
             this.initData.psychosomaticTherapy = this.cheakedEmpty(
@@ -546,13 +564,16 @@ export default {
             this.initData.otherSuggestion = this.cheakedEmpty(
               data.otherSuggestion
             );
-            this.initData.somatizationSymptomsDrugRegimen=JSON.parse(data.somatizationSymptomsDrugRegimen)
+            if(data.somatizationSymptomsDrugRegimen){
+              this.initData.somatizationSymptomsDrugRegimen=JSON.parse(data.somatizationSymptomsDrugRegimen)
+            }
+           // this.initData.somatizationSymptomsDrugRegimen=JSON.parse(data.somatizationSymptomsDrugRegimen)
             // this.initData.somatizationSymptomsDrugRegimen = this.cheakedEmpty(
             //   data.somatizationSymptomsDrugRegimen
             // ); //躯体化治疗方案
-            if (data.noneMedicationPlanPrompt) {
-              this.drugPlan[0] = data.noneMedicationPlanPrompt;
-            }
+            // if (data.noneMedicationPlanPrompt) {
+            //   this.drugPlan[0] = data.noneMedicationPlanPrompt;
+            // }
           }
         })
         .catch(err => {

@@ -2,14 +2,14 @@
   <div style="margin-top: 50px">
     <el-form  :rules="rules" ref="productInfoForm" label-width="120px" >
         <el-form-item style="text-align: center" >
-          <div class="ips-input">植物神经功能检测--》检测科室:{{info.deptName}}</div>
+          <div class="ips-input">植物神经功能检测--》检测科室:{{info.departmentName}}</div>
           <el-button type="primary" @click="verificationCode" >获取验证码</el-button>
           <el-button type="primary" ><a href="HRV://">开始检测</a></el-button>
           <el-button type="primary" @click="handleResult">记录结果</el-button>
 
         </el-form-item>
         <el-form-item style="text-align: center" >
-           <div class="ips-input">脑电功能检测--》检测科室:{{info.deptName}}</div>
+           <div class="ips-input">脑电功能检测--》检测科室:{{info.departmentName}}</div>
           <el-button type="primary" @click="verificationCode" >获取验证码</el-button>
           <el-button type="primary" ><a href="EEG://">开始检测</a></el-button>
            <el-button type="primary" @click="getEEGData">记录结果</el-button>
@@ -91,7 +91,14 @@
     },
     methods: {
       handleResult(){
-          this.getHRVData()
+           getHRV(this.medicalRecordId).then(res=>{
+          if(res.code==200){
+              this.dialogVisible=true;
+              this.hrvPath="data:image/png;base64,"+res.dataList[0].resultImageUrl;
+          }else{
+            this.$message.warning("暂时没有数据")
+          }
+        })
       },
       getHRVData(){
         getHRV(this.medicalRecordId).then(res=>{
@@ -135,20 +142,10 @@
                }
             })
             
-          }else{
-             this.$message.warning("请先完成设备检查")
-          }
+           }else{
+              this.$message.warning("请先完成设备检查")
+           }
         })
-        //  getRecordPatient(this.medicalRecordId).then(res=>{
-        //    if(res.code==200){
-        //      if(res.dataList[0].examinationStatus>10){
-        //          this.$emit('nextStep');
-        //      }else{
-        //        this.$message.warning("请先完成设备检查")
-        //      }
-
-        //    }
-        // })
       },
       handleUpdataState(){
 

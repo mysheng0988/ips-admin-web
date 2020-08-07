@@ -1,26 +1,26 @@
 import request from '@/utils/request'
 export function queryHospital(data) {
   return request({
-    url:'base/hospital/list/'+data.pageNum+"/"+data.pageSize+"?name="+data.name,
+    url:'base/organization/list/'+data.pageNum+"/"+data.pageSize+"?name="+data.name,
     method:'get',
   })
 }
 export function getHospitalData(hospitalId) {
   return request({
-    url:'base/hospital/'+hospitalId,
+    url:'base/organization/'+hospitalId,
     method:'get',
   })
 }
 export function saveHospital(data) {
   return request({
-    url:'base/hospital',
+    url:'base/organization',
     method:'post',
     data:data,
   })
 }
 export function updateHospital(data) {
   return request({
-    url:'base/hospital',
+    url:'base/organization',
     method:'put',
     data:data,
   })

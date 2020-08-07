@@ -4,42 +4,31 @@
      
       <el-form-item style="text-align: center" v-for="(item,index) of scaleNoList" :key="index">
            <div class="ips-input" >{{item.name}}</div>
-           <el-button type="primary" @click="startQuestion(item.number)">
-             {{item.completed?"重新测评":"开始测试"}}</el-button>
-              <el-button type="primary" :class="item.completed?'':'disable'" @click="handleRecord(false,item)">记录结果</el-button>
-        <!-- <div v-if="item!=2201">
-            <div class="ips-input" >{{arrTitle[item-1]}}</div>
-            <el-button type="primary" @click="startQuestion(item)">
-            {{completeScaleNoList.includes(item)?"重新测评":"开始测试"}}</el-button>
-            <el-button type="primary" :class="completeScaleNoList.includes(item)?'':'disable'" @click="handleRecord(false,item)">记录结果</el-button>
-        </div>
-        <div v-else>
-          <div class="ips-input" >家庭教养方式量表EMBU</div>
-           <el-button type="primary" @click="startQuestion(item)">
-            {{completeScaleNoList.includes(2201)?"重新测评":"开始测试"}}</el-button>
-            <el-button type="primary" :class="completeScaleNoList.includes(2201)?'':'disable'" @click="handleRecord(false,2201)">记录结果</el-button>
-        </div> -->
+           <el-button type="primary" @click="startQuestion(item.number)" v-if="!item.completed">
+             开始测试</el-button>
+             <el-button v-else type="success" @click="startQuestion(item.number)">
+             重新测评</el-button>
         
         
        </el-form-item>
      
       <el-form-item style="text-align: center">
-        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
+        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
         <el-button type="primary" size="medium" @click="handleNext">下一步，{{nextTitle}}</el-button> </el-form-item>
     </el-form>
     <el-dialog
       title="答题卡"
       :visible.sync="dialogVisible"
        :close-on-click-modal="false"
-      width="700px">
+      width="60%">
       <question-scale :scale-id="scaleId"  :medical-record-id="medicalRecordId"
-        :patient-id="patientId" @closeDialog="closeDialog" ref="scale"></question-scale>
+        :patient-id="patientId" @closeDialog="closeDialog" ref="scale" :key="scaleId"></question-scale>
 
     </el-dialog>
     <el-dialog
       title="追加问题"
       :visible.sync="dialogVisible2"
-      width="40%">
+      width="50%">
       <div class="answer-box" v-if="problemData.length>0 ">
         <div class="question">{{problemNum+1}}、{{problemData[problemNum].question}}</div>
         <el-radio-group v-model="problemData[problemNum].answer"  @change="handleChange()">
@@ -70,9 +59,6 @@
    submitAdditionalQuestions,
    getScaleSelectedData,
    } from '@/api/question'
-  const defaultProductParam = {
-    
-  };
   export default {
     name: "scale",
     props: {
@@ -122,13 +108,7 @@
             this.scaleNoList=res.dataList;
          }
        })
-        // getMedicalRecord(this.medicalRecordId).then(res=>{
-        //   if(res.code==200){
-        //       this.scaleState=res.dataList[0].scaleNoList.length===res.dataList[0].completeScaleNoList.length;
-        //       this.siblingsNumber=res.dataList[0].patientVO.siblingsNumber;
-        //   }
-            
-        // });
+      
       },
       handleRecord(questionnaire,data){
           if(data.completed){
@@ -294,6 +274,7 @@
   }
   .question{
     line-height: 45px;
+    font-size: 18px
   }
   .question label{
     line-height: 40px;

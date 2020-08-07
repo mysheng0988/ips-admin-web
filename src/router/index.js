@@ -7,6 +7,7 @@ Vue.use(Router)
 import Layout from '../views/layout/Layout'
 export const constantRouterMap = [
   {path: '/pdf2', component: () => import('@/views/rep/pdf2'), hidden: true, meta: {title: '报告分析', icon: 'home',roleId:[1,13,18]}},
+  {path: '/siftPdf2', component: () => import('@/views/rep/siftPdf2'), hidden: true, meta: {title: '报告分析', icon: 'home',roleId:[1,13,18]}},
   {path: '/login', component: () => import('@/views/login/index'), hidden: true,roleId:[1,13,18]},
   {
     path: '',
@@ -207,6 +208,7 @@ export const constantRouterMap = [
     redirect: '/que/index',
     name: 'que',
     meta: {title: '题库管理', icon: 'param',roleId:[1,18,13]},
+    hidden:true,
     children: [
       {
         path: 'index',
@@ -237,6 +239,7 @@ export const constantRouterMap = [
         name: 'detail',
         component: () => import('@/views/que/tempDetail'),
         meta: {title: '模板详情',icon:'sms-new',roleId:[1,18,13]},
+        hidden:true,
       },
     ]
   },
@@ -277,7 +280,7 @@ export const constantRouterMap = [
         name: 'gls',
         component: () => import('@/views/gls/gls'),
         meta: {title: '郭老师测试', icon: 'icon-dep',roleId:[13]},
-        hidden:false
+        hidden:true
       },
     ]
   },

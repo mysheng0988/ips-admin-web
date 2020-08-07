@@ -1,6 +1,6 @@
 <template> 
   <div class="item-box flex-center">
-      <div class="chart"> <ve-gauge :data="chartData" width="100%" height="100%" :settings="chartSettings"></ve-gauge></div>
+      <div class="chart"> <ve-gauge :data="chartData" width="100%" height="100%" :settings="chartSettings" ></ve-gauge></div>
       <div class="content">
           <div class="content-title">{{data.questionnaireName}}</div>
           <div>得分：{{data.score}}分</div>
@@ -20,6 +20,15 @@
     },
     data(){
       return {
+         extend2: {
+             toolbox: {
+              show: true,
+              feature: {
+              restore: {},
+              saveAsImage: {}
+          }
+         },
+         },
         chartSettings:{
           labelMap: {
           'score': '得分'
@@ -50,7 +59,7 @@
               detail:{
                 fontSize:12,
                 formatter: function (value) {
-                    return "总分:"+value+"分";
+                    return "得分:"+value+"分";
                 }
               }
             }

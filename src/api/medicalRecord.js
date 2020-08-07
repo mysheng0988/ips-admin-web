@@ -28,3 +28,12 @@ export function medicalRecordPatientList(data) {
     params:data
   })
 }
+
+
+export function savePatientComplaint(data) {
+  return request({
+    url:'ips/medicalRecord/patientComplaint',
+    method:'post',
+    data:data
+  })
+}

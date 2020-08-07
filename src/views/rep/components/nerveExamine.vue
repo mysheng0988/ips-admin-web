@@ -6,11 +6,11 @@
         <p>自主神经检查</p>
         <p>A<span>UTONOMIC NERVE EXAMNATION</span></p>
       </div>
-      <div class="content-title">1.自述自主神经症状：</div>
+      <!-- <div class="content-title">1.自述自主神经症状：</div>
       <div class="content indent"> 
           {{data.symptom==""?"暂无自主神经症状":data.symptom}}
       </div>
-      <div class="content-title">2.HRV检测结果：</div>
+      <div class="content-title">2.HRV检测结果：</div> -->
       <el-image class="img" :src="base64"></el-image>
       <!-- <img class="img" :src="data.resultImageUrl" crossorigin="anonymous"> -->
     </div>

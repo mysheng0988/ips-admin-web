@@ -1,0 +1,123 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC8",
+    "scaleTitle": "阿森斯失眠量表（AIS）",
+    "type": "1",
+    "explain": "根据近一个月的睡眠情况，当下列症状每周出现3次及以上时，请您选择下列症状的严重程度，若症状出现低于每周3次请选择“第一项，没问题/正常”。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "入睡时间（关灯后到睡着的时间）",
+        "answers": [
+          "没问题",
+          "轻微延迟",
+          "显著延迟",
+          "延迟严重或没有睡觉"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "夜间苏醒",
+        "answers": [
+          "没问题",
+          "轻微影响",
+          "显著影响",
+          "延迟影响或没有睡觉"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "比期望的时间早醒 ",
+        "answers": [
+          "没问题",
+          "轻微提早",
+          "显著提早",
+          "严重提早或没有睡觉"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "总睡眠时间",
+        "answers": [
+          "足够",
+          "轻微不足",
+          "显著不足",
+          "严重不足或没有睡觉"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "总睡眠质量（无论睡多长）",
+        "answers": [
+          "满意",
+          "轻微不满",
+          "显著不满",
+          "严重不满或没有睡觉"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "白天情绪",
+        "answers": [
+          "正常",
+          "轻微低落",
+          "显著低落",
+          "严重低落"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "白天身体功能（体力或精神：如记忆力、认知力和注意力等）",
+        "answers": [
+          "足够",
+          "轻微影响",
+          "显著影响",
+          "严重影响"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "label": "",
+        "question": "白天思睡",
+        "answers": [
+          "无思睡",
+          "轻微思睡",
+          "显著思睡",
+          "严重思睡"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}

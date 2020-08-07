@@ -7,52 +7,32 @@
           <el-row :gutter="20">
             <el-col :span="8">
               <el-form-item class="flex-item" label="姓名:">
-                <p>{{patientVo.realName}}</p>
+                <p>{{patientData.realName}}</p>
               </el-form-item>
             </el-col>
             <el-col :span="8">
               <el-form-item class="flex-item" label="性别:">
-                <p>{{patientVo.gender?"男":"女"}}</p>
+                <p>{{patientData.gender?"男":"女"}}</p>
               </el-form-item>
             </el-col>
             <el-col :span="8">
               <el-form-item class="flex-item" label="年龄:">
-                <p>{{patientVo.birthday | formatAge}}</p>
+                <p>{{patientData.age}}</p>
               </el-form-item>
             </el-col>
-            <el-col :span="8" v-if="patientVo.maritaStatus">
-              <el-form-item class="flex-item" label="婚姻:">
-                <p>{{patientVo.maritaStatus}}</p>
-              </el-form-item>
-            </el-col>
-            <el-col :span="8" v-if="patientVo.nation">
+            <el-col :span="8">
               <el-form-item class="flex-item" label="民族:">
-                <p>{{patientVo.nation}}</p>
-              </el-form-item>
-            </el-col>
-            <el-col :span="8" v-if="patientVo.education">
-              <el-form-item class="flex-item" label="文化程度:">
-                <p>{{patientVo.education}}</p>
-              </el-form-item>
-            </el-col>
-            <el-col :span="8" v-if="patientVo.profession">
-              <el-form-item class="flex-item" label="职业:">
-                <p>{{patientVo.profession}}</p>
+                <p>{{patientData.nation}}</p>
               </el-form-item>
             </el-col>
             <el-col :span="8">
               <el-form-item class="flex-item" label="科室:">
-                <p>{{patientData.fromDeptName}}</p>
+                <p>{{patientData.currentDeptName}}</p>
               </el-form-item>
             </el-col>
             <el-col :span="8">
-              <el-form-item class="flex-item" label="病历号:">
+              <el-form-item class="flex-item" :label="patientData.outpatient?'门诊号:':'住院号:'">
                 <p>{{patientData.beHospitalizedNumber}}</p>
-              </el-form-item>
-            </el-col>
-            <el-col :span="24">
-              <el-form-item class="flex-width" label="临床诊断:">
-                <p>{{clinicalSpecialistDiagnosisName}}</p>
               </el-form-item>
             </el-col>
           </el-row>
@@ -60,131 +40,93 @@
       </div>
     </div>
     <div class="symptom-box">
-      <div class="symptom-title">症状描述</div>
+      <div class="symptom-title">患者自述</div>
       <div class="symptom-content flex-center">
-        <img class="img" src="@/views/rep/img/main-symptom.png" />
+        <!-- <img class="img" src="@/views/rep/img/main-symptom.png" /> -->
+        <div class="content">
+          <div class="title">当前诊断</div>
+          <div class="lable" v-for="(item,index) in patientData.clinicalDiagnosis" :key="index">{{item}}</div>
+        </div>
+      </div>
+      <div class="symptom-content flex-center">
+        <!-- <img class="img" src="@/views/rep/img/main-symptom.png" /> -->
         <div class="content">
           <div class="title">主要症状</div>
-          <div class="lable">{{mainSymptomsName}}</div>
-          <div class="lable">发作频率：{{mainPursue.onsetInterval}}</div>
-          <div class="lable">首次发作时间：{{mainPursue.firstOnsetTime}}</div>
-          <div class="lable">最近发作时间：{{mainPursue.recentOnsetTime}}</div>
-          <div class="lable">严重程度：{{mainPursue.illnessDegree}}</div>
+          <div class="lable" v-for="(item,index) in patientData.mainSymptoms" :key="index">{{item}}</div>
         </div>
       </div>
       <div class="symptom-content flex-center">
-        <img class="img" src="@/views/rep/img/icon-symptom.png" />
+        <!-- <img class="img" src="@/views/rep/img/main-symptom.png" /> -->
         <div class="content">
-          <div class="title">伴随症状</div>
-          <div class="lable max-width">{{accompanyingSymptomsName}}</div>
+          <div class="title">躯体症状</div>
+            <div class="lable" v-if="patientData.somatization&&patientData.somatization.length==0">无</div>
+          <div class="lable" v-else v-for="(item,index) in patientData.somatization" :key="index">{{item}}</div>
         </div>
       </div>
-      <div class="symptom-content flex-center">
-        <img class="img" src="@/views/rep/img/motion-symptom.png" />
+       <div class="symptom-content flex-center">
+        <!-- <img class="img" src="@/views/rep/img/main-symptom.png" /> -->
         <div class="content">
-          <div class="title">运动症状</div>
-          <div class="lable max-width">
-            <span>{{motorSymptomsName}}</span>
-          </div>
+          <div class="title">自述免疫力</div>
+          <div class="lable" v-if="patientData.immunityStatus&&patientData.immunityStatus.length==0">无</div>
+          <div v-else class="lable" v-for="(item,index) in patientData.immunityStatus" :key="index">{{item}}</div>
+        </div>
+      </div>
+       <div class="symptom-content flex-center">
+        <!-- <img class="img" src="@/views/rep/img/main-symptom.png" /> -->
+        <div class="content">
+          <div class="title">自述内分泌</div>
+          <div class="lable" v-if="patientData.endocrineStatus&&patientData.endocrineStatus.length==0">无</div>
+          <div class="lable" v-else v-for="(item,index) in patientData.endocrineStatus" :key="index">{{item}}</div>
+        </div>
+      </div>
+       <div class="symptom-content flex-center">
+        <!-- <img class="img" src="@/views/rep/img/main-symptom.png" /> -->
+        <div class="content">
+          <div class="title">过敏体质</div>
+          <div class="lable" v-if="patientData.allergies&&patientData.allergies.length==0">无</div>
+          <div class="lable" v-else v-for="(item,index) in patientData.allergies" :key="index">{{item}}</div>
         </div>
       </div>
     </div>
-    <img class="footer-img" src="@/views/rep/img/icon-foot.png" />
-    <div class="pageNum">-{{pageNum}}-</div>
+     <div class="pageNum">-{{pageNum}}-</div>   
   </div>
 </template>
 <script>
+import { getReportAssess } from "@/api/report";
 export default {
   name: "patientMsg",
   props: {
     patientData: {
       type: Object
     },
-    pageNum: {
-      type: Number,
-      value: 0
+    pageNum:{
+      type:Number
     },
-    patientVo: {
-      type: Object
-    },
-    mainPursue: {
-      type: Object
+    medicalRecordId: {
+      type: String
     }
   },
-  filters: {
-    formatAge(birthday) {
-      if (birthday && birthday != "") {
-        let age = birthday.substring(0, 4);
-        let year = new Date().getFullYear();
-        return year - age - 1;
-      }
-      return "";
-    }
+  data() {
+    return {
+      
+    };
   },
-  computed: {
-    accompanyingSymptomsName: function() {
-      if (
-        this.mainPursue.accompanyingSymptomsSet &&
-        this.mainPursue.accompanyingSymptomsSet.length > 0
-      ) {
-        return this.mainPursue.accompanyingSymptomsSet.join("、");
-      }
-      return "暂无伴随症状";
-    },
-    mainSymptomsName: function() {
-      if (
-        this.mainPursue.mainSymptomsSet &&
-        this.mainPursue.mainSymptomsSet.length > 0
-      ) {
-        return this.mainPursue.mainSymptomsSet.join("、");
-      }
-      return "";
-    },
-    clinicalSpecialistDiagnosisName: function() {
-      return this.arrayMergeData(
-        this.mainPursue.clinicalSpecialistDiagnosisList,
-        this.mainPursue.clinicalSpecialistDiagnosisSupplementList
-      );
-    },
-    motorSymptomsName: function() {
-      if (
-        this.mainPursue.motorSymptomsSet &&
-        this.mainPursue.motorSymptomsSet.length > 0
-      ) {
-        return this.mainPursue.motorSymptomsSet.join("、");
-      }
-
-      return "暂无运动症状";
-    }
+  mounted() {
+    
+      console.log(this.patientData)
   },
-  methods: {
-    arrayMergeData(arr, strArr) {
-      let titleName = [];
-      if (!arr) {
-        return;
-      }
-      if (!strArr) {
-        return;
-      }
-      for (let item of arr) {
-        if (item.name != "") titleName.push(item.name);
-      }
-      for (let item of strArr) {
-        if (item != "") titleName.push(item);
-      }
-      return titleName.join("、");
-    }
-  }
+  methods: {}
 };
 </script>
 <style  scoped>
+
 .form-pdf.patient-msg {
   padding: 70px;
   background: url("../img/patient-msg.png") no-repeat;
   background-size: 100% 100%;
 }
 .msg-box {
-  margin-top: 70px;
+  margin-top: 30px;
   text-align: left;
 }
 .msg-box .title {
@@ -204,17 +146,17 @@ export default {
   flex: 2;
 }
 .symptom-title {
-  width: 205px;
+  padding-left: 20px;
+  width: 255px;
   height: 53px;
-  text-align: center;
   line-height: 53px;
-  font-size: 30px;
+  font-size: 28px;
   background: url("../img/pdf-label.png") no-repeat;
   background-size: 100% 100%;
   color: #fff;
 }
 .symptom-content {
-  margin-top: 30px;
+  margin: 10px 0;
 }
 .symptom-content .img {
   margin: 0 10px;
@@ -229,10 +171,14 @@ export default {
 }
 .symptom-content .content .title {
   font-size: 16px;
-  color: #000;
+   color: #1C99C7;
   font-weight: 700;
 }
 .symptom-content .content .lable {
+  font-size: 14px;
+}
+.conclusion{
+  color: #000;
   font-size: 14px;
 }
 .max-width {
@@ -244,7 +190,39 @@ export default {
   bottom: 10px;
 }
 .form-pdf .pageNum {
-  color: #fff;
+  color: #000;
+}
+.item-box {
+  margin-top: 20px;
+  padding: 10px 0;
+  width: 626px;
+}
+.item-box .content {
+  flex: 1;
+  color: #666;
+  margin: 5px 0;
+  font-size: 15px;
+  text-align: justify;
+  line-height: 30px;
+}
+.item-box .content span {
+  margin: 0 10px;
+}
+.item-box .chart {
+  width: 240px;
+  height: 180px;
+  margin-right: 20px;
+}
+.content-box .content {
+  font-size: 20px;
+  color: #666;
+  margin: 5px 0;
+  font-size: 15px;
+  text-align: justify;
+  line-height: 30px;
+}
+.content.indent {
+  text-indent: 2em;
 }
 </style>
 

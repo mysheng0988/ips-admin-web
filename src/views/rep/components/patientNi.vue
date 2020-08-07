@@ -77,12 +77,10 @@
     font-size: 26px;
     color: #222;
     line-height: 45px;
-    margin: 10px 0;
   }
  .content-box .content{
     font-size: 20px;
     color: #666;
-     margin: 5px 0;
      font-size: 15px;
      text-align: justify;
     line-height: 30px;

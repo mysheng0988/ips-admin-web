@@ -1,7 +1,7 @@
 import request from '@/utils/request'
 export function submitQuestion(params) {
   return request({
-    url:'ips/questionnaire/submit',
+    url:'ips/questionnaire/inspection/submit',
     method:'post',
     data:params
   })
@@ -84,5 +84,26 @@ export function appendQuestion(medicalRecordId) {
   return request({
     url:'ips/questionnaire/appendQuestion/'+medicalRecordId,
     method:'get',
+  })
+}
+export function getQuestionnaireDetail(params) {
+  return request({
+    url:'ips/questionnaire/details/',
+    method:'get',
+    params:params
+  })
+}
+export function screeningQuestionSubmit(data) {
+  return request({
+    url:'ips/questionnaire/screening/submit',
+    method:'post',
+    data:data
+  })
+}
+export function appendScreeningQuestion(data) {
+  return request({
+    url: 'ips/questionnaire/screening/appendQuestion/submit',
+    method: 'post',
+    data: data
   })
 }

@@ -1,0 +1,221 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC2",
+    "scaleTitle": "汉密尔顿焦虑量表（HAMA）",
+    "type": "1",
+    "explain": "应由评定员采用交谈与观察的方式进行检查，并做出评分。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "焦虑心境（担心、担扰，感到最坏的事将要发生，容易激惹)",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "紧张（紧张感、易疲劳、不能放松、情绪反应、易哭、颤抖、感到不安）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "害怕（害怕黑暗、陌生人、一人独处、动物、乘车或旅行及人多的场合）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "失眠（难以入睡、易醒、睡得不深、多梦、夜惊、醒后感疲倦）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "认知功能（或称记忆、注意障碍、注意力不能集中、记忆力差）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "抑郁心境（丧失兴趣、对以往爱好缺乏快感、抑郁、早醒、昼重夜轻）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "肌肉系统（肌肉酸痛、活动不灵活、肌肉抽动、肢体抽动、牙齿打颤、声音发抖）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "label": "",
+        "question": "感觉系统（视物模糊、发冷发热、软弱无力感、浑身剌痛）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "label": "",
+        "question": "心血管系统症状（心动过速、心悸、胸痛、血管跳动感、昏倒感、心搏脱漏）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "10",
+        "label": "",
+        "question": "呼吸系统症状（胸闷、窒息感、叹息、呼吸困难）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "11",
+        "label": "",
+        "question": "胃肠道症状;吞咽困难、嗳气、消化不良（进食后腹痛、腹胀、恶心、胃部饱感）、肠动感、肠鸣、腹泻、体重减轻、便秘",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "12",
+        "label": "",
+        "question": "生理泌尿系统症状（尿意频数、尿急、停经、性冷淡、早泄、阳萎）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "13",
+        "label": "",
+        "question": "植物神经系统症状（口干、潮红、苍白、易出汗、起鸡皮疙瘩、紧张性头痛、毛发竖起）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "14",
+        "label": "",
+        "question": "会谈时行为表现（1、一般表现：紧张、不能松弛、忐忑不安、咬手指、紧紧握拳、摸弄手帕、面肌抽动、不宁顿足、手发 抖、皱眉、表情僵硬、肌张力高、叹气样呼吸、面色苍白。2、生理表现：吞咽、打呃、安静时心率快、呼吸快（20次/分以上）、腱反向亢进、震颤、瞳孔放大、易出汗、眼球突出）",
+        "answers": [
+          "无症状",
+          "轻",
+          "中等",
+          "重",
+          "极重"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}

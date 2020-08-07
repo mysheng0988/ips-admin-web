@@ -45,7 +45,6 @@
    .item-box{
     padding: 10px 0;
     width: 626px;
-
   }
   .content{
     flex:1;

@@ -1,0 +1,1369 @@
+{
+  "code": 200,
+  "data": {
+    "id": "SC32",
+    "scaleTitle": "C型行为特征量表",
+    "type": "1",
+    "explain": "在以下的题目中，都是人们在自我描述中喜欢使用的一些句子。请您仔细阅读每一个句子，并从后面的四个答案中找出最符合您的情况。这里所指的是您的一般感觉和举止，答案无所谓对错，请不要反复琢磨，要快一点决定，逐题回答所有的问题。",
+    "problem": [
+      {
+        "questionNum": "1",
+        "label": "",
+        "question": "我感觉我的身体良好 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "2",
+        "label": "",
+        "question": "我感到闷闷不乐和沮丧 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "3",
+        "label": "",
+        "question": "我生气或恼怒时，把它藏在内心，不表露 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "4",
+        "label": "",
+        "question": "我感到烦躁和不安 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "5",
+        "label": "",
+        "question": "当感到可能有困难时，我相信前途会是光明的 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "6",
+        "label": "",
+        "question": "与他人接触时，我理智从事 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "7",
+        "label": "",
+        "question": "我觉得自己早晨身体最好 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "8",
+        "label": "",
+        "question": "当我感到恐惧或忧虑时，我不使它流露出来 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "9",
+        "label": "",
+        "question": "我易于激动",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "10",
+        "label": "",
+        "question": "我对自己感到满意",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "11",
+        "label": "",
+        "question": "我想大哭一场 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "12",
+        "label": "",
+        "question": "我宁愿理智地解决与他人的矛盾，而不愿感情用事",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "13",
+        "label": "",
+        "question": "不成功时，我就觉得一切都完了",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "14",
+        "label": "",
+        "question": "当我忧伤时，就把它表现出来",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "15",
+        "label": "",
+        "question": "我睡眠不好，容易早醒 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "16",
+        "label": "",
+        "question": "我一遇到挫折便会垂头丧气 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "17",
+        "label": "",
+        "question": "当我生气时，便会表现出来",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "18",
+        "label": "",
+        "question": "当有人阻挠我的愿望与要求时，我试图理解他",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "19",
+        "label": "",
+        "question": "我容易发火 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "20",
+        "label": "",
+        "question": "我吃的和以前一样多 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "21",
+        "label": "",
+        "question": "当我胆怯或发愁时，我能控制自己的举止 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "22",
+        "label": "",
+        "question": "我喜欢看有魅力的异性，并乐意与其交往 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "23",
+        "label": "",
+        "question": "当我忧伤或沮丧时，我能控制自己的感情",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "24",
+        "label": "",
+        "question": "我觉得，我想干的事老是实现不了 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "25",
+        "label": "",
+        "question": "我觉得自己正在走下坡路 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "26",
+        "label": "",
+        "question": "我较为乐观地看待一切",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "27",
+        "label": "",
+        "question": "当我恼怒时，心里的愤怒比表现出来的还要厉害 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "28",
+        "label": "",
+        "question": "我感觉自己休息得很好 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "29",
+        "label": "",
+        "question": "我试图用理智，而不是用感情对别人作出反应",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "30",
+        "label": "",
+        "question": "我希望我像别人那样快乐",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "31",
+        "label": "",
+        "question": "当我恐惧或发愁时，我就表露出自己的感情 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "32",
+        "label": "",
+        "question": "我觉得自己很冷静 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "33",
+        "label": "",
+        "question": "我性情暴躁",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "34",
+        "label": "",
+        "question": "当我忧伤或沮丧时，我就表露出自己的感情 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "35",
+        "label": "",
+        "question": "当我和别人闹矛盾时，我试图不流露感情 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "36",
+        "label": "",
+        "question": "我的心跳得比一般人快 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "37",
+        "label": "",
+        "question": "我的出发点总是：什么事也不能打扰我 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "38",
+        "label": "",
+        "question": "当我恼怒和生气时，我能控制自己的举止 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "39",
+        "label": "",
+        "question": "我觉得有不可克服的困难",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "40",
+        "label": "",
+        "question": "我无缘无故地感到疲倦 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "41",
+        "label": "",
+        "question": "如果谁伤害了我的感情，我还试图理解他",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "42",
+        "label": "",
+        "question": "当我恐惧或忧愁时，我能控制自己的感情 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "43",
+        "label": "",
+        "question": "我的思路仍与以前一样清楚 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "44",
+        "label": "",
+        "question": "我容易生气 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "45",
+        "label": "",
+        "question": "当我忧伤或沮丧时，我能自我控制 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "46",
+        "label": "",
+        "question": "我对那些确实不重要的事情想得太多了",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "47",
+        "label": "",
+        "question": "我跟着感觉走 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "48",
+        "label": "",
+        "question": "我对未来抱乐观态度",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "49",
+        "label": "",
+        "question": "当我生气及恼怒时，就会流露出来 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "50",
+        "label": "",
+        "question": "我很幸福",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "51",
+        "label": "",
+        "question": "我感到和以前一样无忧无虑 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "52",
+        "label": "",
+        "question": "我易大发雷霆 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "53",
+        "label": "",
+        "question": "我试着以理智行事，而不感情用事 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "54",
+        "label": "",
+        "question": "我被一些琐事所困扰 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "55",
+        "label": "",
+        "question": "我无缘无故地觉得心里难受",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "56",
+        "label": "",
+        "question": "当我恐惧或忧虑时，就流露出自己的感情 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "57",
+        "label": "",
+        "question": "事情进展得象我期待的一样 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "58",
+        "label": "",
+        "question": "我缺乏自信",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "59",
+        "label": "",
+        "question": "当我受到伤害时，我设法克制自己的感情 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "60",
+        "label": "",
+        "question": "当我忧伤或沮丧时，我能自制",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "61",
+        "label": "",
+        "question": "我对未来充满信心",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "62",
+        "label": "",
+        "question": "我觉得自己很安全 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "63",
+        "label": "",
+        "question": "我设法理解我所遇到的所有的人 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "64",
+        "label": "",
+        "question": "我很快就会暴跳如雷 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "65",
+        "label": "",
+        "question": "当我生气和恼怒时，我能控制自己",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "66",
+        "label": "",
+        "question": "当遇到困难时，我相信一切都会变好",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "67",
+        "label": "",
+        "question": "我对自己的处境满意 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "68",
+        "label": "",
+        "question": "我凭感情判断一个人的好坏 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "69",
+        "label": "",
+        "question": "当我恐惧或发愁时，我能压抑自己的情绪 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "70",
+        "label": "",
+        "question": "我比以前容易闷闷不乐 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "71",
+        "label": "",
+        "question": "我的情绪十分平稳 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "72",
+        "label": "",
+        "question": "当我忧伤时，我感觉到的比表现出来的还要严重",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "73",
+        "label": "",
+        "question": "我尽量避免与别人闹矛盾 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "74",
+        "label": "",
+        "question": "当我很愤怒时，就会变得不顾脸面 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "75",
+        "label": "",
+        "question": "我很容易作出决断 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "76",
+        "label": "",
+        "question": "我觉得与我交往的人都喜欢我",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "77",
+        "label": "",
+        "question": "我心满意足 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "78",
+        "label": "",
+        "question": "我确信，我净碰上好事 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "79",
+        "label": "",
+        "question": "我设法在与他人交往中，不受自己的感情支配",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "80",
+        "label": "",
+        "question": "我觉得我周围的人能容忍我的缺点 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "81",
+        "label": "",
+        "question": "我觉得自己有用，别人需要我",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "82",
+        "label": "",
+        "question": "有些念头，我很难摆脱",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "83",
+        "label": "",
+        "question": "我在与他人交往中，能够得到帮助与支持",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "84",
+        "label": "",
+        "question": "既使有足够的理由，我也不对别人发火",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "85",
+        "label": "",
+        "question": "当着别人的面批评我，我就要发火 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "86",
+        "label": "",
+        "question": "我深感失望，以致不能从中解脱 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "87",
+        "label": "",
+        "question": "我的生活很充实",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "88",
+        "label": "",
+        "question": "当我需要时，与我交往的人能给予我安慰 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "89",
+        "label": "",
+        "question": "我易于烦躁 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "90",
+        "label": "",
+        "question": "我是一个平静的人",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "91",
+        "label": "",
+        "question": "我的举止受自己感情的影响",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "92",
+        "label": "",
+        "question": "我感到，如果我死了，对别人可能更好一点 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "93",
+        "label": "",
+        "question": "当我处于困境时，与他人交往会使我好受些",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "94",
+        "label": "",
+        "question": "当我想起不久前的烦恼，我就陷入紧张与不安之中 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "95",
+        "label": "",
+        "question": "如果我做了某件好事而未能得到表扬，我就会生气 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "96",
+        "label": "",
+        "question": "我现在工作或学习的能力和从前差不多 ",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      },
+      {
+        "questionNum": "97",
+        "label": "",
+        "question": "我能从我周围的人那里得到好主意",
+        "answers": [
+          "无",
+          "偶尔",
+          "经常",
+          "总是"
+        ],
+        "answer": "",
+        "hidden": false,
+        "nextNum": 0
+      }
+    ]
+  }
+}
