@@ -66,7 +66,6 @@
 
 <script>
   import {saveCustomClass,getCustomClassById} from '@/api/classify';
-  import {findShop} from '@/api/shop';
   import { Message, MessageBox } from 'element-ui'
   const defaultCustomClass = {
     id:null,

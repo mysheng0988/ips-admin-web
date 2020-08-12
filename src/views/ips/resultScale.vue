@@ -73,10 +73,6 @@
 </template>
 
 <script>
-  import {queryCustomClass,
-          deleteCustomClass,
-          saveCustomClass} from '@/api/classify'
-  import {findShop} from '@/api/shop';
   import { Message, MessageBox } from 'element-ui'
   export default {
     name: "resultHRV",

@@ -217,6 +217,10 @@ import {getScaleTypeJson} from '@/api/getJson'
        })
       },
       appendQuestionSubmitData(){
+        if(this.tipsData.selected==''){
+            this.$message.warning("请选择答案！")
+            return;
+        }
         let data={
            medicalRecordId: this.medicalRecordId,
            questionNumber: this.tipsData.appendQuestionNumber,

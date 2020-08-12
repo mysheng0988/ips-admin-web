@@ -166,43 +166,6 @@ export const constantRouterMap = [
     ],
   },
   {
-    path:'/sms',
-    component: Layout,
-    redirect: '/sms/coupon',
-    name: 'sms',
-    meta: {title: '心身治疗', icon: 'sms',roleId:[1]},
-    hidden:true,
-  },
-  {
-    path:'/param',
-    component: Layout,
-    redirect: '/param/cureItem',
-    name: 'param',
-    meta: {title: '参数配置', icon: 'param',roleId:[1]},
-    hidden:true,
-    children: [
-      {
-        path: 'cureItem',
-        name: 'cureItem',
-        component: () => import('@/views/param/cureItem'),
-        meta: {title: '治疗项目', icon: 'sms-ad',roleId:[1]}
-      },
-      {
-        path: 'assess',
-        name: 'assess',
-        component: () => import('@/views/param/assessItem'),
-        meta: {title: '测评项目', icon: 'sms-flash',roleId:[1]}
-      },
-      {
-        path: 'scale',
-        name: 'scale',
-        component: () => import('@/views/param/scaleManage'),
-        meta: {title: '量表管理',icon:'sms-new',roleId:[1]},
-      },
-
-    ]
-  },
-  {
     path:'/que',
     component: Layout,
     redirect: '/que/index',
@@ -280,7 +243,7 @@ export const constantRouterMap = [
         name: 'gls',
         component: () => import('@/views/gls/gls'),
         meta: {title: '郭老师测试', icon: 'icon-dep',roleId:[13]},
-        hidden:true
+        hidden:false
       },
     ]
   },
