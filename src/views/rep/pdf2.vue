@@ -106,6 +106,7 @@ export default {
       suggestData: [],
       page: [],
       resultData: [],
+      currentDoctorName:"",//测评师
       contentsData: [
         {
           pageName: "基本信息",
@@ -226,8 +227,7 @@ export default {
             0
           );
           totalData.splice(2, 0, {
-            content:
-              "请医生勾选患者使用的药物，患者仅需查看医生勾选药物的注意事项",
+            content:"请医生勾选患者使用的药物，患者仅需查看医生勾选药物的注意事项",
             type: 1
           });
           let exercisePrescription = JSON.parse(data.exercisePrescription); //运动处方
@@ -300,7 +300,7 @@ export default {
           
          if(this.pressureData&&his.pressureData2){
                 this.contentsData[7].pageNum=this.contentsData[6].pageNum+2;
-           }else if(this.pressureData2!=""&&this.pressureData2==""){
+           }else if(this.pressureData!=""&&this.pressureData2==""){
              this.contentsData[7].pageNum=this.contentsData[6].pageNum+1;
           }else{
              this.contentsData[7].pageNum=this.contentsData[6].pageNum;
@@ -321,6 +321,7 @@ export default {
     getReportPatMsgData() {
      return getReportPatMsg(this.medicalRecordId).then(res => {
         this.patientData = res.dataList[0];
+         this.currentDoctorName=res.dataList[0].currentDoctorName;
         let data = res.dataList[0];
         let pageNum = 0;
         let rowNum = 0;
@@ -398,6 +399,9 @@ export default {
       };
       contentData.push(content);
       if (Array.isArray(arrData)) {
+         if(arrData.length==0){
+          arrData.push("无")
+        }
         for (let item of arrData) {
           let contentStr = {
             type: "0",
@@ -428,7 +432,7 @@ export default {
     },
     getScaleNumResult() {
       return scaleResultNum(this.medicalRecordId, {
-        questionnaireNumbers: 12
+        questionnaireNumbers: "SC12"
       }).then(res => {
         let rowNum = 0;
         let maxRow = 20;
@@ -634,8 +638,8 @@ export default {
       }
      totalData.push({
         type:100,
-        content:"此报告仅供参考,不作为临床诊断,测评师：测试用例,测评时间：2020-12-19",
-        name:this.info.realName,
+        content:"",
+        name:this.currentDoctorName,
         createTime:data.reportGenerationTime
       })
       drugData[pageNum] = [];
@@ -709,9 +713,6 @@ export default {
         return;
       }
       let str = "";
-      // if(index!=0){
-      //   str=index+"、"
-      // }
       if (typeof obj === "object") {
         let param = {
           content: str + obj.title,
@@ -746,7 +747,7 @@ export default {
             type: "text",
             explanation: []
           };
-          if (item.questionnaireNumber != 12) {
+          if (item.questionnaireNumber != "SC12") {
             currentNum = 6;
             if (item.type == "dial") {
               item.chartData = JSON.parse(item.chartData);
@@ -790,7 +791,7 @@ export default {
               let index = 0;
               for (let item1 of item.explanation) {
                 currentNum += this.computeRowNum(item1);
-                if (currentNum < maxRowNum) {
+                if (currentNum <= maxRowNum) {
                   index++;
                 }
               }
@@ -798,6 +799,9 @@ export default {
               item.explanation = explanation.slice(0, index);
               copyItem.explanation = explanation.slice(index);
               rowNum += currentNum;
+               if(currentNum>maxRowNum){
+                rowNum=25
+              }
             } else if (item.type == "text") {
               currentNum = 3;
               for (let item1 of item.explanation) {
@@ -805,7 +809,7 @@ export default {
               }
               rowNum += currentNum;
             }
-            if (rowNum >= maxRowNum) {
+            if (scaleData[pageNum].length!==0&&rowNum >= maxRowNum) {
               rowNum = currentNum;
               pageNum++;
               scaleData[pageNum] = [];
@@ -958,11 +962,6 @@ export default {
       for (let item of comprehensiveEvaluation) {
         toatalData = this.spreadJson2arr(toatalData, item, 0);
       }
-      //   let tipsObj={
-      //    imgPath:"",
-      //    content:"对于检出条目，请做进一步深入评估，或进行临床专科诊疗。"
-      //  }
-      //   toatalData.push(tipsObj)
       toatalData = this.copyAnalysis(
         toatalData,
         require("@/views/rep/img/icon-analysis.png"),
@@ -986,7 +985,6 @@ export default {
           page[pageNum].push(item);
         } else if (contentNum - surplus > 0) {
           let content1 = item.content.substring(0, surplus * 38);
-
           let dataObj1 = {
             imgPath: "",
             content: content1,

@@ -93,7 +93,7 @@
         </div>
       </el-form-item> -->
       <el-form-item style="text-align: center">
-        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
+        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
         <el-button type="primary" size="medium" @click="handleNext" v-if="nextTitle!=''">下一步，{{nextTitle}}</el-button>
         <el-button type="primary" size="medium" @click="handleFinishCommit" v-else>完成</el-button>
       </el-form-item>

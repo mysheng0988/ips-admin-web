@@ -8,7 +8,7 @@
          <el-button type="primary"  @click="qrcodeData">扫码答题</el-button>
       </el-form-item>
       <el-form-item style="text-align: center">
-        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
+        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
         <el-button type="primary" size="medium" @click="handleNext">下一步，{{nextTitle}}</el-button>
       </el-form-item>
     </el-form>
@@ -163,6 +163,7 @@ import {getScaleTypeJson} from '@/api/getJson'
           if(res.code==200){
               this.questionNo=res.dataList[0].questionnaireNo;
                this.scaleNoList=res.dataList[0].scaleNoList;
+               this.gender=res.dataList[0].gender;
               this.completeQuestionnaire=res.dataList[0].completeQuestionnaire;
           }
         });
@@ -181,7 +182,6 @@ import {getScaleTypeJson} from '@/api/getJson'
       },
       openScaleSelectData(){
         getScaleSelectData(this.medicalRecordId).then(res=>{
-
            if(res.code==200){
                let dataList=res.dataList;
             let data=[];

@@ -253,7 +253,7 @@
           if(res.code==200){
               this.hrvVisible=true;
                 this.hrvComplete=true;
-              this.hrvPath="data:image/png;base64,"+res.dataList[0].resultImageUrl;
+              this.hrvPath=res.dataList[0].resultImageUrl;
           }else{
               this.hrvComplete=false;
             this.$message.warning("暂时没有数据")

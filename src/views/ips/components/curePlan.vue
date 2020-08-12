@@ -218,7 +218,7 @@
         </div>
       </el-form-item>
       <el-form-item style="text-align: center">
-        <!-- <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button> -->
+        <el-button size="medium" @click="handlePrev">上一步，{{prevTitle}}</el-button>
         <el-button type="primary" size="medium" @click="submitReportData">确认签名</el-button>
       </el-form-item>
     </el-form>

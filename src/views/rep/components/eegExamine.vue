@@ -33,7 +33,7 @@ import{getEEG} from "@/api/HRV"
     mounted(){
       getEEG(this.medicalRecordId).then(res=>{
           if(res.code==200){
-            this.eegPath="data:image/png;base64,"+res.dataList[0].resultImageUrl;
+            this.eegPath=res.dataList[0].resultImageUrl;
           }else{
             this.$message.warning("没有查到数据")
           }

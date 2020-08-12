@@ -106,6 +106,7 @@ export default {
       suggestData: [],
       page: [],
       resultData: [],
+      currentDoctorName:"",//测评师
       contentsData: [
         {
           pageName: "基本信息",
@@ -294,7 +295,7 @@ export default {
           this.suggestData = suggestData;
            if(this.pressureData&&this.pressureData2){
                 this.contentsData[7].pageNum=this.contentsData[6].pageNum+2;
-           }else if(this.pressureData2!=""&&this.pressureData2==""){
+           }else if(this.pressureData!=""&&this.pressureData2==""){
              this.contentsData[7].pageNum=this.contentsData[6].pageNum+1;
           }else{
              this.contentsData[7].pageNum=this.contentsData[6].pageNum;
@@ -316,6 +317,7 @@ export default {
     getReportPatMsgData() {
      return getReportPatMsg(this.medicalRecordId).then(res => {
         this.patientData = res.dataList[0];
+        this.currentDoctorName=res.dataList[0].currentDoctorName;
         let data = res.dataList[0];
         let pageNum = 0;
         let rowNum = 0;
@@ -394,6 +396,9 @@ export default {
       };
       contentData.push(content);
       if (Array.isArray(arrData)) {
+        if(arrData.length==0){
+          arrData.push("无")
+        }
         for (let item of arrData) {
           let contentStr = {
             type: "0",
@@ -450,7 +455,7 @@ export default {
           }
           this.pressureData = pressureData;
           this.contentsData[6].pageNum =
-            this.contentsData[5].pageNum + this.scaleData.length;
+          this.contentsData[5].pageNum + this.scaleData.length;
         } else {
           this.contentsData[6].pageNum =
             this.contentsData[5].pageNum + this.scaleData.length;
@@ -535,6 +540,7 @@ export default {
           for (let item of totalData) {
             let surplus = maxRowNum - rowNum;
             let contentNum = this.computeRowNum(item.content);
+           
             if (contentNum - surplus == 1) {
               rowNum = 1;
               pageNum++;
@@ -630,8 +636,8 @@ export default {
       }
       totalData.push({
         type:100,
-        content:"此报告仅供参考,不作为临床诊断,测评师：测试用例,测评时间：2020-12-19",
-        name:this.info.realName,
+        content:"",
+        name:this.currentDoctorName,
         createTime:data.reportGenerationTime
       })
       drugData[pageNum] = [];
@@ -741,6 +747,7 @@ export default {
           if (item.questionnaireNumber != "SC12") {
             currentNum = 6;
             if (item.type == "dial") {
+             
               item.chartData = JSON.parse(item.chartData);
               let num = -3;
               for (let item1 of item.explanation) {
@@ -790,6 +797,9 @@ export default {
               item.explanation = explanation.slice(0, index);
               copyItem.explanation = explanation.slice(index);
               rowNum += currentNum;
+              if(currentNum>maxRowNum){
+                rowNum=25
+              }
             } else if (item.type == "text") {
               currentNum = 3;
               for (let item1 of item.explanation) {
@@ -797,7 +807,8 @@ export default {
               }
               rowNum += currentNum;
             }
-            if (rowNum >= maxRowNum) {
+            console.log(rowNum)
+            if (rowNum>= maxRowNum) {
               rowNum = currentNum;
               pageNum++;
               scaleData[pageNum] = [];

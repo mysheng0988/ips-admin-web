@@ -112,12 +112,11 @@
           </el-form-item>
         </el-col>
         <el-col :span="16">
-          <el-form-item label="人群分类：" prop="occupationalClassification">
+          <el-form-item label="人群分类：" >
             <el-select
               placeholder="请选择"
               multiple
               v-model="pursueObj.occupationalClassification"
-              @change="crowdRoleChange"
               clearable
               class="input-width"
             >
@@ -198,7 +197,7 @@ const defaultPursue = {
   weight: "", //体重
   mainSymptoms: [], //主要症状
   maritaStatus: null, //婚姻状态
-  occupationalClassification: ["无"], //职业类别
+  occupationalClassification: [], //职业类别
   parentSituation: "", //父母情况
   siblingsNumber: 1 //兄妹人数
 };
@@ -270,7 +269,6 @@ export default {
     return {
       listLoading: false,
       optionRow: [
-        "无",
         "驾驶员",
         "机器操纵者",
         "高空作业者",
@@ -326,7 +324,6 @@ export default {
   mounted() {
     if (this.gender) {
       this.optionRow = [
-        "无",
         "驾驶员",
         "机器操纵者",
         "高空作业者",
@@ -335,7 +332,6 @@ export default {
       ];
     } else {
       this.optionRow = [
-        "无",
         "哺乳",
         "妊娠期妇女",
         "育龄期妇女",
@@ -349,8 +345,8 @@ export default {
         "精细工作者"
       ];
     }
-    this.pursueObj.occupationalClassification = ["无"];
-    this.getSymptoms("3");
+    this.pursueObj.occupationalClassification = [];
+    //this.getSymptoms("3");
     this.getPatientData();
   },
   methods: {
@@ -374,7 +370,7 @@ export default {
           // this.completeQuestionnaire=res.dataList[0].completeQuestionnaire;
           this.pursueObj = res.dataList[0];
           if(this.pursueObj.occupationalClassification){
-            this.pursueObj.occupationalClassification = ["无"];
+            this.pursueObj.occupationalClassification = [];
           }
           // this.scaleId=res.dataList[0].questionnaireNo
         }

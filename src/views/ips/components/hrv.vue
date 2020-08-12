@@ -79,7 +79,7 @@
         getHRV(this.medicalRecordId).then(res=>{
           if(res.code==200){
               this.dialogVisible=true;
-              this.hrvPath="data:image/png;base64,"+res.dataList[0].resultImageUrl;
+              this.hrvPath=res.dataList[0].resultImageUrl;
           }
         })
       },

@@ -47,6 +47,9 @@
     export default {
       name: "question",
        props: {
+         gender:{
+           type:Boolean
+         },
         scaleId: {
             type: String,
           },

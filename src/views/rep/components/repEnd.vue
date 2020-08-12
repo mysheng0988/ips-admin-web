@@ -43,7 +43,6 @@
     mounted(){
       getHospitalData(this.info.organizationId).then(res=>{
         if(res.code==200){
-         
           this.hospitalData=res.dataList[0]
         }
       })

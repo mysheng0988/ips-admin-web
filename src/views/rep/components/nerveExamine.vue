@@ -40,7 +40,7 @@ import {getHRV} from "@/api/HRV"
      getHRV(this.medicalRecordId).then(res=>{
           if(res.code==200){
               this.data=res.dataList[0];
-              this.base64="data:image/png;base64,"+this.data.resultImageUrl;
+              this.base64=this.data.resultImageUrl;
           }
         })
     }

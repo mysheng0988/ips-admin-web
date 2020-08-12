@@ -487,7 +487,7 @@ export default {
         cardNo: [
           { required: true, message: "请输入身份证号码", trigger: "blur" },
           {
-            pattern: /^[0-9]{18}$/,
+            pattern: /^[0-9]{17}([0-9]|X|x)$/,
             message: "身份证格式不正确",
             trigger: "blur"
           }
@@ -729,7 +729,8 @@ export default {
       let patObj=this.patObj;
       this.$refs[formName].validate(valid => {
         if (valid) {
-          if(!this.patientId){
+         // console.log()
+          if(!this.patObj.id){
               insertPatint(patObj).then(res=>{
                   if(res.code==200){
                     this.dialogVisible=false;
